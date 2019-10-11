@@ -9,8 +9,6 @@
 import Foundation
 import UIKit
 
-
-
 class Constants: NSObject {
     /**
     MARK: - App Constants
@@ -24,10 +22,12 @@ class Constants: NSObject {
     /**
     MARK: - Storyboard Constants
     */
-    static let walkthroughStoryboard       = UIStoryboard(name: "Walkthrough", bundle: nil)
-    static let loginAndSignupStoryboard    = UIStoryboard(name: "LoginAndSignup", bundle: nil)
-    static let commonStoryboard            = UIStoryboard(name: "Common", bundle: nil)
-    static let surveyStoryboard            = UIStoryboard(name: "Survey", bundle: nil)
-    static let mainStoryboard              = UIStoryboard(name: "Main", bundle: nil)
+    static let walkthroughStoryboard      = UIStoryboard(name: "Walkthrough", bundle: nil)
+    static let loginAndSignupStoryboard   = UIStoryboard(name: "LoginAndSignup", bundle: nil)
+    static let commonStoryboard           = UIStoryboard(name: "Common", bundle: nil)
+    static let eventStoryboard            = UIStoryboard(name: "Event", bundle: nil)
+    static let registerStoryboard         = UIStoryboard(name: "Register", bundle: nil)
+    static let homeStoryboard             = UIStoryboard(name: "Home", bundle: nil)
+    static let settingsStoryboard         = UIStoryboard(name: "Settings", bundle: nil)
     //end
 }

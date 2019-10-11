@@ -14,7 +14,6 @@ class WalkthroughParentViewController: UIViewController {
      MARK: - Properties
      */
     @IBOutlet weak var scrollView       : UIScrollView!
-    @IBOutlet weak var btnBack          : UIButton!
     @IBOutlet weak var btnNext          : UIButton!
     @IBOutlet weak var pageControl      : UIPageControl!
     var pageArray                       : Array<Any>!
@@ -38,9 +37,6 @@ class WalkthroughParentViewController: UIViewController {
         }
         self.scrollView.frame = self.view.frame
         self.scrollView.contentSize = CGSize(width: self.view.frame.width, height: self.view.frame.size.height)
-        
-        self.btnNext.setTitle("NEXT", for: UIControl.State.normal)
-        self.btnBack.isHidden = true
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -63,24 +59,19 @@ class WalkthroughParentViewController: UIViewController {
         self.scrollView.showsHorizontalScrollIndicator = false
         self.scrollView.showsVerticalScrollIndicator = false
 
-        let dictView1 = ["imageDesc" : "WALKTHROUGH_DESC_VIEW1",
-                         "imageURL"  : "ic_Walkthrough_View1",
-                         "title"     : "WALKTHROUGH_TITLE_VIEW1"]
+        let dictView1 = ["imageDesc" : "Many brands, one passion.\nSuper Cars",
+                         "imageURL"  : "ic_ScreenA",
+                         "title"     : "Welcome to\nSuperCars Majlis"]
         
-        let dictView2 = ["imageDesc" : "WALKTHROUGH_DESC_VIEW2",
-                         "imageURL"  : "ic_Walkthrough_View2",
-                         "title"     : "WALKTHROUGH_TITLE_VIEW2"]
+        let dictView2 = ["imageDesc" : "Get notified about the latest events and RSVP to them ysing the app",
+                         "imageURL"  : "ic_ScreenB",
+                         "title"     : "Events"]
         
-        let dictView3 = ["imageDesc" : "WALKTHROUGH_DESC_VIEW3",
-                         "imageURL"  : "ic_Walkthrough_View3",
-                         "title"     : "WALKTHROUGH_TITLE_VIEW3"]
-        
-        let dictView4 = ["imageDesc" : "WALKTHROUGH_DESC_VIEW4",
-                         "imageURL"  : "ic_Walkthrough_View4",
-                         "title"     : "WALKTHROUGH_TITLE_VIEW4"]
-        
-
-        self.pageArray = [dictView1, dictView2, dictView3, dictView4]
+        let dictView3 = ["imageDesc" : "Get connected to our partners and ger exclusive offers available only to SCM members.",
+                         "imageURL"  : "ic_ScreenC",
+                         "title"     : "Promotions"]
+   
+        self.pageArray = [dictView1, dictView2, dictView3]
         
 
         self.count = 0
@@ -113,31 +104,12 @@ class WalkthroughParentViewController: UIViewController {
     }
     
     /**
-     MARK: - Button Back Tapped
-    */
-    @IBAction func btnBackTapped(){
-        if(self.pageArray.count != self.count){
-            self.count = self.count - 1
-            xOffSet = self.pageArray.count * Int(self.view.frame.width)
-            UIView.animate(withDuration: 0.5) {
-                self.scrollView.contentOffset = CGPoint(x: self.scrollView.frame.size.width * CGFloat(self.count), y: 0)
-                self.pageControl.currentPage = self.count
-            }
-            if(self.count == self.pageArray.count - 1){
-                self.btnNext.setTitle("LETS_BEGIN", for: UIControl.State.normal)
-            }else{
-                self.btnNext.setTitle("NEXT", for: UIControl.State.normal)
-            }
-        }
-    }
-    
-    /**
      MARK: - Button Next Tapped
      */
     @IBAction func btnNextTapped(){
         if self.count == self.pageArray.count - 1{
-//            let viewController = Constants.loginAndSignupStoryboard.instantiateViewController(withIdentifier: "ChooseUserTypeViewController") as! ChooseUserTypeViewController
-//            self.navigationController?.pushViewController(viewController, animated: true)
+            let viewController = Constants.walkthroughStoryboard.instantiateViewController(withIdentifier: "WelcomeViewController") as! WelcomeViewController
+            self.navigationController?.pushViewController(viewController, animated: true)
         }else{
             if(self.pageArray.count != self.count){
                 xOffSet = self.count * Int(self.view.frame.width)
@@ -145,11 +117,6 @@ class WalkthroughParentViewController: UIViewController {
                 UIView.animate(withDuration: 0.5) {
                     self.scrollView.contentOffset = CGPoint(x: self.scrollView.frame.size.width * CGFloat(self.count), y: 0)
                     self.pageControl.currentPage = self.count
-                }
-                if(self.count == self.pageArray.count - 1){
-                    self.btnNext.setTitle("LETS_BEGIN", for: UIControl.State.normal)
-                }else{
-                    self.btnNext.setTitle("NEXT", for: UIControl.State.normal)
                 }
             }else{
             }
@@ -167,29 +134,12 @@ extension WalkthroughParentViewController: UIScrollViewDelegate{
         if self.pageArray != nil{
             self.scrollView.contentSize = CGSize(width: self.scrollView.frame.size.width * CGFloat(self.pageArray.count), height: self.scrollView.frame.size.height)
             self.pageControl.numberOfPages = self.pageArray.count
-            let page : Int = Int(self.scrollView.contentOffset.x / self.scrollView.frame.size.width)
-            if page == 0{
-                self.btnBack.isHidden = true
-            }else{
-                self.btnBack.isHidden = false
-            }
         }
     }
 
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         let page : Int = Int(self.scrollView.contentOffset.x / self.scrollView.frame.size.width)
         xOffSet = page * Int(self.view.frame.width)
-        if page == self.pageArray.count - 1 {
-            self.btnNext.setTitle("LETS_BEGIN", for: UIControl.State.normal)
-        }
-        else {
-            if page == 0{
-                self.btnBack.isHidden = true
-            }else{
-                self.btnBack.isHidden = false
-            }
-            self.btnNext.setTitle("NEXT", for: UIControl.State.normal)
-        }
         self.pageControl.currentPage = page
         self.count = page
     }

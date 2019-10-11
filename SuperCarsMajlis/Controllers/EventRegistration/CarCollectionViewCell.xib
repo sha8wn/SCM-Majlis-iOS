@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Bold.ttf">
+            <string>Poppins-Bold</string>
+        </array>
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" id="gTV-IL-0wX" customClass="CarCollectionViewCell" customModule="SuperCarsMajlis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="140" height="300"/>
+            <autoresizingMask key="autoresizingMask"/>
+            <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
+                <rect key="frame" x="0.0" y="0.0" width="140" height="300"/>
+                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="F3s-lg-a0i">
+                        <rect key="frame" x="0.0" y="0.0" width="140" height="200"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B6C-H4-gBS">
+                                <rect key="frame" x="10" y="15" width="120" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h8a-BE-6iw">
+                                <rect key="frame" x="10" y="42.5" width="120" height="18.5"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="13"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="h8a-BE-6iw" firstAttribute="top" secondItem="B6C-H4-gBS" secondAttribute="bottom" constant="5" id="3Jf-UC-NpA"/>
+                            <constraint firstItem="h8a-BE-6iw" firstAttribute="leading" secondItem="B6C-H4-gBS" secondAttribute="leading" id="4t4-WZ-Nif"/>
+                            <constraint firstAttribute="height" constant="200" id="Elg-yS-Wv8"/>
+                            <constraint firstItem="B6C-H4-gBS" firstAttribute="top" secondItem="F3s-lg-a0i" secondAttribute="top" constant="15" id="HFa-QW-H4X"/>
+                            <constraint firstAttribute="trailing" secondItem="B6C-H4-gBS" secondAttribute="trailing" constant="10" id="YU6-eL-qop"/>
+                            <constraint firstItem="B6C-H4-gBS" firstAttribute="leading" secondItem="F3s-lg-a0i" secondAttribute="leading" constant="10" id="aCB-o3-3R1"/>
+                            <constraint firstItem="h8a-BE-6iw" firstAttribute="trailing" secondItem="B6C-H4-gBS" secondAttribute="trailing" id="co6-bM-v33"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="corners">
+                                <real key="value" value="20"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Demo" translatesAutoresizingMaskIntoConstraints="NO" id="mRM-vi-zbH">
+                        <rect key="frame" x="40" y="80" width="90" height="160"/>
+                        <constraints>
+                            <constraint firstAttribute="width" constant="90" id="kDo-3H-59R"/>
+                            <constraint firstAttribute="height" constant="160" id="yWH-Wl-Hqk"/>
+                        </constraints>
+                    </imageView>
+                </subviews>
+            </view>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="F3s-lg-a0i" secondAttribute="trailing" id="14l-GU-6c1"/>
+                <constraint firstAttribute="bottom" secondItem="F3s-lg-a0i" secondAttribute="bottom" constant="100" id="6Sa-Ma-wEc"/>
+                <constraint firstAttribute="trailing" secondItem="mRM-vi-zbH" secondAttribute="trailing" constant="10" id="Cuq-mX-eIL"/>
+                <constraint firstItem="mRM-vi-zbH" firstAttribute="top" secondItem="h8a-BE-6iw" secondAttribute="bottom" constant="19" id="PkR-an-CUk"/>
+                <constraint firstItem="F3s-lg-a0i" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="Ufp-Xy-4uQ"/>
+                <constraint firstItem="F3s-lg-a0i" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="VdG-8J-Gpo"/>
+            </constraints>
+            <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="bgView" destination="F3s-lg-a0i" id="dkZ-AA-PFb"/>
+                <outlet property="imgCar" destination="mRM-vi-zbH" id="4sG-x3-Dwy"/>
+                <outlet property="lblCarModel" destination="h8a-BE-6iw" id="xo7-pK-6IC"/>
+                <outlet property="lblCarName" destination="B6C-H4-gBS" id="x4T-Mt-VuD"/>
+            </connections>
+            <point key="canvasLocation" x="137.68115942028987" y="89.732142857142847"/>
+        </collectionViewCell>
+    </objects>
+    <resources>
+        <image name="ic_Demo" width="97" height="204"/>
+    </resources>
+</document>

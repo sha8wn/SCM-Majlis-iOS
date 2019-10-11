@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "CF22E9FF51FA795F95CFC8EE98F3B054"
+               BlueprintIdentifier = "FC3306B1DA5792DBEDD20B8D9010DA48"
                BuildableName = "Pods_SuperCarsMajlis.framework"
                BlueprintName = "Pods-SuperCarsMajlis"
                ReferencedContainer = "container:Pods.xcodeproj">

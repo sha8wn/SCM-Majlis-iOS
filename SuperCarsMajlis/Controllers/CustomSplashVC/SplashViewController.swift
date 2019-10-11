@@ -7,15 +7,31 @@
 //
 
 import UIKit
+import Foundation
 
 class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        self.openWalkThroughScreen()
         // Do any additional setup after loading the view.
     }
     
+    func openWalkThroughScreen(){
+        let navigationController: UINavigationController = Constants.walkthroughStoryboard.instantiateInitialViewController() as! UINavigationController
+        let rootViewController: UIViewController = Constants.walkthroughStoryboard.instantiateViewController(withIdentifier: "WalkthroughParentViewController") as UIViewController
+        navigationController.viewControllers = [rootViewController]
+        navigationController.navigationBar.isHidden = true
+        Constants.kAppDelegate.window?.rootViewController = navigationController
+    }
+    
+    func openRegisterFlowForApprovedUser(){
+        let navigationController: UINavigationController = Constants.walkthroughStoryboard.instantiateInitialViewController() as! UINavigationController
+        let rootViewController: UIViewController = Constants.walkthroughStoryboard.instantiateViewController(withIdentifier: "RegisterApprovedMemberViewController") as UIViewController
+        navigationController.viewControllers = [rootViewController]
+        navigationController.navigationBar.isHidden = true
+        Constants.kAppDelegate.window?.rootViewController = navigationController
+    }
 
     /*
     // MARK: - Navigation

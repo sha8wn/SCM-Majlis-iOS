@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="Poppins-Medium.ttf">
+            <string>Poppins-Medium</string>
+        </array>
+    </customFonts>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <tableViewCell contentMode="scaleToFill" selectionStyle="none" indentationWidth="10" id="KGk-i7-Jjw" customClass="MemberGoingTableViewCell" customModule="SuperCarsMajlis" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+            <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="KGk-i7-Jjw" id="H2p-sc-9uM">
+                <rect key="frame" x="0.0" y="0.0" width="320" height="90"/>
+                <autoresizingMask key="autoresizingMask"/>
+                <subviews>
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="sdV-Ap-4d7">
+                        <rect key="frame" x="15" y="7.5" width="290" height="74"/>
+                        <subviews>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Av-WW-Mzw">
+                                <rect key="frame" x="15" y="15" width="44" height="44"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="44" id="ESF-HS-rQ8"/>
+                                    <constraint firstAttribute="height" constant="44" id="jPf-BU-340"/>
+                                </constraints>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="corners">
+                                        <real key="value" value="22"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
+                            </imageView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ferrari-SF90 Stradale" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogz-an-P1e">
+                                <rect key="frame" x="74" y="15" width="201" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="John Smith" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-Qs-L0o">
+                                <rect key="frame" x="74" y="42.5" width="201" height="17"/>
+                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
+                                <color key="textColor" name="customGreyColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="1Av-WW-Mzw" firstAttribute="top" secondItem="sdV-Ap-4d7" secondAttribute="top" constant="15" id="6IW-Xp-8Mn"/>
+                            <constraint firstItem="ceT-Qs-L0o" firstAttribute="leading" secondItem="1Av-WW-Mzw" secondAttribute="trailing" constant="15" id="AHo-xE-Lz1"/>
+                            <constraint firstItem="ogz-an-P1e" firstAttribute="leading" secondItem="1Av-WW-Mzw" secondAttribute="trailing" constant="15" id="DAr-mz-WKi"/>
+                            <constraint firstAttribute="trailing" secondItem="ogz-an-P1e" secondAttribute="trailing" constant="15" id="K8D-Jo-ilv"/>
+                            <constraint firstAttribute="bottom" secondItem="1Av-WW-Mzw" secondAttribute="bottom" constant="15" id="L5T-sq-2eg"/>
+                            <constraint firstItem="ceT-Qs-L0o" firstAttribute="top" secondItem="ogz-an-P1e" secondAttribute="bottom" constant="5" id="OBc-jU-Res"/>
+                            <constraint firstItem="ogz-an-P1e" firstAttribute="top" secondItem="1Av-WW-Mzw" secondAttribute="top" id="jQY-6f-0bI"/>
+                            <constraint firstAttribute="bottom" secondItem="ceT-Qs-L0o" secondAttribute="bottom" constant="14.5" id="kkf-7q-WYJ"/>
+                            <constraint firstItem="1Av-WW-Mzw" firstAttribute="centerY" secondItem="sdV-Ap-4d7" secondAttribute="centerY" id="pIY-wg-XlF"/>
+                            <constraint firstItem="1Av-WW-Mzw" firstAttribute="leading" secondItem="sdV-Ap-4d7" secondAttribute="leading" constant="15" id="vZX-oZ-zFZ"/>
+                            <constraint firstAttribute="trailing" secondItem="ceT-Qs-L0o" secondAttribute="trailing" constant="15" id="ygd-5l-k4a"/>
+                        </constraints>
+                        <userDefinedRuntimeAttributes>
+                            <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                                <real key="value" value="1"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                                <color key="value" name="customGreyColor"/>
+                            </userDefinedRuntimeAttribute>
+                            <userDefinedRuntimeAttribute type="number" keyPath="corners">
+                                <real key="value" value="10"/>
+                            </userDefinedRuntimeAttribute>
+                        </userDefinedRuntimeAttributes>
+                    </view>
+                </subviews>
+                <constraints>
+                    <constraint firstItem="sdV-Ap-4d7" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="A70-lE-oBw"/>
+                    <constraint firstAttribute="trailing" secondItem="sdV-Ap-4d7" secondAttribute="trailing" constant="15" id="Wv9-lZ-Iay"/>
+                    <constraint firstItem="sdV-Ap-4d7" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="7.5" id="d1a-zy-cHG"/>
+                    <constraint firstAttribute="bottom" secondItem="sdV-Ap-4d7" secondAttribute="bottom" constant="7.5" id="tMs-TC-7tE"/>
+                </constraints>
+            </tableViewCellContentView>
+            <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+            <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <point key="canvasLocation" x="139" y="86"/>
+        </tableViewCell>
+    </objects>
+    <resources>
+        <namedColor name="customGreyColor">
+            <color red="0.62745098039215685" green="0.63137254901960782" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>
