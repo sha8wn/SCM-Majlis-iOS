@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		03DB5DCD987F31CB06CE1461 /* Pods_SuperCarsMajlis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DA3973C0C7F64ED6367D50 /* Pods_SuperCarsMajlis.framework */; };
+		B4089B1923543BDF001E05E8 /* CarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4089B1823543BDF001E05E8 /* CarModels.swift */; };
 		B40A1B04233CB87A0033BB82 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40A1B03233CB87A0033BB82 /* Event.storyboard */; };
 		B40A1B07233CB8B30033BB82 /* PastEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40A1B06233CB8B30033BB82 /* PastEventViewController.swift */; };
 		B40A1B0A233CBC7F0033BB82 /* PastEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40A1B08233CBC7F0033BB82 /* PastEventTableViewCell.swift */; };
@@ -52,6 +53,7 @@
 		B474855A235038B100A4D489 /* Network.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4748556235038B100A4D489 /* Network.swift */; };
 		B474855B235038B100A4D489 /* ErrorHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4748557235038B100A4D489 /* ErrorHandler.swift */; };
 		B474855C235038B100A4D489 /* Connectivity.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4748558235038B100A4D489 /* Connectivity.swift */; };
+		B474856123504B7700A4D489 /* PastEventWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B474856023504B7700A4D489 /* PastEventWebservice.swift */; };
 		B47831FC233A344D0081735F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B47831FB233A344D0081735F /* AppDelegate.swift */; };
 		B4783206233A344D0081735F /* SuperCarsMajlis.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = B4783204233A344D0081735F /* SuperCarsMajlis.xcdatamodeld */; };
 		B4783208233A34510081735F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B4783207233A34510081735F /* Assets.xcassets */; };
@@ -61,6 +63,9 @@
 		B48CC31D234100F900A4D4D7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48CC31C234100F800A4D4D7 /* UIColor+Extension.swift */; };
 		B48CC3202341019F00A4D4D7 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48CC31F2341019F00A4D4D7 /* AlertViewController.swift */; };
 		B48CC32323411FF400A4D4D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48CC32223411FF400A4D4D7 /* LoginViewController.swift */; };
+		B498C344235064E300D073F8 /* PastEventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C343235064E300D073F8 /* PastEventListModel.swift */; };
+		B498C34923508A6200D073F8 /* RegisterWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C34823508A6200D073F8 /* RegisterWebservice.swift */; };
+		B498C34D23508F7800D073F8 /* CarBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C34C23508F7800D073F8 /* CarBrands.swift */; };
 		B4AF95A7234DA50600FE7F90 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF95A6234DA50600FE7F90 /* ProfileViewController.swift */; };
 		B4B84AD22342060200607AF4 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B84AD12342060200607AF4 /* ForgotPasswordViewController.swift */; };
 		B4B84AD423420C0600607AF4 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B84AD323420C0600607AF4 /* Register.storyboard */; };
@@ -139,6 +144,7 @@
 		8ED761D56DD017F60E1AC0B9 /* Pods-SuperCarsMajlis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlis.debug.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlis/Pods-SuperCarsMajlis.debug.xcconfig"; sourceTree = "<group>"; };
 		A21ED808E30A848FCA1AD363 /* Pods_SuperCarsMajlisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCarsMajlisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		ABEA51CEAF90E2CB90C1F339 /* Pods_SuperCarsMajlisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCarsMajlisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B4089B1823543BDF001E05E8 /* CarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModels.swift; sourceTree = "<group>"; };
 		B40A1B03233CB87A0033BB82 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		B40A1B06233CB8B30033BB82 /* PastEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventViewController.swift; sourceTree = "<group>"; };
 		B40A1B08233CBC7F0033BB82 /* PastEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventTableViewCell.swift; sourceTree = "<group>"; };
@@ -183,6 +189,7 @@
 		B4748556235038B100A4D489 /* Network.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Network.swift; sourceTree = "<group>"; };
 		B4748557235038B100A4D489 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		B4748558235038B100A4D489 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
+		B474856023504B7700A4D489 /* PastEventWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventWebservice.swift; sourceTree = "<group>"; };
 		B47831F8233A344D0081735F /* SuperCarsMajlis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCarsMajlis.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47831FB233A344D0081735F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4783205233A344D0081735F /* SuperCarsMajlis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperCarsMajlis.xcdatamodel; sourceTree = "<group>"; };
@@ -198,6 +205,9 @@
 		B48CC31C234100F800A4D4D7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B48CC31F2341019F00A4D4D7 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		B48CC32223411FF400A4D4D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		B498C343235064E300D073F8 /* PastEventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventListModel.swift; sourceTree = "<group>"; };
+		B498C34823508A6200D073F8 /* RegisterWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWebservice.swift; sourceTree = "<group>"; };
+		B498C34C23508F7800D073F8 /* CarBrands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrands.swift; sourceTree = "<group>"; };
 		B4AF95A6234DA50600FE7F90 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B4B84AD12342060200607AF4 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		B4B84AD323420C0600607AF4 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
@@ -305,11 +315,9 @@
 		B40A1B05233CB89F0033BB82 /* PastEvent */ = {
 			isa = PBXGroup;
 			children = (
-				B40A1B06233CB8B30033BB82 /* PastEventViewController.swift */,
-				B40A1B08233CBC7F0033BB82 /* PastEventTableViewCell.swift */,
-				B40A1B09233CBC7F0033BB82 /* PastEventTableViewCell.xib */,
-				B40A1B0C233CC1530033BB82 /* PaseEventCollectionViewCell.swift */,
-				B40A1B0D233CC1530033BB82 /* PaseEventCollectionViewCell.xib */,
+				B474855D23504B2F00A4D489 /* View */,
+				B474855E23504B4D00A4D489 /* Model */,
+				B474855F23504B5300A4D489 /* Webservice */,
 			);
 			path = PastEvent;
 			sourceTree = "<group>";
@@ -354,7 +362,9 @@
 		B40A1B1B233DCE290033BB82 /* Register */ = {
 			isa = PBXGroup;
 			children = (
-				B40A1B1C233DCE3B0033BB82 /* RegisterViewController.swift */,
+				B498C347235089B000D073F8 /* View */,
+				B498C345235089A200D073F8 /* Model */,
+				B498C346235089A800D073F8 /* Webservice */,
 			);
 			path = Register;
 			sourceTree = "<group>";
@@ -445,6 +455,34 @@
 				B4748558235038B100A4D489 /* Connectivity.swift */,
 			);
 			path = NetworkManager;
+			sourceTree = "<group>";
+		};
+		B474855D23504B2F00A4D489 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B40A1B06233CB8B30033BB82 /* PastEventViewController.swift */,
+				B40A1B08233CBC7F0033BB82 /* PastEventTableViewCell.swift */,
+				B40A1B09233CBC7F0033BB82 /* PastEventTableViewCell.xib */,
+				B40A1B0C233CC1530033BB82 /* PaseEventCollectionViewCell.swift */,
+				B40A1B0D233CC1530033BB82 /* PaseEventCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B474855E23504B4D00A4D489 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B498C343235064E300D073F8 /* PastEventListModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B474855F23504B5300A4D489 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B474856023504B7700A4D489 /* PastEventWebservice.swift */,
+			);
+			path = Webservice;
 			sourceTree = "<group>";
 		};
 		B47831EF233A344D0081735F = {
@@ -593,6 +631,31 @@
 				B48CC32223411FF400A4D4D7 /* LoginViewController.swift */,
 			);
 			path = Login;
+			sourceTree = "<group>";
+		};
+		B498C345235089A200D073F8 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B498C34C23508F7800D073F8 /* CarBrands.swift */,
+				B4089B1823543BDF001E05E8 /* CarModels.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B498C346235089A800D073F8 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B498C34823508A6200D073F8 /* RegisterWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B498C347235089B000D073F8 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B40A1B1C233DCE3B0033BB82 /* RegisterViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B4AF95A5234DA4EB00FE7F90 /* Profile */ = {
@@ -1059,6 +1122,8 @@
 				B4C1FE0423435D2700A4581C /* DocumentViewController.swift in Sources */,
 				B4382FCD234B0CE700FDF560 /* MemberCollectionViewCell.swift in Sources */,
 				B424F60223434D2E00C8BEF6 /* SupercarsModel.swift in Sources */,
+				B498C34D23508F7800D073F8 /* CarBrands.swift in Sources */,
+				B4089B1923543BDF001E05E8 /* CarModels.swift in Sources */,
 				B4C1BBE62345DDBB00D2A074 /* SettingsViewController.swift in Sources */,
 				B4EDB4A7233E126B0051DA29 /* UITextField+Extension.swift in Sources */,
 				B474855B235038B100A4D489 /* ErrorHandler.swift in Sources */,
@@ -1075,6 +1140,7 @@
 				B4382FD4234B259300FDF560 /* MemberGoingListViewController.swift in Sources */,
 				B48CC3202341019F00A4D4D7 /* AlertViewController.swift in Sources */,
 				B4EFC4E6233CAD5D000DC74A /* UIView+Extension.swift in Sources */,
+				B474856123504B7700A4D489 /* PastEventWebservice.swift in Sources */,
 				B4382FD7234B2D8300FDF560 /* MemberGoingTableViewCell.swift in Sources */,
 				B4EFC4DD233C9932000DC74A /* WelcomeViewController.swift in Sources */,
 				B40A1B0E233CC1530033BB82 /* PaseEventCollectionViewCell.swift in Sources */,
@@ -1086,6 +1152,7 @@
 				B47831FC233A344D0081735F /* AppDelegate.swift in Sources */,
 				B4EFC4E4233C9EDC000DC74A /* ChooseUserTypeViewController.swift in Sources */,
 				B4B84ADA2342209D00607AF4 /* ApprovedMemberSupercarsViewController.swift in Sources */,
+				B498C34923508A6200D073F8 /* RegisterWebservice.swift in Sources */,
 				B4AF95A7234DA50600FE7F90 /* ProfileViewController.swift in Sources */,
 				B48CC32323411FF400A4D4D7 /* LoginViewController.swift in Sources */,
 				B4EE4046233B8BEF008FD80D /* WalkthroughViewController.swift in Sources */,
@@ -1097,6 +1164,7 @@
 				B4EDB4A5233E018F0051DA29 /* PickerViewController.swift in Sources */,
 				B4B84AE12343091000607AF4 /* SupercarsTableViewCell.swift in Sources */,
 				B4E019F9233B28A1001EBE65 /* AppDelegateExtension.swift in Sources */,
+				B498C344235064E300D073F8 /* PastEventListModel.swift in Sources */,
 				B40A1B1D233DCE3B0033BB82 /* RegisterViewController.swift in Sources */,
 				B4EE4042233B8ACA008FD80D /* SplashViewController.swift in Sources */,
 				B40A1B14233CDC550033BB82 /* BecomeMemberViewController.swift in Sources */,

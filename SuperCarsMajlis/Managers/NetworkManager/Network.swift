@@ -1,88 +1,80 @@
-//import UIKit
-//import Foundation
-//import Alamofire
-//import MBProgressHUD
-//
-//enum WebServiceResponseType{
-//    case Success
-//    case Failure
-//    case SomethingWentWrong
-//    case None
-//}
-//
-//enum AuthorizationType{
-//    case basic
-//    case auth
-//}
-//
-//public class Network: NSObject
-//{
-//    //MARK: - Properties
-//    static let shared       : Network                   = Network()
-//    var responseData        : NSMutableData             = NSMutableData()
-//    var responseType        : WebServiceResponseType!
-//    let appVersion          : String                    = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
+import UIKit
+import Foundation
+import Alamofire
+import MBProgressHUD
+
+enum WebServiceResponseType{
+    case Success
+    case Failure
+    case SomethingWentWrong
+    case None
+}
+
+enum AuthorizationType{
+    case basic
+    case auth
+}
+
+public class Network: NSObject
+{
+    //MARK: - Properties
+    static let shared       : Network                   = Network()
+    var responseData        : NSMutableData             = NSMutableData()
+    var responseType        : WebServiceResponseType!
+    let appVersion          : String                    = Bundle.main.infoDictionary!["CFBundleShortVersionString"] as! String
 //    var Base64                                          = "FIFUser:FIFUser".toBase64()
-//    var delegates                                       = UIApplication.shared.delegate as! AppDelegate
-//    var HttpHeaders                                     = ["":""]
+    var delegates                                       = UIApplication.shared.delegate as! AppDelegate
+    var HttpHeaders                                     = ["":""]
 //    var accessTokenModel    : LoginModel!
-//    var unauthUrlPath       : String                    = ""
-//    var unauthMethods       : HTTPMethod!
-//    var unauthParams        : [String : AnyObject]?
-//    var unauthType          : AuthorizationType!
-//
-//
-//    var unauthMultipath_ParamsName  : [String]?
-//    var unauthMultipath_File        : [Data]?
-//    var unauthMultipath_FileName    : [String]?
-//    var unauthMultipath_MineType    : [String]?
-//    var unauthMultipath_UploadDict  : [String: Any]?
-//
-//    let JSONdecoder                                     = JSONDecoder()
-//    //end
-//
-//    func request(urlPath: String, methods: HTTPMethod, authType: AuthorizationType, params: [String : AnyObject]? = nil, completion:@escaping (_ response: DataResponse<Any>?, _ message: String?, _ statusCode: Int, _ status: WebServiceResponseType) -> Void)
-//    {
+    var unauthUrlPath       : String                    = ""
+    var unauthMethods       : HTTPMethod!
+    var unauthParams        : [String : AnyObject]?
+    var unauthType          : AuthorizationType!
+
+
+    var unauthMultipath_ParamsName  : [String]?
+    var unauthMultipath_File        : [Data]?
+    var unauthMultipath_FileName    : [String]?
+    var unauthMultipath_MineType    : [String]?
+    var unauthMultipath_UploadDict  : [String: Any]?
+
+    let JSONdecoder                                     = JSONDecoder()
+    //end
+
+    func request(urlPath: String, methods: HTTPMethod, authType: AuthorizationType, params: [String : AnyObject]? = nil, completion:@escaping (_ response: DataResponse<Any>?, _ message: String?, _ statusCode: Int, _ status: WebServiceResponseType) -> Void)
+    {
 //        self.accessTokenModel = getAccessTokenModel()
-//        if(Reachability.isConnectedToNetwork()){
-//
-//            if authType == AuthorizationType.basic{
-//                HttpHeaders = ["Content-Type"           : "application/json",
-//                               "X-App-Lang"             : "\(getCurrentLanguage())"
+        if(Reachability.isConnectedToNetwork()){
+
+            if authType == AuthorizationType.basic{
+                HttpHeaders = ["Content-Type"           : "application/json"                ]
+            }else if authType == AuthorizationType.auth{
+//                HttpHeaders = ["Content-Type"           : "application/json",                          "Authorization"          : "Bearer \(self.accessTokenModel.accessToken)"
 //                ]
-//            }else if authType == AuthorizationType.auth{
-//                HttpHeaders = ["Content-Type"           : "application/json",
-//                               "X-App-Lang"             : "\(getCurrentLanguage())",
-//                               "Authorization"          : "Bearer \(self.accessTokenModel.accessToken)"
-//                ]
-//            }
-//
-//            print("---------------------")
-//            print("URL: ", "\(urlPath)")
-//            print("HttpHeaders: ", "\(HttpHeaders)")
-//            print("Request: ", params ?? "")
-//
-//        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 120
-//            Alamofire.request(urlPath, method: methods, parameters: params, encoding: JSONEncoding.default, headers: HttpHeaders).responseJSON { (responseObject) -> Void in
-//
-//                if urlPath.contains(kForgotPassword){
-//                    completion(responseObject, "SUCCESS", 200, .Success)
-//                }
-//
-//                let (status, statusCode, message, _) = handleError(response: responseObject)
-//
-//                if let resJson = responseObject.result.value as? NSDictionary{
-//                    print("Reponse: ", resJson)
-//                    print("StatusCode: ", statusCode)
-//                    print("---------------------")
-//                }else{
-//                    print("StatusCode: ", statusCode)
-//                    print("---------------------")
-//                }
-//
-//                if status == .Success{
-//                    completion(responseObject, message, statusCode, status)
-//                }else{
+            }
+
+            print("---------------------")
+            print("URL: ", "\(urlPath)")
+            print("HttpHeaders: ", "\(HttpHeaders)")
+            print("Request: ", params ?? "")
+
+        Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 120
+            Alamofire.request(urlPath, method: methods, parameters: params, encoding: JSONEncoding.default, headers: HttpHeaders).responseJSON { (responseObject) -> Void in
+
+                let (status, statusCode, message, _) = handleError(response: responseObject)
+
+                if let resJson = responseObject.result.value as? NSDictionary{
+                    print("Reponse: ", resJson)
+                    print("StatusCode: ", statusCode)
+                    print("---------------------")
+                }else{
+                    print("StatusCode: ", statusCode)
+                    print("---------------------")
+                }
+
+                if status == .Success{
+                    completion(responseObject, message, statusCode, status)
+                }else{
 //                    if statusCode == 401{
 //                        self.accessTokenModel = getAccessTokenModel()
 //                        self.unauthUrlPath = urlPath
@@ -111,16 +103,16 @@
 //                            }
 //                        }
 //                    }else{
-//                        completion(responseObject, message, statusCode, status)
+                        completion(responseObject, message, statusCode, status)
 //                    }
-//                }
-//            }
-//        }else{
-//            completion(nil , "INTERNET".localized(), kInternetErrorCode, .Failure)
-//        }
-//    }
-//
-//
+                }
+            }
+        }else{
+            completion(nil , "No Internet Connection", kInternetErrorCode, .Failure)
+        }
+    }
+
+
 //    func multipartRequest(urlPath: String, methods: HTTPMethod, paramName: [String]?, fileData: [Data]?, fileName: [String]?, mineType: [String]?, uploadDict: [String: Any]? = nil, completion:@escaping (_ response: DataResponse<Any>?, _ message: String?, _ statusCode: Int, _ status: WebServiceResponseType) -> Void) {
 //
 //        self.accessTokenModel = getAccessTokenModel()
@@ -225,14 +217,14 @@
 //            completion(nil , "INTERNET".localized(), kInternetErrorCode, .Failure)
 //        }
 //    }
-//
-//    func stopRedirection(){
-//        let delegate = Alamofire.SessionManager.default.delegate
-//        delegate.taskWillPerformHTTPRedirection = { (_, _, _, _) -> URLRequest? in
-//            return nil
-//        }
-//    }
-//
+
+    func stopRedirection(){
+        let delegate = Alamofire.SessionManager.default.delegate
+        delegate.taskWillPerformHTTPRedirection = { (_, _, _, _) -> URLRequest? in
+            return nil
+        }
+    }
+
 //    func callRefreshTokenApi(completion:@escaping (_ response: DataResponse<Any>?, _ message: String?, _ statusCode: Int) -> Void){
 //        let refreshToken = ""
 //        let urlPath = kBaseURL + kAccessToken + "?grant_type=refresh_token&client_id=" + kClientId + "&client_secret=" + kClientSecret + "&refresh_token=" + refreshToken
@@ -245,4 +237,4 @@
 //            }
 //        }
 //    }
-//}
+}

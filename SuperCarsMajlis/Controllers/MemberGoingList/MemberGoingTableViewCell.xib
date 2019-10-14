@@ -1,16 +1,19 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
-        <array key="Poppins-Medium.ttf">
-            <string>Poppins-Medium</string>
+        <array key="segoeui.ttf">
+            <string>SegoeUI</string>
+        </array>
+        <array key="seguisb.ttf">
+            <string>SegoeUI-Semibold</string>
         </array>
     </customFonts>
     <objects>
@@ -28,7 +31,7 @@
                         <subviews>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="1Av-WW-Mzw">
                                 <rect key="frame" x="15" y="15" width="44" height="44"/>
-                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117647058826" green="0.78431372549019607" blue="0.98039215686274506" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" systemColor="systemTealColor" red="0.35294117650000001" green="0.7843137255" blue="0.98039215690000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="44" id="ESF-HS-rQ8"/>
                                     <constraint firstAttribute="height" constant="44" id="jPf-BU-340"/>
@@ -40,14 +43,14 @@
                                 </userDefinedRuntimeAttributes>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="Ferrari-SF90 Stradale" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ogz-an-P1e">
-                                <rect key="frame" x="74" y="15" width="201" height="22.5"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="16"/>
+                                <rect key="frame" x="74" y="15" width="201" height="24"/>
+                                <fontDescription key="fontDescription" name="SegoeUI-Semibold" family="Segoe UI" pointSize="18"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" text="John Smith" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ceT-Qs-L0o">
-                                <rect key="frame" x="74" y="42.5" width="201" height="17"/>
-                                <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
+                                <rect key="frame" x="74" y="44" width="201" height="19"/>
+                                <fontDescription key="fontDescription" name="SegoeUI" family="Segoe UI" pointSize="14"/>
                                 <color key="textColor" name="customGreyColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
@@ -61,7 +64,7 @@
                             <constraint firstAttribute="bottom" secondItem="1Av-WW-Mzw" secondAttribute="bottom" constant="15" id="L5T-sq-2eg"/>
                             <constraint firstItem="ceT-Qs-L0o" firstAttribute="top" secondItem="ogz-an-P1e" secondAttribute="bottom" constant="5" id="OBc-jU-Res"/>
                             <constraint firstItem="ogz-an-P1e" firstAttribute="top" secondItem="1Av-WW-Mzw" secondAttribute="top" id="jQY-6f-0bI"/>
-                            <constraint firstAttribute="bottom" secondItem="ceT-Qs-L0o" secondAttribute="bottom" constant="14.5" id="kkf-7q-WYJ"/>
+                            <constraint firstAttribute="bottom" secondItem="ceT-Qs-L0o" secondAttribute="bottom" constant="11" id="jes-de-8QA"/>
                             <constraint firstItem="1Av-WW-Mzw" firstAttribute="centerY" secondItem="sdV-Ap-4d7" secondAttribute="centerY" id="pIY-wg-XlF"/>
                             <constraint firstItem="1Av-WW-Mzw" firstAttribute="leading" secondItem="sdV-Ap-4d7" secondAttribute="leading" constant="15" id="vZX-oZ-zFZ"/>
                             <constraint firstAttribute="trailing" secondItem="ceT-Qs-L0o" secondAttribute="trailing" constant="15" id="ygd-5l-k4a"/>

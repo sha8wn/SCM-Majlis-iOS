@@ -8,6 +8,12 @@
 
 import UIKit
 
+enum PickerType{
+    case model
+    case brand
+    case color
+}
+
 class PickerViewController: UIViewController {
     
     /*
@@ -24,6 +30,9 @@ class PickerViewController: UIViewController {
     var searchArray                     : [String]      = []
     var searchActive                    : Bool          = false
     var selectedIndex                   : Int!
+    var lastSelectedValue               : String        = ""
+    var model                           : [Any]         = []
+    var pickerType                      : PickerType!
     private var pickerDoneBlock         : PickerDone!
     internal typealias PickerDone                       = (_ value: String, _ index : Int?) -> Void
     
@@ -56,7 +65,14 @@ class PickerViewController: UIViewController {
         PickerViewController.sharedInstance.openPicker(dataArray: dataArray, title: title, lastSelectedValue: lastSelectedValue, completionHandler: completionHandler)
     }
     
-    func openPicker( dataArray: [String], title: String, lastSelectedValue: String? = "", completionHandler: @escaping PickerDone){
+    class func openPickerView(type: PickerType, title: String, lastSelectedValue: String? = "", lastSelectedIndex: String? = "", completionHandler: @escaping PickerDone) {
+        
+        PickerViewController.sharedInstance.pickerDoneBlock = completionHandler
+        
+        PickerViewController.sharedInstance.openPicker(type: type, title: title, lastSelectedValue: lastSelectedValue, lastSelectedIndex: lastSelectedIndex, completionHandler: completionHandler)
+    }
+    
+    func openPicker(dataArray: [String], title: String, lastSelectedValue: String? = "", completionHandler: @escaping PickerDone){
         
         guard let rootVC = Constants.kAppDelegate.window?.rootViewController else {
             return
@@ -88,6 +104,42 @@ class PickerViewController: UIViewController {
         self.tableView.reloadData()
     }
     
+    func openPicker(type: PickerType, title: String, lastSelectedValue: String? = "", lastSelectedIndex: String? = "", completionHandler: @escaping PickerDone){
+        
+        guard let rootVC = Constants.kAppDelegate.window?.rootViewController else {
+            return
+        }
+        
+        self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
+        rootVC.present(self, animated: true, completion: nil)
+        
+        self.dataArray = []
+        
+        self.pickerType = type
+        
+        self.lblNoData.isHidden = true
+        
+        self.lblTitle.text = title
+        
+        self.searchBar.isHidden = true
+        
+        self.searchActive = false
+        
+        self.selectedIndex = nil
+        
+        self.lastSelectedValue = lastSelectedValue ?? ""
+        
+        self.tableView.reloadData()
+        
+        if type == .brand{
+            self.getBrands()
+        }else if type == .model{
+            self.getModels(brandId: lastSelectedIndex!)
+        }else if type == .color{
+            self.getColors()
+        }
+        
+    }
     
     
     @IBAction func btnBackTapped(_ sender: Any) {
@@ -111,7 +163,7 @@ class PickerViewController: UIViewController {
 
 extension PickerViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-            
+        
         if self.searchActive {
             if searchArray.count > 0{
                 self.lblNoData.isHidden = true
@@ -129,10 +181,10 @@ extension PickerViewController: UITableViewDelegate, UITableViewDataSource{
         }
     }
     
-//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-//        return 80
-//    }
-//
+    //    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+    //        return 80
+    //    }
+    //
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         if let cell = tableView.dequeueReusableCell(withIdentifier: "PickerTableViewCell", for: indexPath) as? PickerTableViewCell
         {
@@ -165,8 +217,20 @@ extension PickerViewController: UITableViewDelegate, UITableViewDataSource{
         }else{
             selectedValue = self.dataArray[indexPath.row]
         }
-                
-        self.pickerDoneBlock(selectedValue, self.dataArray.firstIndex(of: selectedValue))
+        
+        if self.pickerType == .brand{
+            var id: Int!
+            for i in 0..<self.model.count{
+                let model = self.model[i] as! BrandList
+                print(model)
+                if model.name == selectedValue{
+                    id = Int(model.id ?? "0")!
+                }
+            }
+            self.pickerDoneBlock(selectedValue, id)
+        }else{
+            self.pickerDoneBlock(selectedValue, self.dataArray.firstIndex(of: selectedValue))
+        }
         self.dismiss(animated: true, completion: nil)        
     }
     
@@ -230,4 +294,119 @@ extension PickerViewController: UISearchBarDelegate{
 class PickerTableViewCell: UITableViewCell {
     @IBOutlet weak var lblTitle: UILabel!
     @IBOutlet weak var imgTick: UIImageView!
+}
+
+/*
+ MARK: - PickerViewController: Webservice
+ */
+extension PickerViewController{
+    func getBrands(){
+        
+        self.lblNoData.isHidden = true
+        
+        FunctionConstants.getInstance().showLoader(message: "Loading", view: self)
+        let urlPath = kBaseURL + kGetCarBrandsAPI
+        
+        Network.shared.request(urlPath: urlPath, methods: .get, authType: .basic) { (response, message, statusCode, status) in
+            FunctionConstants.getInstance().hideLoader(view: self)
+            if status == .Success{
+                do {
+                    let responseModel = try JSONDecoder().decode(CarBrands.self, from: response?.data ?? Data())
+                    if let brands = responseModel.brands{
+                        if let list = brands.list{
+                            if list.count > 0{
+                                self.lblNoData.isHidden = true
+                                
+                                var array: [String] = []
+                                for model in list{
+                                    array.append(model.name ?? "")
+                                }
+                                
+                                self.model = list
+                                
+                                self.dataArray = array
+                                
+                                if self.lastSelectedValue == ""{
+                                    self.selectedIndex = nil
+                                }else{
+                                    self.selectedIndex = self.dataArray.firstIndex(of: self.lastSelectedValue)
+                                }
+                                
+                                self.tableView.reloadData()
+                            }else{
+                                self.lblNoData.isHidden = false
+                            }
+                        }else{
+                            self.lblNoData.isHidden = false
+                        }
+                    }else{
+                        self.lblNoData.isHidden = false
+                    }
+                } catch let error {
+                    print(error)
+                    self.lblNoData.isHidden = false
+                }
+            }else{
+                self.lblNoData.isHidden = false
+            }
+        }
+    }
+    
+    func getModels(brandId: String){
+        
+        self.lblNoData.isHidden = true
+        
+        FunctionConstants.getInstance().showLoader(message: "Loading", view: self)
+        let urlPath = kBaseURL + kGetCarModelsAPI + "?brand=" + "\(brandId)"
+        
+        Network.shared.request(urlPath: urlPath, methods: .get, authType: .basic) { (response, message, statusCode, status) in
+            FunctionConstants.getInstance().hideLoader(view: self)
+            if status == .Success{
+                do {
+                    let responseModel = try JSONDecoder().decode(CarModels.self, from: response?.data ?? Data())
+                    if let brands = responseModel.models{
+                        if let list = brands.list{
+                            if list.count > 0{
+                                self.lblNoData.isHidden = true
+                                
+                                var array: [String] = []
+                                for model in list{
+                                    array.append(model.name ?? "")
+                                }
+                                
+                                self.model = list
+                                
+                                self.dataArray = array
+                                
+                                if self.lastSelectedValue == ""{
+                                    self.selectedIndex = nil
+                                }else{
+                                    self.selectedIndex = self.dataArray.firstIndex(of: self.lastSelectedValue)
+                                }
+                                
+                                self.tableView.reloadData()
+                            }else{
+                                self.lblNoData.isHidden = false
+                            }
+                        }else{
+                            self.lblNoData.isHidden = false
+                        }
+                    }else{
+                        self.lblNoData.isHidden = false
+                    }
+                } catch let error {
+                    print(error)
+                    self.lblNoData.isHidden = false
+                }
+            }else{
+                self.lblNoData.isHidden = false
+            }
+        }
+    }
+    
+    func getColors(){
+        
+        self.lblNoData.isHidden = true
+        
+    }
 }

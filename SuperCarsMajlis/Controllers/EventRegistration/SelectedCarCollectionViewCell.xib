@@ -4,7 +4,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
-        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -30,19 +29,18 @@
                         <rect key="frame" x="0.0" y="0.0" width="160" height="240"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MVr-Uf-fWe">
-                                <rect key="frame" x="10" y="15" width="140" height="19"/>
+                                <rect key="frame" x="10" y="15" width="140" height="22.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ylx-ds-Ogu">
-                                <rect key="frame" x="10" y="39" width="140" height="15.5"/>
+                                <rect key="frame" x="10" y="42.5" width="140" height="18.5"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="13"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" name="customRed"/>
                         <constraints>
                             <constraint firstItem="MVr-Uf-fWe" firstAttribute="leading" secondItem="But-NH-gyc" secondAttribute="leading" constant="10" id="CFv-P7-oGY"/>
                             <constraint firstItem="Ylx-ds-Ogu" firstAttribute="top" secondItem="MVr-Uf-fWe" secondAttribute="bottom" constant="5" id="HsW-b1-Xop"/>
@@ -59,7 +57,7 @@
                         </userDefinedRuntimeAttributes>
                     </view>
                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Demo" translatesAutoresizingMaskIntoConstraints="NO" id="CoN-md-ey7">
-                        <rect key="frame" x="50" y="73.5" width="100" height="220"/>
+                        <rect key="frame" x="50" y="80" width="100" height="220"/>
                         <constraints>
                             <constraint firstAttribute="width" constant="100" id="Dyq-Yx-JTC"/>
                             <constraint firstAttribute="height" constant="220" id="fYp-p6-iof"/>
@@ -88,8 +86,5 @@
     </objects>
     <resources>
         <image name="ic_Demo" width="97" height="204"/>
-        <namedColor name="customRed">
-            <color red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-        </namedColor>
     </resources>
 </document>

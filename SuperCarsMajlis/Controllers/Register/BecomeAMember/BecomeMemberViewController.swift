@@ -23,9 +23,9 @@ class BecomeMemberViewController: UIViewController {
         
         let attributedString = NSMutableAttributedString(string: "Completing this from not guarantee an SCM membersip. You will be notified if your application is successful. Please read our privacy policy and terms & conditions to know more about our selection process")
         let linkRange1 = (attributedString.string as NSString).range(of: "terms & conditions")
-        attributedString.addAttribute(NSAttributedString.Key.link, value: "https://www.apple.com", range: linkRange1)
+        attributedString.addAttribute(NSAttributedString.Key.link, value: "Terms", range: linkRange1)
         let linkRange2 = (attributedString.string as NSString).range(of: "privacy policy")
-        attributedString.addAttribute(NSAttributedString.Key.link, value: "https://www.apple.com", range: linkRange2)
+        attributedString.addAttribute(NSAttributedString.Key.link, value: "Privacy", range: linkRange2)
         
         let linkAttributes: [NSAttributedString.Key : Any] = [
             NSAttributedString.Key(rawValue: NSAttributedString.Key.foregroundColor.rawValue): UIColor.white,

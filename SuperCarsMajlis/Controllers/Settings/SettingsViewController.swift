@@ -93,7 +93,7 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 4{
             let viewController = Constants.commonStoryboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
-            viewController.urlString = "https://www.apple.com"
+            viewController.urlString = "Terms"
             self.navigationController?.pushViewController(viewController, animated: true)
         }else if indexPath.row == 5{
             

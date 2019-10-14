@@ -7,9 +7,13 @@
 //
 
 import UIKit
+import SDWebImage
 
+/*
+ MARK: - Delegate PastEvent Selected
+ */
 protocol PastEventDelegate {
-    func eventSelected(index: Int)
+    func eventSelected(index: Int, imageArray: [PastEventImages])
 }
 
 class PastEventTableViewCell: UITableViewCell {
@@ -18,8 +22,10 @@ class PastEventTableViewCell: UITableViewCell {
      MARK: - Properties
     */
     @IBOutlet var collectionView: UICollectionView!
-    var delegate: PastEventDelegate!
-    var index: Int!
+    var delegate                : PastEventDelegate!
+    var index                   : Int!
+    var eventData               : PastEventList!
+    var imageArray              : [PastEventImages]     = []
     //end
     
     override func awakeFromNib() {
@@ -34,6 +40,19 @@ class PastEventTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setupCell(model: PastEventList){
+        self.eventData = model
+        if self.eventData != nil{
+            if let array = self.eventData.imgs{
+                self.imageArray = array
+            }else{
+                self.imageArray = []
+            }
+        }else{
+            self.imageArray = []
+        }
+        self.collectionView.reloadData()
+    }
 }
 
 /*
@@ -41,11 +60,36 @@ class PastEventTableViewCell: UITableViewCell {
 */
 extension PastEventTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if self.imageArray.count > 0{
+            return self.imageArray.count
+        }else{
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "PaseEventCollectionViewCell", for: indexPath) as! PaseEventCollectionViewCell
+        
+        //Data
+        cell.lblEventTitle.text = self.eventData.name ?? ""
+        cell.lblDateAndTime.text = self.eventData.date ?? ""
+        cell.lblLocation.text = self.eventData.location ?? ""
+        cell.lblNoOfGoing.text = String(format: "%@ participants", self.eventData.participants ?? "0")
+        
+        //Images
+        var url: String = ""
+        if let imageURL = self.imageArray[indexPath.item].img{
+            url = imageURL
+        }else{
+            url = ""
+        }
+        cell.imgView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        if url != ""{
+            cell.imgView.sd_setImage(with: URL(string: url), completed: nil)
+        }else{
+            cell.imgView.image = UIImage(named: "")
+        }
+        
         if indexPath.item == 0{
             cell.lblLocation.isHidden = false
             cell.lblNoOfGoing.isHidden = false
@@ -75,6 +119,6 @@ extension PastEventTableViewCell: UICollectionViewDelegate, UICollectionViewData
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        self.delegate.eventSelected(index: indexPath.item)
+        self.delegate.eventSelected(index: indexPath.item, imageArray: self.imageArray)
     }
 }

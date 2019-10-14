@@ -23,6 +23,8 @@ class RegisterViewController: UIViewController {
     @IBOutlet var txtPhone      : UITextField!
     @IBOutlet var txtBrand      : UITextField!
     @IBOutlet var txtModel      : UITextField!
+    var selectedBrandId         : String        = ""
+    var selectedModelId         : String        = ""
     //end
     
     
@@ -32,6 +34,7 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
+        
         // Do any additional setup after loading the view.
     }
     
@@ -88,34 +91,40 @@ class RegisterViewController: UIViewController {
     
     @IBAction func btnModelTapped(_ sender: Any) {
         self.view.endEditing(true)
-        PickerViewController.openPickerView(dataArray: ["1", "2", "3", "4", "5", "6", "7"], title: "Model", lastSelectedValue: self.txtModel.text!) { (value, index) in
-            print(value)
-            self.txtModel.text = value
+        if self.selectedBrandId == ""{
+            AlertViewController.openAlertView(title: "Error", message: "Please select Brand!", buttons: ["OK"])
+        }else{
+            PickerViewController.openPickerView(type: .model, title: "Model", lastSelectedValue: self.txtModel.text!, lastSelectedIndex: self.selectedBrandId) { (value, index) in
+                self.txtModel.text = value
+                self.selectedModelId = String(index!)
+            }
         }
     }
     
     @IBAction func btnBrandTapped(_ sender: Any) {
         self.view.endEditing(true)
-        PickerViewController.openPickerView(dataArray: ["1", "2", "3", "4", "5", "6", "7"], title: "Brand", lastSelectedValue: self.txtBrand.text!) { (value, index) in
-            print(value)
+        PickerViewController.openPickerView(type: .brand, title: "Brand", lastSelectedValue: self.txtBrand.text!) { (value, index) in
             self.txtBrand.text = value
+            self.selectedBrandId = "\(String(describing: index!))"
+            self.txtModel.text = ""
         }
-        
     }
     
     @IBAction func btnBackTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
+    
     @IBAction func btnSumbitTapped(_ sender: Any) {
-        let vc = Constants.registerStoryboard.instantiateViewController(withIdentifier: "RegisterApprovedMemberViewController") as! RegisterApprovedMemberViewController
-        self.navigationController?.pushViewController(vc, animated: true)
-//        let (isValidate, errorMessage) = self.getValidate()
-//        if isValidate{
+        let (isValidate, errorMessage) = self.getValidate()
+        if isValidate{
+            
+            self.callRegisterAPi()
+            
 //            let vc = Constants.registerStoryboard.instantiateViewController(withIdentifier: "RegisterApprovedMemberViewController") as! RegisterApprovedMemberViewController
 //            self.navigationController?.pushViewController(vc, animated: true)
-//        }else{
-//            AlertViewController.openAlertView(title: "Error", message: errorMessage, buttons: ["OK"])
-//        }
+        }else{
+            AlertViewController.openAlertView(title: "Error", message: errorMessage, buttons: ["OK"])
+        }
     }
     
 }

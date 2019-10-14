@@ -13,16 +13,8 @@ class EventRegistrationViewController: UIViewController {
     /*
      MARK: - Properties
      */
-    
-    @IBOutlet weak var MOTopView      : UIView!
-    @IBOutlet weak var MOBottomView   : UIView!
-    @IBOutlet weak var MOLeftView     : UIView!
-    @IBOutlet weak var MiddleView     : UIView!
-    @IBOutlet weak var MGTopView      : UIView!
-    @IBOutlet weak var MGBottomView   : UIView!
-    @IBOutlet weak var MGRightView    : UIView!
-    
-    
+
+    @IBOutlet weak var segmentBGImageView   : UIImageView!
     @IBOutlet weak var bgView               : UIView!
     @IBOutlet weak var memberGuestView      : UIView!
     @IBOutlet weak var memberOnlyView       : UIView!
@@ -71,61 +63,21 @@ class EventRegistrationViewController: UIViewController {
             //Selected
             self.lblMemberOnly.textColor = UIColor.white
             self.lblRSVPMember.textColor = UIColor.white
-//            self.memberOnlyView.layer.borderWidth = 1
-//            self.memberOnlyView.layer.borderColor = UIColor(named: "customRed")?.cgColor
-            self.memberOnlyView.backgroundColor = UIColor.gradient(from: UIColor(red:56.0/255.0, green:56.0/255.0 ,blue:67.0/255.0 , alpha:1.0), to: UIColor(red:39.0/255.0, green:39.0/255.0 ,blue:47.0/255.0 , alpha:1.0), withHeight: Int(self.memberOnlyView.frame.height))
+            self.segmentBGImageView.image = UIImage(named: "ic_First_MemberOnly")
             
             //UnSelected
             self.lblMemberGuest.textColor = UIColor(named: "customWhite50Opacity")
             self.lblRSVPMemberGuest.textColor = UIColor(named: "customWhite50Opacity")
-//            self.memberGuestView.layer.borderWidth = 1
-//            self.memberGuestView.layer.borderColor = UIColor(named: "customWhite50Opacity")?.cgColor
-            self.memberGuestView.backgroundColor = UIColor.clear
         }else{
             //Selected
             self.lblMemberGuest.textColor = UIColor.white
             self.lblRSVPMemberGuest.textColor = UIColor.white
-//            self.memberGuestView.layer.borderWidth = 1
-//            self.memberGuestView.layer.borderColor = UIColor(named: "customRed")?.cgColor
-            self.memberGuestView.backgroundColor = UIColor.gradient(from: UIColor(red:56.0/255.0, green:56.0/255.0 ,blue:67.0/255.0 , alpha:1.0), to: UIColor(red:39.0/255.0, green:39.0/255.0 ,blue:47.0/255.0 , alpha:1.0), withHeight: Int(self.memberGuestView.frame.height))
+            self.segmentBGImageView.image = UIImage(named: "ic_Second_MemberGuest")
             
             //UnSelected
             self.lblMemberOnly.textColor = UIColor(named: "customWhite50Opacity")
             self.lblRSVPMember.textColor = UIColor(named: "customWhite50Opacity")
-//            self.memberOnlyView.layer.borderWidth = 1
-//            self.memberOnlyView.layer.borderColor = UIColor(named: "customWhite50Opacity")?.cgColor
-            self.memberOnlyView.backgroundColor = UIColor.clear
         }
-        
-        self.bgView.layer.borderWidth = 1
-        self.bgView.layer.borderColor = UIColor.clear.cgColor
-
-//        self.bgView.layer.borderColor = UIColor(named: "customRed")?.cgColor
-        self.MiddleView.backgroundColor = UIColor(named: "customRed")
-        
-        if self.btnRSVPMember == button{
-            //Selected
-            self.MOLeftView.backgroundColor = UIColor(named: "customRed")
-            self.MOTopView.backgroundColor = UIColor(named: "customRed")
-            self.MOBottomView.backgroundColor = UIColor(named: "customRed")
-            
-            //UnSelected
-            self.MGTopView.backgroundColor = UIColor(named: "customWhite50Opacity")
-            self.MGBottomView.backgroundColor = UIColor(named: "customWhite50Opacity")
-            self.MGRightView.backgroundColor = UIColor(named: "customWhite50Opacity")
-        }else{
-            //Selected
-            self.MOLeftView.backgroundColor = UIColor(named: "customWhite50Opacity")
-            self.MOTopView.backgroundColor = UIColor(named: "customWhite50Opacity")
-            self.MOBottomView.backgroundColor = UIColor(named: "customWhite50Opacity")
-            
-            //UnSelected
-            self.MGTopView.backgroundColor = UIColor(named: "customRed")
-            self.MGBottomView.backgroundColor = UIColor(named: "customRed")
-            self.MGRightView.backgroundColor = UIColor(named: "customRed")
-        }
-        
-        
     }
 
     /*
