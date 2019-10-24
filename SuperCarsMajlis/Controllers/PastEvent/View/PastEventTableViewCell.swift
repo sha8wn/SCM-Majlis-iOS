@@ -41,17 +41,20 @@ class PastEventTableViewCell: UITableViewCell {
     }
     
     func setupCell(model: PastEventList){
-        self.eventData = model
-        if self.eventData != nil{
-            if let array = self.eventData.imgs{
-                self.imageArray = array
+        DispatchQueue.main.async {
+            self.eventData = model
+            if self.eventData != nil{
+                if let array = self.eventData.imgs{
+                    self.imageArray = array
+                }else{
+                    self.imageArray = []
+                }
             }else{
                 self.imageArray = []
             }
-        }else{
-            self.imageArray = []
+            self.collectionView.reloadData()
+            self.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: false)
         }
-        self.collectionView.reloadData()
     }
 }
 
@@ -83,7 +86,7 @@ extension PastEventTableViewCell: UICollectionViewDelegate, UICollectionViewData
         }else{
             url = ""
         }
-        cell.imgView.sd_imageIndicator = SDWebImageActivityIndicator.gray
+        cell.imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
         if url != ""{
             cell.imgView.sd_setImage(with: URL(string: url), completed: nil)
         }else{

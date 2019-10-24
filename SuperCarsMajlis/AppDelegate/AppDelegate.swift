@@ -8,6 +8,7 @@
 
 import UIKit
 import CoreData
+import Branch
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -17,8 +18,20 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.setUp()
+        Branch.setUseTestBranchKey(true)
+        let branch: Branch = Branch.getInstance()!
+           branch.initSession(launchOptions: launchOptions, andRegisterDeepLinkHandler: {params, error in
+               if error == nil {
+                   // params are the deep linked params associated with the link that the user clicked -> was re-directed to this app
+                   // params will be empty if no data found
+                   // ... insert custom logic here ...
+                   print("params: %@", params as? [String: AnyObject] ?? {})
+               }
+           })
         return true
     }
+    
+    
 
     // MARK: UISceneSession Lifecycle
 
@@ -45,6 +58,44 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Saves changes in the application's managed object context before the application terminates.
     }
 
+    // Respond to URI scheme links
+    func application(_ application: UIApplication, open url: URL, sourceApplication: String?, annotation: Any) -> Bool {
+        // pass the url to the handle deep link call
+        
+//        print(url)
+//        print(url.host)
+//
+//        var parameters: [String: String] = [:]
+//        URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
+//            parameters[$0.name] = $0.value
+//        }
+//
+        
+        
+        let branchHandled = Branch.getInstance()!.application(application,
+                open: url,
+                sourceApplication: sourceApplication,
+                annotation: annotation
+            )
+        if (!branchHandled) {
+            // If not handled by Branch, do other deep link routing for the Facebook SDK, Pinterest SDK, etc
+        }
+
+        // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
+        return true
+    }
+
+    // Respond to Universal Links
+    func application(_ application: UIApplication, continue userActivity: NSUserActivity, restorationHandler: @escaping ([UIUserActivityRestoring]?) -> Void) -> Bool {
+      // handler for Universal Links
+        Branch.getInstance()!.continue(userActivity)
+      return true
+    }
+
+    func application(_ application: UIApplication, didReceiveRemoteNotification userInfo: [AnyHashable : Any], fetchCompletionHandler completionHandler: @escaping (UIBackgroundFetchResult) -> Void) {
+      // handler for Push Notifications
+        Branch.getInstance()!.handlePushNotification(userInfo)
+    }
 
     // MARK: - Core Data stack
 

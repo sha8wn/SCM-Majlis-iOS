@@ -26,7 +26,7 @@ extension PastEventViewController{
                             if list.count > 0{
                                 self.lbl_NoData.isHidden = true
                                 if let count = pastEvent.num_rows{
-                                    self.totalRecord = Int(count) ?? 0
+                                    self.totalRecord = Int(count)
                                 }else{
                                     self.totalRecord = 0
                                 }
@@ -47,7 +47,6 @@ extension PastEventViewController{
             }else{
                 AlertViewController.openAlertView(title: "Error", message: message ?? "Something Went Wrong!, Try Again Later.", buttons: ["OK"])
             }
-            
         }
     }
 }

@@ -7,10 +7,11 @@
 //
 
 import UIKit
+import SDWebImage
 
 /*
-MARK: - Enum Supercars Cell Type
-*/
+ MARK: - Enum Supercars Cell Type
+ */
 enum SupercarsCellType{
     case register
     case edit
@@ -27,6 +28,7 @@ class SupercarsTableViewCell: UITableViewCell {
     @IBOutlet weak var btnUploadFront        : UIButton!
     @IBOutlet weak var btnUploadBack         : UIButton!
     @IBOutlet weak var btnUploadCar          : UIButton!
+    @IBOutlet weak var imgUploadCar          : UIImageView!
     @IBOutlet weak var deleteheightConstraint: NSLayoutConstraint!
     @IBOutlet weak var btnDelete             : UIButton!
     @IBOutlet weak var btnColor              : UIButton!
@@ -46,10 +48,10 @@ class SupercarsTableViewCell: UITableViewCell {
         // Initialization code
         
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -73,37 +75,95 @@ class SupercarsTableViewCell: UITableViewCell {
             self.txtColor.text = ""
         }
         //FRONT IMAGE
-        if let frontImage = model.carRegistraionFrontImage{
-            self.btnUploadFront.setBackgroundImage(frontImage, for: .normal)
-            self.btnCrossFront.isHidden = false
+        if let isFrontImageEdit = model.isCarRegistraionFrontImageEdit{
+            if isFrontImageEdit == false{
+                if let frontImage = model.carRegistraionFrontImageURL{
+                    self.btnUploadFront.sd_imageIndicator = SDWebImageActivityIndicator.white
+                    self.btnUploadFront.sd_setBackgroundImage(with: URL(string: frontImage), for: .normal, completed: nil)
+                    self.btnCrossFront.isHidden = false
+                }else{
+                    self.btnUploadFront.setBackgroundImage(UIImage(named: ""), for: .normal)
+                    self.btnCrossFront.isHidden = true
+                }
+            }else{
+                if let frontImage = model.carRegistraionFrontImage{
+                    self.btnUploadFront.setBackgroundImage(frontImage, for: .normal)
+                    self.btnCrossFront.isHidden = false
+                }else{
+                    self.btnUploadFront.setBackgroundImage(UIImage(named: ""), for: .normal)
+                    self.btnCrossFront.isHidden = true
+                }
+            }
         }else{
-            self.btnUploadFront.setBackgroundImage(UIImage(named: ""), for: .normal)
-            self.btnCrossFront.isHidden = true
+            if let frontImage = model.carRegistraionFrontImage{
+                self.btnUploadFront.setBackgroundImage(frontImage, for: .normal)
+                self.btnCrossFront.isHidden = false
+            }else{
+                self.btnUploadFront.setBackgroundImage(UIImage(named: ""), for: .normal)
+                self.btnCrossFront.isHidden = true
+            }
         }
+
         //BACK IMAGE
-        if let backImage = model.carRegistraionBackImage{
-            self.btnUploadBack.setBackgroundImage(backImage, for: .normal)
-            self.btnCrossBack.isHidden = false
+        if let isBackImageEdit = model.isCarRegistraionBackImageEdit{
+            if isBackImageEdit == false{
+                if let backImage = model.carRegistraionBackImageURL{
+                    self.btnUploadBack.sd_imageIndicator = SDWebImageActivityIndicator.white
+                    self.btnUploadBack.sd_setBackgroundImage(with: URL(string: backImage), for: .normal, completed: nil)
+                    self.btnCrossBack.isHidden = false
+                }else{
+                    self.btnUploadBack.setBackgroundImage(UIImage(named: ""), for: .normal)
+                    self.btnCrossBack.isHidden = true
+                }
+            }else{
+                if let backImage = model.carRegistraionBackImage{
+                    self.btnUploadBack.setBackgroundImage(backImage, for: .normal)
+                    self.btnCrossBack.isHidden = false
+                }else{
+                    self.btnUploadBack.setBackgroundImage(UIImage(named: ""), for: .normal)
+                    self.btnCrossBack.isHidden = true
+                }
+            }
         }else{
-            self.btnUploadBack.setBackgroundImage(UIImage(named: ""), for: .normal)
-            self.btnCrossBack.isHidden = true
-        }
-        //CAR IMAGE
-        if let carImage = model.carImage{
-            self.btnUploadCar.setBackgroundImage(carImage, for: .normal)
-            self.btnCrossCar.isHidden = false
-        }else{
-            self.btnUploadCar.setBackgroundImage(UIImage(named: ""), for: .normal)
-            self.btnCrossCar.isHidden = true
+            if let backImage = model.carRegistraionBackImage{
+                self.btnUploadBack.setBackgroundImage(backImage, for: .normal)
+                self.btnCrossBack.isHidden = false
+            }else{
+                self.btnUploadBack.setBackgroundImage(UIImage(named: ""), for: .normal)
+                self.btnCrossBack.isHidden = true
+            }
         }
         
-        //SETUP DELETE BUTTON
-        if index == 0{
-            self.btnDelete.isHidden = true
-            self.deleteheightConstraint.constant = 0
+        //CAR IMAGE
+        if let isCarImageEdit = model.isCarImageEdit{
+            if isCarImageEdit == false{
+                if let carImage = model.carImageURL{
+                    self.imgUploadCar.sd_imageIndicator = SDWebImageActivityIndicator.white
+                    self.imgUploadCar.sd_setImage(with: URL(string: carImage), completed: nil)
+                    self.btnCrossCar.isHidden = false
+                }else{
+                    self.imgUploadCar.image = UIImage(named: "")
+                    self.btnCrossCar.isHidden = true
+                }
+            }else{
+               if let carImage = model.carImage{
+                   self.imgUploadCar.image = carImage
+                   self.btnCrossCar.isHidden = false
+               }else{
+                   self.imgUploadCar.image = UIImage(named: "")
+                   self.btnCrossCar.isHidden = true
+               }
+            }
         }else{
-            self.btnDelete.isHidden = false
-            self.deleteheightConstraint.constant = 50
+            if let carImage = model.carImage{
+                self.imgUploadCar.image = carImage
+                self.btnCrossCar.isHidden = false
+            }else{
+                self.imgUploadCar.image = UIImage(named: "")
+                self.btnCrossCar.isHidden = true
+            }
         }
+        
+        
     }
 }

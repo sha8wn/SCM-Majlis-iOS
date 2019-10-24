@@ -140,7 +140,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wZR-mX-cyi">
                                 <rect key="frame" x="15" y="203" width="250" height="30"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAR REGISTRATION" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-UN-wag">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="CAR REGISTRATION (front/back)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJZ-UN-wag">
                                 <rect key="frame" x="15" y="257" width="250" height="17"/>
                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                 <color key="textColor" name="customWhite50Opacity"/>
@@ -162,7 +162,7 @@
                                                     <constraint firstAttribute="height" constant="15" id="jF5-qI-Jl4"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Car Registration Front" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFX-YI-FVG">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Car Registration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gFX-YI-FVG">
                                                 <rect key="frame" x="10" y="55" width="95" height="50.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -218,7 +218,7 @@
                                                     <constraint firstAttribute="height" constant="15" id="a8w-W4-7I5"/>
                                                 </constraints>
                                             </imageView>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Car Registration Back" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iva-4m-rYK">
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Upload Car Registration" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Iva-4m-rYK">
                                                 <rect key="frame" x="10" y="55" width="95" height="50.5"/>
                                                 <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -285,7 +285,10 @@
                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHF-bE-KjK">
+                                    <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="F4Q-Aa-eEt">
+                                        <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
+                                    </imageView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cHF-bE-KjK">
                                         <rect key="frame" x="0.0" y="0.0" width="280" height="140"/>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dbI-wM-JTY">
@@ -305,8 +308,11 @@
                                     <constraint firstItem="dbI-wM-JTY" firstAttribute="top" secondItem="st1-18-UPB" secondAttribute="top" constant="10" id="Ato-Cj-wO3"/>
                                     <constraint firstItem="cHF-bE-KjK" firstAttribute="top" secondItem="st1-18-UPB" secondAttribute="top" id="Ixe-bl-Fem"/>
                                     <constraint firstItem="cHF-bE-KjK" firstAttribute="leading" secondItem="st1-18-UPB" secondAttribute="leading" id="JWN-j5-Zux"/>
+                                    <constraint firstAttribute="bottom" secondItem="F4Q-Aa-eEt" secondAttribute="bottom" id="JYJ-Ou-ViO"/>
+                                    <constraint firstAttribute="trailing" secondItem="F4Q-Aa-eEt" secondAttribute="trailing" id="R7n-aT-n1R"/>
                                     <constraint firstAttribute="trailing" secondItem="dbI-wM-JTY" secondAttribute="trailing" constant="10" id="W57-Ja-HJ1"/>
                                     <constraint firstItem="QLP-15-TWa" firstAttribute="centerX" secondItem="st1-18-UPB" secondAttribute="centerX" id="Y54-gu-e3r"/>
+                                    <constraint firstItem="F4Q-Aa-eEt" firstAttribute="leading" secondItem="st1-18-UPB" secondAttribute="leading" id="dvK-wB-1lg"/>
                                     <constraint firstItem="QLP-15-TWa" firstAttribute="top" secondItem="st1-18-UPB" secondAttribute="top" constant="30" id="lU6-B4-V6s"/>
                                     <constraint firstAttribute="bottom" secondItem="sfG-C7-6cy" secondAttribute="bottom" constant="20" id="n80-7e-NcQ"/>
                                     <constraint firstAttribute="bottom" secondItem="cHF-bE-KjK" secondAttribute="bottom" id="nia-oT-Zd3"/>
@@ -314,6 +320,7 @@
                                     <constraint firstAttribute="height" constant="140" id="sfS-Qk-QTh"/>
                                     <constraint firstItem="uiI-rv-0dZ" firstAttribute="top" secondItem="QLP-15-TWa" secondAttribute="bottom" constant="10" id="uWG-Uc-ZUs"/>
                                     <constraint firstAttribute="trailing" secondItem="cHF-bE-KjK" secondAttribute="trailing" id="vV9-dn-hfq"/>
+                                    <constraint firstItem="F4Q-Aa-eEt" firstAttribute="top" secondItem="st1-18-UPB" secondAttribute="top" id="zbH-XR-18v"/>
                                 </constraints>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="baM-0g-gq1">
@@ -432,6 +439,7 @@
                 <outlet property="btnUploadCar" destination="cHF-bE-KjK" id="6mZ-cZ-1ev"/>
                 <outlet property="btnUploadFront" destination="z0E-7Z-qG3" id="GAe-sj-GVD"/>
                 <outlet property="deleteheightConstraint" destination="hea-Te-3nt" id="5EF-gp-sea"/>
+                <outlet property="imgUploadCar" destination="F4Q-Aa-eEt" id="zN8-yO-N6J"/>
                 <outlet property="txtBrand" destination="d9y-sf-zAA" id="kEI-QK-Agy"/>
                 <outlet property="txtColor" destination="FBQ-UF-CPc" id="MOQ-9s-1Ff"/>
                 <outlet property="txtModel" destination="uMn-xb-o2H" id="h69-CH-hF5"/>

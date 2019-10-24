@@ -20,21 +20,13 @@ struct CarBrands : Codable {
         case error_text = "error_text"
         case brands = "brands"
     }
-
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        error = try values.decodeIfPresent(Int.self, forKey: .error)
-        error_text = try values.decodeIfPresent(String.self, forKey: .error_text)
-        brands = try values.decodeIfPresent(BrandsData.self, forKey: .brands)
-    }
-
 }
 
 struct BrandsData : Codable {
     let list : [BrandList]?
     let limit : Int?
     let n : Int?
-    let num_rows : String?
+    let num_rows : Int?
 
     enum CodingKeys: String, CodingKey {
 
@@ -44,45 +36,27 @@ struct BrandsData : Codable {
         case num_rows = "num_rows"
     }
 
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        list = try values.decodeIfPresent([BrandList].self, forKey: .list)
-        limit = try values.decodeIfPresent(Int.self, forKey: .limit)
-        n = try values.decodeIfPresent(Int.self, forKey: .n)
-        num_rows = try values.decodeIfPresent(String.self, forKey: .num_rows)
-    }
-
 }
 
 struct BrandList : Codable {
-    let id : String?
-    let created : String?
-    let updated : String?
-    let display : String?
-    let rank : String?
+    let id : Int?
+//    let created : String?
+//    let updated : String?
+//    let display : Int?
+//    let rank : Int?
     let name : String?
     let img : String?
 
     enum CodingKeys: String, CodingKey {
 
         case id = "id"
-        case created = "created"
-        case updated = "updated"
-        case display = "display"
-        case rank = "rank"
+//        case created = "created"
+//        case updated = "updated"
+//        case display = "display"
+//        case rank = "rank"
         case name = "name"
         case img = "img"
     }
 
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decodeIfPresent(String.self, forKey: .id)
-        created = try values.decodeIfPresent(String.self, forKey: .created)
-        updated = try values.decodeIfPresent(String.self, forKey: .updated)
-        display = try values.decodeIfPresent(String.self, forKey: .display)
-        rank = try values.decodeIfPresent(String.self, forKey: .rank)
-        name = try values.decodeIfPresent(String.self, forKey: .name)
-        img = try values.decodeIfPresent(String.self, forKey: .img)
-    }
 
 }

@@ -20,13 +20,6 @@ struct PastEventListModel : Codable {
         case past_events = "past_events"
     }
 
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        error = try values.decodeIfPresent(Int.self, forKey: .error)
-        error_text = try values.decodeIfPresent(String.self, forKey: .error_text)
-        past_events = try values.decodeIfPresent(Past_events.self, forKey: .past_events)
-    }
-
 }
 
 struct PastEventImages : Codable {
@@ -39,19 +32,13 @@ struct PastEventImages : Codable {
         case img = "img"
     }
 
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        n = try values.decodeIfPresent(Int.self, forKey: .n)
-        img = try values.decodeIfPresent(String.self, forKey: .img)
-    }
-
 }
 
 struct PastEventList : Codable {
-    let id : String?
+    let id : Int?
     let created : String?
     let updated : String?
-    let display : String?
+    let display : Int?
     let date : String?
     let participants : String?
     let location : String?
@@ -72,28 +59,13 @@ struct PastEventList : Codable {
         case text = "text"
         case imgs = "imgs"
     }
-
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        id = try values.decodeIfPresent(String.self, forKey: .id)
-        created = try values.decodeIfPresent(String.self, forKey: .created)
-        updated = try values.decodeIfPresent(String.self, forKey: .updated)
-        display = try values.decodeIfPresent(String.self, forKey: .display)
-        date = try values.decodeIfPresent(String.self, forKey: .date)
-        participants = try values.decodeIfPresent(String.self, forKey: .participants)
-        location = try values.decodeIfPresent(String.self, forKey: .location)
-        name = try values.decodeIfPresent(String.self, forKey: .name)
-        text = try values.decodeIfPresent(String.self, forKey: .text)
-        imgs = try values.decodeIfPresent([PastEventImages].self, forKey: .imgs)
-    }
-
 }
 
 struct Past_events : Codable {
     let list : [PastEventList]?
     let limit : Int?
     let n : Int?
-    let num_rows : String?
+    let num_rows : Int?
 
     enum CodingKeys: String, CodingKey {
 
@@ -102,13 +74,4 @@ struct Past_events : Codable {
         case n = "n"
         case num_rows = "num_rows"
     }
-
-    init(from decoder: Decoder) throws {
-        let values = try decoder.container(keyedBy: CodingKeys.self)
-        list = try values.decodeIfPresent([PastEventList].self, forKey: .list)
-        limit = try values.decodeIfPresent(Int.self, forKey: .limit)
-        n = try values.decodeIfPresent(Int.self, forKey: .n)
-        num_rows = try values.decodeIfPresent(String.self, forKey: .num_rows)
-    }
-
 }

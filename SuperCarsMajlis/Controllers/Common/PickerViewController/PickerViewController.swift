@@ -224,7 +224,30 @@ extension PickerViewController: UITableViewDelegate, UITableViewDataSource{
                 let model = self.model[i] as! BrandList
                 print(model)
                 if model.name == selectedValue{
-                    id = Int(model.id ?? "0")!
+//                    id = Int(model.id ?? "0")!
+                    id = model.id ?? 0
+                }
+            }
+            self.pickerDoneBlock(selectedValue, id)
+        }else if self.pickerType == .model{
+            var id: Int!
+            for i in 0..<self.model.count{
+                let model = self.model[i] as! ModelList
+                print(model)
+                if model.name == selectedValue{
+//                    id = Int(model.id ?? "0")!
+                    id = model.id ?? 0
+                }
+            }
+            self.pickerDoneBlock(selectedValue, id)
+        }else if self.pickerType == .color{
+            var id: Int!
+            for i in 0..<self.model.count{
+                let model = self.model[i] as! CarColorsList
+                print(model)
+                if model.name == selectedValue{
+//                    id = Int(model.id ?? "0")!
+                    id = model.id ?? 0
                 }
             }
             self.pickerDoneBlock(selectedValue, id)
@@ -407,6 +430,51 @@ extension PickerViewController{
     func getColors(){
         
         self.lblNoData.isHidden = true
+        FunctionConstants.getInstance().showLoader(message: "Loading", view: self)
+        let urlPath = kBaseURL + kGetCarColorAPI
         
+        Network.shared.request(urlPath: urlPath, methods: .get, authType: .auth) { (response, message, statusCode, status) in
+            FunctionConstants.getInstance().hideLoader(view: self)
+            if status == .Success{
+                do {
+                    let responseModel = try JSONDecoder().decode(CarColorsModel.self, from: response?.data ?? Data())
+                    if let colors = responseModel.colors{
+                        if let list = colors.list{
+                            if list.count > 0{
+                                self.lblNoData.isHidden = true
+                                
+                                var array: [String] = []
+                                for model in list{
+                                    array.append(model.name ?? "")
+                                }
+                                
+                                self.model = list
+                                
+                                self.dataArray = array
+                                
+                                if self.lastSelectedValue == ""{
+                                    self.selectedIndex = nil
+                                }else{
+                                    self.selectedIndex = self.dataArray.firstIndex(of: self.lastSelectedValue)
+                                }
+                                
+                                self.tableView.reloadData()
+                            }else{
+                                self.lblNoData.isHidden = false
+                            }
+                        }else{
+                            self.lblNoData.isHidden = false
+                        }
+                    }else{
+                        self.lblNoData.isHidden = false
+                    }
+                } catch let error {
+                    print(error)
+                    self.lblNoData.isHidden = false
+                }
+            }else{
+                self.lblNoData.isHidden = false
+            }
+        }
     }
 }

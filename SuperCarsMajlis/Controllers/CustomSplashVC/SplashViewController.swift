@@ -13,13 +13,39 @@ class SplashViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.openWalkThroughScreen()
+        let state = getUserState()
+        if state == .walkthrough{
+            self.openWalkThroughScreen()
+        }else if state == .pastEvent{
+            self.openPastEventScreen()
+        }else if state == .home{
+            self.openHomeScreen()
+        }else{
+            
+        }
         // Do any additional setup after loading the view.
     }
     
     func openWalkThroughScreen(){
         let navigationController: UINavigationController = Constants.walkthroughStoryboard.instantiateInitialViewController() as! UINavigationController
         let rootViewController: UIViewController = Constants.walkthroughStoryboard.instantiateViewController(withIdentifier: "WalkthroughParentViewController") as UIViewController
+        navigationController.viewControllers = [rootViewController]
+        navigationController.navigationBar.isHidden = true
+        Constants.kAppDelegate.window?.rootViewController = navigationController
+    }
+    
+    func openPastEventScreen(){
+        let navigationController: UINavigationController = Constants.walkthroughStoryboard.instantiateInitialViewController() as! UINavigationController
+        let rootViewController: PastEventViewController = Constants.eventStoryboard.instantiateViewController(withIdentifier: "PastEventViewController") as! PastEventViewController
+        rootViewController.openFrom = .chooseUser
+        navigationController.viewControllers = [rootViewController]
+        navigationController.navigationBar.isHidden = true
+        Constants.kAppDelegate.window?.rootViewController = navigationController
+    }
+    
+    func openHomeScreen(){
+        let navigationController: UINavigationController = Constants.walkthroughStoryboard.instantiateInitialViewController() as! UINavigationController
+        let rootViewController: UIViewController = Constants.homeStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as UIViewController
         navigationController.viewControllers = [rootViewController]
         navigationController.navigationBar.isHidden = true
         Constants.kAppDelegate.window?.rootViewController = navigationController

@@ -39,16 +39,18 @@ class WelcomeViewController: UIViewController {
     */
 
     @IBAction func btnStartTapped(sender: UIButton){
-        guard let url = Bundle.main.url(forResource: "start", withExtension: "mp3") else { return }
-        do {
-            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-            try AVAudioSession.sharedInstance().setActive(true)
-            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-            audioPlayer?.delegate = self
-            audioPlayer?.play()
-        }catch let error{
-            print(error.localizedDescription)
-        }
+        let viewController = Constants.loginAndSignupStoryboard.instantiateViewController(withIdentifier: "ChooseUserTypeViewController") as! ChooseUserTypeViewController
+        self.navigationController?.pushViewController(viewController, animated: true)
+//        guard let url = Bundle.main.url(forResource: "start", withExtension: "mp3") else { return }
+//        do {
+//            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
+//            try AVAudioSession.sharedInstance().setActive(true)
+//            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
+//            audioPlayer?.delegate = self
+//            audioPlayer?.play()
+//        }catch let error{
+//            print(error.localizedDescription)
+//        }
     }
 }
 

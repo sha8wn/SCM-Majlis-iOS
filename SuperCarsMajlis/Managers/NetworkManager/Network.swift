@@ -25,7 +25,7 @@ public class Network: NSObject
 //    var Base64                                          = "FIFUser:FIFUser".toBase64()
     var delegates                                       = UIApplication.shared.delegate as! AppDelegate
     var HttpHeaders                                     = ["":""]
-//    var accessTokenModel    : LoginModel!
+    var accessTokenModel    : RegisterModel!
     var unauthUrlPath       : String                    = ""
     var unauthMethods       : HTTPMethod!
     var unauthParams        : [String : AnyObject]?
@@ -43,20 +43,22 @@ public class Network: NSObject
 
     func request(urlPath: String, methods: HTTPMethod, authType: AuthorizationType, params: [String : AnyObject]? = nil, completion:@escaping (_ response: DataResponse<Any>?, _ message: String?, _ statusCode: Int, _ status: WebServiceResponseType) -> Void)
     {
-//        self.accessTokenModel = getAccessTokenModel()
-        if(Reachability.isConnectedToNetwork()){
+        if getAccessTokenModel() != nil{
+            accessTokenModel = getAccessTokenModel()
+        }
 
+        if(Reachability.isConnectedToNetwork()){
             if authType == AuthorizationType.basic{
                 HttpHeaders = ["Content-Type"           : "application/json"                ]
             }else if authType == AuthorizationType.auth{
-//                HttpHeaders = ["Content-Type"           : "application/json",                          "Authorization"          : "Bearer \(self.accessTokenModel.accessToken)"
-//                ]
+                HttpHeaders = ["Content-Type"    : "application/json",                         "token"           : "\(accessTokenModel.token ?? "")"
+                ]
             }
 
             print("---------------------")
             print("URL: ", "\(urlPath)")
             print("HttpHeaders: ", "\(HttpHeaders)")
-            print("Request: ", params ?? "")
+            debugPrint("Request: ", params ?? "")
 
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 120
             Alamofire.request(urlPath, method: methods, parameters: params, encoding: JSONEncoding.default, headers: HttpHeaders).responseJSON { (responseObject) -> Void in
@@ -64,7 +66,7 @@ public class Network: NSObject
                 let (status, statusCode, message, _) = handleError(response: responseObject)
 
                 if let resJson = responseObject.result.value as? NSDictionary{
-                    print("Reponse: ", resJson)
+                    debugPrint("Reponse: ", resJson)
                     print("StatusCode: ", statusCode)
                     print("---------------------")
                 }else{
@@ -75,36 +77,18 @@ public class Network: NSObject
                 if status == .Success{
                     completion(responseObject, message, statusCode, status)
                 }else{
-//                    if statusCode == 401{
-//                        self.accessTokenModel = getAccessTokenModel()
-//                        self.unauthUrlPath = urlPath
-//                        self.unauthMethods = methods
-//                        self.unauthParams = params
-//                        self.unauthType = authType
-//
-//                        let refreshToken = "\(self.accessTokenModel.refreshToken)"
-//                        let urlPath = kBaseURL + kAccessToken + "?grant_type=refresh_token&client_id=" + kClientId + "&client_secret=" + kClientSecret + "&refresh_token=" + refreshToken
-//
-//                        self.request(urlPath: urlPath, methods: .post, authType: .basic) { (response, message, statusCode, status) in
-//
-//                            if statusCode == 200{
-//                                do {
-//                                    let data = try self.JSONdecoder.decode(LoginModel.self, from: response?.data ?? Data())
-//                                    setAccessTokenModel(model: data)
-//                                    self.request(urlPath: self.unauthUrlPath, methods: self.unauthMethods, authType: self.unauthType, params: self.unauthParams, completion: { (refreshResponse, refreshMessage, refreshStatusCode, refreshStatus) in
-//                                        completion(refreshResponse, refreshMessage, refreshStatusCode, refreshStatus)
-//                                    })
-//                                } catch let error {
-//                                    print(error.localizedDescription)
-//                                    completion(response, "SOMETHING_WENT_WRONG".localized(), kSomethingWentWrongErrorCode, .Failure)
-//                                }
-//                            }else{
-//                                completion(response, message, statusCode, status)
-//                            }
-//                        }
-//                    }else{
+                    if statusCode == 11 || statusCode == 12{
+                        AlertViewController.openAlertView(title: "Error", message: "Session Expired, Please try again!", buttons: ["OK"]) { (index) in
+                            clearUserDefault()
+                            let navigationController: UINavigationController = Constants.walkthroughStoryboard.instantiateInitialViewController() as! UINavigationController
+                            let rootViewController: UIViewController = Constants.loginAndSignupStoryboard.instantiateViewController(withIdentifier: "ChooseUserTypeViewController") as UIViewController
+                            navigationController.viewControllers = [rootViewController]
+                            navigationController.navigationBar.isHidden = true
+                            Constants.kAppDelegate.window?.rootViewController = navigationController
+                        }
+                    }else{
                         completion(responseObject, message, statusCode, status)
-//                    }
+                    }
                 }
             }
         }else{

@@ -23,12 +23,23 @@ extension RegisterViewController{
                            "brand"     : Int(self.selectedBrandId)!,
                            "model"     : Int(self.selectedModelId)!,
                            "uid"       : "",
-        ] as [String : Any]
+            ] as [String : Any]
         
         Network.shared.request(urlPath: urlPath, methods: .post, authType: .basic, params: requestDict as [String : AnyObject]) { (response, message, statusCode, status) in
             FunctionConstants.getInstance().hideLoader(view: self)
             if status == .Success{
-                print(response)
+                do {
+                    let responseModel = try JSONDecoder().decode(RegisterModel.self, from: response?.data ?? Data())
+                    setAccessTokenModel(model: responseModel)
+                    setUserState(state: .pastEvent)
+                    AlertViewController.openAlertView(title: "Thank you", message: "We have received your application. You will be contacted shortly.", buttons: ["Continue"]) { (index) in
+                        let vc = Constants.registerStoryboard.instantiateViewController(withIdentifier: "RegisterApprovedMemberViewController") as! RegisterApprovedMemberViewController
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                    
+                } catch let error {
+                    AlertViewController.openAlertView(title: "Error", message: error.localizedDescription, buttons: ["OK"])
+                }
             }else{
                 AlertViewController.openAlertView(title: "Error", message: message!, buttons: ["OK"])
             }

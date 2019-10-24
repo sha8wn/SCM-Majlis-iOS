@@ -103,8 +103,9 @@ extension PastEventViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "PastEventTableViewCell", for: indexPath) as! PastEventTableViewCell
-        cell.collectionView.scrollToItem(at: IndexPath(item: 0, section: 0), at: .left, animated: false)
-        cell.setupCell(model: self.dataArray[indexPath.row])
+        if self.dataArray.count > 0{
+            cell.setupCell(model: self.dataArray[indexPath.row])
+        }
         cell.index = indexPath.row
         cell.delegate = self
         return cell

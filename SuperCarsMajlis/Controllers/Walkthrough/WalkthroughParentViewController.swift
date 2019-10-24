@@ -63,11 +63,11 @@ class WalkthroughParentViewController: UIViewController {
                          "imageURL"  : "ic_ScreenA",
                          "title"     : "Welcome to\nSuperCars Majlis"]
         
-        let dictView2 = ["imageDesc" : "Get notified about the latest events and RSVP to them ysing the app",
+        let dictView2 = ["imageDesc" : "Get notified about the latest events and RSVP to them using the app",
                          "imageURL"  : "ic_ScreenB",
                          "title"     : "Events"]
         
-        let dictView3 = ["imageDesc" : "Get connected to our partners and ger exclusive offers available only to SCM members.",
+        let dictView3 = ["imageDesc" : "Get connected to our partners and get exclusive offers available only to SCM members.",
                          "imageURL"  : "ic_ScreenC",
                          "title"     : "Promotions"]
    

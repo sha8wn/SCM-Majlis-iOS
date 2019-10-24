@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class MemberGoingListViewController: UIViewController {
 
@@ -17,6 +18,8 @@ class MemberGoingListViewController: UIViewController {
     @IBOutlet weak var lblNoOfGoing: UILabel!
     @IBOutlet weak var btnBack: UIButton!
     @IBOutlet weak var lblTitle: UILabel!
+    var dataModel: HomeList!
+    var dataArray: [HomeUsers] = []
     
     //end
     
@@ -32,6 +35,14 @@ class MemberGoingListViewController: UIViewController {
     func setUpView(){
         //Register TableView Cell
         self.tableView.register(UINib(nibName: "MemberGoingTableViewCell", bundle: nil), forCellReuseIdentifier: "MemberGoingTableViewCell")
+        if self.dataModel != nil{
+            self.lblTitle.text = self.dataModel.name ?? ""
+            if let userArray = self.dataModel.users{
+                self.lblNoOfGoing.text = "\(userArray.count) members going"
+                self.dataArray = userArray
+                self.tableView.reloadData()
+            }
+        }
     }
     
 
@@ -55,11 +66,26 @@ MARK: - MemberGoingListViewController: UITableViewDelegate and UITableViewDataSo
 */
 extension MemberGoingListViewController: UITableViewDelegate, UITableViewDataSource{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 12
+        if self.dataArray.count > 0{
+            return dataArray.count
+        }else{
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let model = self.dataArray[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "MemberGoingTableViewCell", for: indexPath) as! MemberGoingTableViewCell
+        
+        //Image
+        cell.imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
+        cell.imgView.sd_setImage(with: URL(string: model.img ?? ""), completed: nil)
+        
+        //UserName
+        cell.lblUserName.text = model.name ?? ""
+        
+        //Title
+        cell.lblTitle.text = String(format: "%@-%@", model.brand_name ?? "", model.model_name ?? "")
         return cell
     }
 

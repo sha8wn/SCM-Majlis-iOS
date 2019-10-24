@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1020"
+   LastUpgradeVersion = "1100"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "87C273154D7ABE96D31886D6C33BEF97"
+               BlueprintIdentifier = "B4694077A57FEC04319455DC74995902"
                BuildableName = "Pods_SuperCarsMajlisTests.framework"
                BlueprintName = "Pods-SuperCarsMajlisTests"
                ReferencedContainer = "container:Pods.xcodeproj">

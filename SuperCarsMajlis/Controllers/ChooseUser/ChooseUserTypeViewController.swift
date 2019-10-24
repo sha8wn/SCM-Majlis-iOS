@@ -23,7 +23,7 @@ class ChooseUserTypeViewController: UIViewController {
     */
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        setUserState(state: .pastEvent)
         // Do any additional setup after loading the view.
     }
     //end

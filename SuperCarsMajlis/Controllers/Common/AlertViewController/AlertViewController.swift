@@ -38,6 +38,12 @@ class AlertViewController: UIViewController {
         self.setUpUI()
         // Do any additional setup after loading the view.
     }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        self.setUpUI()
+    }
     //end
     
     //MARK: - SetUp UI
@@ -62,15 +68,22 @@ class AlertViewController: UIViewController {
     
     class func openAlertView(title: String, message: String, buttons:[String]) {
 
+        AlertViewController.sharedInstance.alertCompletionBlock = nil
+        
         AlertViewController.sharedInstance.openAlert(title: title, message: message, buttons: buttons, tapBlock: nil)
     }
 
+    
     func openAlert(title: String, message: String, buttons:[String], tapBlock:((Int) -> Void)?){
         
-        guard let rootVC = Constants.kAppDelegate.window?.rootViewController else {
+        guard var rootVC = Constants.kAppDelegate.window?.rootViewController else {
             return
         }
         
+//        if let vc = rootVC.presentedViewController{
+//            rootVC = vc
+//        }
+
         self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         
         rootVC.present(self, animated: false, completion: nil)
@@ -78,7 +91,7 @@ class AlertViewController: UIViewController {
         self.lblTitle.text = title
         
         self.lblMessage.text = message
-        
+    
         
         if title.lowercased().contains("success"){
             self.lblSeprator.backgroundColor = UIColor(named: "customGreen")
@@ -103,6 +116,8 @@ class AlertViewController: UIViewController {
             self.btnA.setTitle("OK", for: .normal)
             self.btnB.isHidden = true
         }
+        
+        self.viewDidAppear(true)
     }
     
     

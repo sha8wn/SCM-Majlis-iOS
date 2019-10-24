@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -35,6 +35,8 @@
 		B427DB10234EFF03003ACB36 /* OtherDetailsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B427DB0E234EFF03003ACB36 /* OtherDetailsTableViewCell.xib */; };
 		B427DB13234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B427DB11234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.swift */; };
 		B427DB14234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B427DB12234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.xib */; };
+		B429479C236039DA007345B9 /* HomeWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429479B236039DA007345B9 /* HomeWebservice.swift */; };
+		B429479E23603AC6007345B9 /* HomeModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B429479D23603AC6007345B9 /* HomeModel.swift */; };
 		B4382FC9234AF99600FDF560 /* HomeEventTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4382FC7234AF99600FDF560 /* HomeEventTableViewCell.swift */; };
 		B4382FCA234AF99600FDF560 /* HomeEventTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4382FC8234AF99600FDF560 /* HomeEventTableViewCell.xib */; };
 		B4382FCD234B0CE700FDF560 /* MemberCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4382FCB234B0CE700FDF560 /* MemberCollectionViewCell.swift */; };
@@ -45,6 +47,8 @@
 		B4382FD8234B2D8300FDF560 /* MemberGoingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4382FD6234B2D8300FDF560 /* MemberGoingTableViewCell.xib */; };
 		B4382FDB234B446900FDF560 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4382FD9234B446900FDF560 /* SettingsTableViewCell.swift */; };
 		B4382FDC234B446900FDF560 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4382FDA234B446900FDF560 /* SettingsTableViewCell.xib */; };
+		B45E5F042358C8A20019C05B /* ChangePasswordWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E5F032358C8A20019C05B /* ChangePasswordWebservice.swift */; };
+		B46A35422358B30300C7D58C /* ProfileWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A35412358B30300C7D58C /* ProfileWebservice.swift */; };
 		B474854E234F34C100A4D489 /* CarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B474854C234F34C100A4D489 /* CarCollectionViewCell.swift */; };
 		B474854F234F34C100A4D489 /* CarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B474854D234F34C100A4D489 /* CarCollectionViewCell.xib */; };
 		B4748552234F34DD00A4D489 /* SelectedCarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4748550234F34DD00A4D489 /* SelectedCarCollectionViewCell.swift */; };
@@ -60,6 +64,14 @@
 		B478320B233A34510081735F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4783209233A34510081735F /* LaunchScreen.storyboard */; };
 		B4783216233A34510081735F /* SuperCarsMajlisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4783215233A34510081735F /* SuperCarsMajlisTests.swift */; };
 		B4783221233A34510081735F /* SuperCarsMajlisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4783220233A34510081735F /* SuperCarsMajlisUITests.swift */; };
+		B48BEB5E2356D17400271B24 /* RegisterApprovedMemberWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB5D2356D17400271B24 /* RegisterApprovedMemberWebservice.swift */; };
+		B48BEB612356D61C00271B24 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB602356D61C00271B24 /* UserDefaultManager.swift */; };
+		B48BEB632356DA4600271B24 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB622356DA4600271B24 /* RegisterModel.swift */; };
+		B48BEB652356ED1200271B24 /* ApprovedMemberDetailModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB642356ED1200271B24 /* ApprovedMemberDetailModel.swift */; };
+		B48BEB6823570F3E00271B24 /* ApprovedMemberSupercarsWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB6723570F3E00271B24 /* ApprovedMemberSupercarsWebservice.swift */; };
+		B48BEB6B2357193300271B24 /* CarColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB6A2357193300271B24 /* CarColors.swift */; };
+		B48BEB6D235763E300271B24 /* String+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB6C235763E300271B24 /* String+Extension.swift */; };
+		B48BEB712358412400271B24 /* DocumentWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB702358412400271B24 /* DocumentWebservice.swift */; };
 		B48CC31D234100F900A4D4D7 /* UIColor+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48CC31C234100F800A4D4D7 /* UIColor+Extension.swift */; };
 		B48CC3202341019F00A4D4D7 /* AlertViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48CC31F2341019F00A4D4D7 /* AlertViewController.swift */; };
 		B48CC32323411FF400A4D4D7 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48CC32223411FF400A4D4D7 /* LoginViewController.swift */; };
@@ -67,6 +79,7 @@
 		B498C34923508A6200D073F8 /* RegisterWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C34823508A6200D073F8 /* RegisterWebservice.swift */; };
 		B498C34D23508F7800D073F8 /* CarBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C34C23508F7800D073F8 /* CarBrands.swift */; };
 		B4AF95A7234DA50600FE7F90 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF95A6234DA50600FE7F90 /* ProfileViewController.swift */; };
+		B4B07A2B235D6D6600F6EC06 /* ManagerSuperCarsWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B07A2A235D6D6600F6EC06 /* ManagerSuperCarsWebservice.swift */; };
 		B4B84AD22342060200607AF4 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B84AD12342060200607AF4 /* ForgotPasswordViewController.swift */; };
 		B4B84AD423420C0600607AF4 /* Register.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4B84AD323420C0600607AF4 /* Register.storyboard */; };
 		B4B84AD723420CB900607AF4 /* RegisterApprovedMemberViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B84AD623420CB900607AF4 /* RegisterApprovedMemberViewController.swift */; };
@@ -80,6 +93,9 @@
 		B4C1FE0423435D2700A4581C /* DocumentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4C1FE0323435D2700A4581C /* DocumentViewController.swift */; };
 		B4C1FE0723435DC200A4581C /* Home.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C1FE0623435DC200A4581C /* Home.storyboard */; };
 		B4C74EBC234DB84E00E9CEDF /* Settings.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4C74EBB234DB84E00E9CEDF /* Settings.storyboard */; };
+		B4CCF625235856EF0047F5FB /* LoginWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CCF624235856EF0047F5FB /* LoginWebservice.swift */; };
+		B4CCF62923587CCC0047F5FB /* ForgotPasswordWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CCF62823587CCC0047F5FB /* ForgotPasswordWebservice.swift */; };
+		B4CCF62D235891D60047F5FB /* SettingWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CCF62C235891D60047F5FB /* SettingWebservice.swift */; };
 		B4D6C018234DD40300D351E2 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D6C017234DD40300D351E2 /* ChangePasswordViewController.swift */; };
 		B4D6C01B234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D6C01A234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift */; };
 		B4E019F9233B28A1001EBE65 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E019F8233B28A1001EBE65 /* AppDelegateExtension.swift */; };
@@ -171,6 +187,8 @@
 		B427DB0E234EFF03003ACB36 /* OtherDetailsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = OtherDetailsTableViewCell.xib; sourceTree = "<group>"; };
 		B427DB11234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventOtherDetailsCollectionViewCell.swift; sourceTree = "<group>"; };
 		B427DB12234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = EventOtherDetailsCollectionViewCell.xib; sourceTree = "<group>"; };
+		B429479B236039DA007345B9 /* HomeWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeWebservice.swift; sourceTree = "<group>"; };
+		B429479D23603AC6007345B9 /* HomeModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeModel.swift; sourceTree = "<group>"; };
 		B4382FC7234AF99600FDF560 /* HomeEventTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeEventTableViewCell.swift; sourceTree = "<group>"; };
 		B4382FC8234AF99600FDF560 /* HomeEventTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = HomeEventTableViewCell.xib; sourceTree = "<group>"; };
 		B4382FCB234B0CE700FDF560 /* MemberCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemberCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -181,6 +199,8 @@
 		B4382FD6234B2D8300FDF560 /* MemberGoingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberGoingTableViewCell.xib; sourceTree = "<group>"; };
 		B4382FD9234B446900FDF560 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		B4382FDA234B446900FDF560 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		B45E5F032358C8A20019C05B /* ChangePasswordWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordWebservice.swift; sourceTree = "<group>"; };
+		B46A35412358B30300C7D58C /* ProfileWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWebservice.swift; sourceTree = "<group>"; };
 		B474854C234F34C100A4D489 /* CarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCollectionViewCell.swift; sourceTree = "<group>"; };
 		B474854D234F34C100A4D489 /* CarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarCollectionViewCell.xib; sourceTree = "<group>"; };
 		B4748550234F34DD00A4D489 /* SelectedCarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectedCarCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -202,6 +222,15 @@
 		B478321C233A34510081735F /* SuperCarsMajlisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCarsMajlisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4783220233A34510081735F /* SuperCarsMajlisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCarsMajlisUITests.swift; sourceTree = "<group>"; };
 		B4783222233A34510081735F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B48BEB59235474DE00271B24 /* SuperCarsMajlis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuperCarsMajlis.entitlements; sourceTree = "<group>"; };
+		B48BEB5D2356D17400271B24 /* RegisterApprovedMemberWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApprovedMemberWebservice.swift; sourceTree = "<group>"; };
+		B48BEB602356D61C00271B24 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
+		B48BEB622356DA4600271B24 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
+		B48BEB642356ED1200271B24 /* ApprovedMemberDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedMemberDetailModel.swift; sourceTree = "<group>"; };
+		B48BEB6723570F3E00271B24 /* ApprovedMemberSupercarsWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedMemberSupercarsWebservice.swift; sourceTree = "<group>"; };
+		B48BEB6A2357193300271B24 /* CarColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarColors.swift; sourceTree = "<group>"; };
+		B48BEB6C235763E300271B24 /* String+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "String+Extension.swift"; sourceTree = "<group>"; };
+		B48BEB702358412400271B24 /* DocumentWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentWebservice.swift; sourceTree = "<group>"; };
 		B48CC31C234100F800A4D4D7 /* UIColor+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIColor+Extension.swift"; sourceTree = "<group>"; };
 		B48CC31F2341019F00A4D4D7 /* AlertViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlertViewController.swift; sourceTree = "<group>"; };
 		B48CC32223411FF400A4D4D7 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
@@ -209,6 +238,7 @@
 		B498C34823508A6200D073F8 /* RegisterWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWebservice.swift; sourceTree = "<group>"; };
 		B498C34C23508F7800D073F8 /* CarBrands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrands.swift; sourceTree = "<group>"; };
 		B4AF95A6234DA50600FE7F90 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		B4B07A2A235D6D6600F6EC06 /* ManagerSuperCarsWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSuperCarsWebservice.swift; sourceTree = "<group>"; };
 		B4B84AD12342060200607AF4 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		B4B84AD323420C0600607AF4 /* Register.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Register.storyboard; sourceTree = "<group>"; };
 		B4B84AD623420CB900607AF4 /* RegisterApprovedMemberViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApprovedMemberViewController.swift; sourceTree = "<group>"; };
@@ -222,6 +252,9 @@
 		B4C1FE0323435D2700A4581C /* DocumentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentViewController.swift; sourceTree = "<group>"; };
 		B4C1FE0623435DC200A4581C /* Home.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Home.storyboard; sourceTree = "<group>"; };
 		B4C74EBB234DB84E00E9CEDF /* Settings.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Settings.storyboard; sourceTree = "<group>"; };
+		B4CCF624235856EF0047F5FB /* LoginWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebservice.swift; sourceTree = "<group>"; };
+		B4CCF62823587CCC0047F5FB /* ForgotPasswordWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordWebservice.swift; sourceTree = "<group>"; };
+		B4CCF62C235891D60047F5FB /* SettingWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWebservice.swift; sourceTree = "<group>"; };
 		B4D6C017234DD40300D351E2 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		B4D6C01A234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSuperCarsViewController.swift; sourceTree = "<group>"; };
 		B4E019F8233B28A1001EBE65 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
@@ -420,18 +453,40 @@
 			path = Segoeui;
 			sourceTree = "<group>";
 		};
+		B42947982360394D007345B9 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B429479D23603AC6007345B9 /* HomeModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B429479923603952007345B9 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B429479B236039DA007345B9 /* HomeWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B429479A2360395A007345B9 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4C1BBE22345DDA700D2A074 /* HomeViewController.swift */,
+				B4382FC7234AF99600FDF560 /* HomeEventTableViewCell.swift */,
+				B4382FC8234AF99600FDF560 /* HomeEventTableViewCell.xib */,
+				B4382FCB234B0CE700FDF560 /* MemberCollectionViewCell.swift */,
+				B4382FCC234B0CE700FDF560 /* MemberCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B4382FCF234B20B700FDF560 /* EventDetails */ = {
 			isa = PBXGroup;
 			children = (
-				B4382FD0234B21DA00FDF560 /* EventDetailsViewController.swift */,
-				B427DAFC234EE670003ACB36 /* EventDescTableViewCell.swift */,
-				B427DAFD234EE670003ACB36 /* EventDescTableViewCell.xib */,
-				B427DB09234EEDD2003ACB36 /* EventCheckPointsTableViewCell.swift */,
-				B427DB0A234EEDD2003ACB36 /* EventCheckPointsTableViewCell.xib */,
-				B427DB0D234EFF03003ACB36 /* OtherDetailsTableViewCell.swift */,
-				B427DB0E234EFF03003ACB36 /* OtherDetailsTableViewCell.xib */,
-				B427DB11234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.swift */,
-				B427DB12234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.xib */,
+				B487A00C2361A37400053E31 /* View */,
+				B487A00B2361A36E00053E31 /* Webservice */,
+				B487A00A2361A36800053E31 /* Model */,
 			);
 			path = EventDetails;
 			sourceTree = "<group>";
@@ -444,6 +499,38 @@
 				B4382FD6234B2D8300FDF560 /* MemberGoingTableViewCell.xib */,
 			);
 			path = MemberGoingList;
+			sourceTree = "<group>";
+		};
+		B45E5F012358C53E0019C05B /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B45E5F032358C8A20019C05B /* ChangePasswordWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B45E5F022358C5460019C05B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4D6C017234DD40300D351E2 /* ChangePasswordViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B46A353F2358B23D00C7D58C /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B46A35412358B30300C7D58C /* ProfileWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B46A35402358B24900C7D58C /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4AF95A6234DA50600FE7F90 /* ProfileViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B4748554235038B100A4D489 /* NetworkManager */ = {
@@ -510,6 +597,7 @@
 		B47831FA233A344D0081735F /* SuperCarsMajlis */ = {
 			isa = PBXGroup;
 			children = (
+				B48BEB59235474DE00271B24 /* SuperCarsMajlis.entitlements */,
 				B478322E233A38100081735F /* AppDelegate */,
 				B478322F233A38300081735F /* Controllers */,
 				B4783230233A383A0081735F /* Managers */,
@@ -575,6 +663,7 @@
 		B4783230233A383A0081735F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				B48BEB5F2356D61400271B24 /* UserDefaultManager */,
 				B4748554235038B100A4D489 /* NetworkManager */,
 			);
 			path = Managers;
@@ -617,6 +706,92 @@
 			path = Utils;
 			sourceTree = "<group>";
 		};
+		B487A00A2361A36800053E31 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B487A00B2361A36E00053E31 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B487A00C2361A37400053E31 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4382FD0234B21DA00FDF560 /* EventDetailsViewController.swift */,
+				B427DAFC234EE670003ACB36 /* EventDescTableViewCell.swift */,
+				B427DAFD234EE670003ACB36 /* EventDescTableViewCell.xib */,
+				B427DB09234EEDD2003ACB36 /* EventCheckPointsTableViewCell.swift */,
+				B427DB0A234EEDD2003ACB36 /* EventCheckPointsTableViewCell.xib */,
+				B427DB0D234EFF03003ACB36 /* OtherDetailsTableViewCell.swift */,
+				B427DB0E234EFF03003ACB36 /* OtherDetailsTableViewCell.xib */,
+				B427DB11234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.swift */,
+				B427DB12234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B48BEB5A2356C8E700271B24 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B48BEB642356ED1200271B24 /* ApprovedMemberDetailModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B48BEB5B2356C8F200271B24 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B48BEB5D2356D17400271B24 /* RegisterApprovedMemberWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B48BEB5C2356C8F800271B24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4B84AD623420CB900607AF4 /* RegisterApprovedMemberViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B48BEB5F2356D61400271B24 /* UserDefaultManager */ = {
+			isa = PBXGroup;
+			children = (
+				B48BEB602356D61C00271B24 /* UserDefaultManager.swift */,
+			);
+			path = UserDefaultManager;
+			sourceTree = "<group>";
+		};
+		B48BEB6623570F2300271B24 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B48BEB6723570F3E00271B24 /* ApprovedMemberSupercarsWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B48BEB6E2358410900271B24 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B48BEB702358412400271B24 /* DocumentWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B48BEB6F2358411000271B24 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4C1FE0323435D2700A4581C /* DocumentViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
 		B48CC31E2341018A00A4D4D7 /* AlertViewController */ = {
 			isa = PBXGroup;
 			children = (
@@ -628,7 +803,8 @@
 		B48CC32123411FE500A4D4D7 /* Login */ = {
 			isa = PBXGroup;
 			children = (
-				B48CC32223411FF400A4D4D7 /* LoginViewController.swift */,
+				B4CCF623235856DE0047F5FB /* View */,
+				B4CCF622235856D70047F5FB /* Webservice */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -638,6 +814,8 @@
 			children = (
 				B498C34C23508F7800D073F8 /* CarBrands.swift */,
 				B4089B1823543BDF001E05E8 /* CarModels.swift */,
+				B48BEB622356DA4600271B24 /* RegisterModel.swift */,
+				B48BEB6A2357193300271B24 /* CarColors.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -661,15 +839,33 @@
 		B4AF95A5234DA4EB00FE7F90 /* Profile */ = {
 			isa = PBXGroup;
 			children = (
-				B4AF95A6234DA50600FE7F90 /* ProfileViewController.swift */,
+				B46A35402358B24900C7D58C /* View */,
+				B46A353F2358B23D00C7D58C /* Webservice */,
 			);
 			path = Profile;
+			sourceTree = "<group>";
+		};
+		B4B07A28235D6D0100F6EC06 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B4B07A2A235D6D6600F6EC06 /* ManagerSuperCarsWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B4B07A29235D6D0A00F6EC06 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4D6C01A234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B4B84AD0234205EB00607AF4 /* ForgotPassword */ = {
 			isa = PBXGroup;
 			children = (
-				B4B84AD12342060200607AF4 /* ForgotPasswordViewController.swift */,
+				B4CCF62723587CB30047F5FB /* View */,
+				B4CCF62623587CAB0047F5FB /* Webservice */,
 			);
 			path = ForgotPassword;
 			sourceTree = "<group>";
@@ -677,7 +873,9 @@
 		B4B84AD523420C7C00607AF4 /* RegisterApprovedMember */ = {
 			isa = PBXGroup;
 			children = (
-				B4B84AD623420CB900607AF4 /* RegisterApprovedMemberViewController.swift */,
+				B48BEB5C2356C8F800271B24 /* View */,
+				B48BEB5B2356C8F200271B24 /* Webservice */,
+				B48BEB5A2356C8E700271B24 /* Model */,
 			);
 			path = RegisterApprovedMember;
 			sourceTree = "<group>";
@@ -686,6 +884,7 @@
 			isa = PBXGroup;
 			children = (
 				B424F5FF23434D0700C8BEF6 /* View */,
+				B48BEB6623570F2300271B24 /* Webservice */,
 				B424F60023434D0D00C8BEF6 /* Model */,
 			);
 			path = ApprovedMemberSupercars;
@@ -694,11 +893,9 @@
 		B4C1BBE12345DD9000D2A074 /* Home */ = {
 			isa = PBXGroup;
 			children = (
-				B4C1BBE22345DDA700D2A074 /* HomeViewController.swift */,
-				B4382FC7234AF99600FDF560 /* HomeEventTableViewCell.swift */,
-				B4382FC8234AF99600FDF560 /* HomeEventTableViewCell.xib */,
-				B4382FCB234B0CE700FDF560 /* MemberCollectionViewCell.swift */,
-				B4382FCC234B0CE700FDF560 /* MemberCollectionViewCell.xib */,
+				B429479A2360395A007345B9 /* View */,
+				B429479923603952007345B9 /* Webservice */,
+				B42947982360394D007345B9 /* Model */,
 			);
 			path = Home;
 			sourceTree = "<group>";
@@ -706,9 +903,8 @@
 		B4C1BBE42345DDAB00D2A074 /* Settings */ = {
 			isa = PBXGroup;
 			children = (
-				B4C1BBE52345DDBA00D2A074 /* SettingsViewController.swift */,
-				B4382FD9234B446900FDF560 /* SettingsTableViewCell.swift */,
-				B4382FDA234B446900FDF560 /* SettingsTableViewCell.xib */,
+				B4CCF62B235891C10047F5FB /* View */,
+				B4CCF62A235891BB0047F5FB /* Webservice */,
 			);
 			path = Settings;
 			sourceTree = "<group>";
@@ -716,15 +912,67 @@
 		B4C1FE0223435D0C00A4581C /* ManageDocument */ = {
 			isa = PBXGroup;
 			children = (
-				B4C1FE0323435D2700A4581C /* DocumentViewController.swift */,
+				B48BEB6F2358411000271B24 /* View */,
+				B48BEB6E2358410900271B24 /* Webservice */,
 			);
 			path = ManageDocument;
+			sourceTree = "<group>";
+		};
+		B4CCF622235856D70047F5FB /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B4CCF624235856EF0047F5FB /* LoginWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B4CCF623235856DE0047F5FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B48CC32223411FF400A4D4D7 /* LoginViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4CCF62623587CAB0047F5FB /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B4CCF62823587CCC0047F5FB /* ForgotPasswordWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B4CCF62723587CB30047F5FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4B84AD12342060200607AF4 /* ForgotPasswordViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4CCF62A235891BB0047F5FB /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B4CCF62C235891D60047F5FB /* SettingWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B4CCF62B235891C10047F5FB /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4C1BBE52345DDBA00D2A074 /* SettingsViewController.swift */,
+				B4382FD9234B446900FDF560 /* SettingsTableViewCell.swift */,
+				B4382FDA234B446900FDF560 /* SettingsTableViewCell.xib */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 		B4D6C016234DD39500D351E2 /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
-				B4D6C017234DD40300D351E2 /* ChangePasswordViewController.swift */,
+				B45E5F022358C5460019C05B /* View */,
+				B45E5F012358C53E0019C05B /* Webservice */,
 			);
 			path = ChangePassword;
 			sourceTree = "<group>";
@@ -732,7 +980,8 @@
 		B4D6C019234DDD5200D351E2 /* ManageSuperCars */ = {
 			isa = PBXGroup;
 			children = (
-				B4D6C01A234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift */,
+				B4B07A29235D6D0A00F6EC06 /* View */,
+				B4B07A28235D6D0100F6EC06 /* Webservice */,
 			);
 			path = ManageSuperCars;
 			sourceTree = "<group>";
@@ -768,6 +1017,7 @@
 				B4EFC4E5233CAD5D000DC74A /* UIView+Extension.swift */,
 				B48CC31C234100F800A4D4D7 /* UIColor+Extension.swift */,
 				B4EDB4A6233E126B0051DA29 /* UITextField+Extension.swift */,
+				B48BEB6C235763E300271B24 /* String+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -1022,24 +1272,11 @@
 			files = (
 			);
 			inputFileListPaths = (
-			);
-			inputPaths = (
-				"${PODS_ROOT}/Target Support Files/Pods-SuperCarsMajlis/Pods-SuperCarsMajlis-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
-				"${BUILT_PRODUCTS_DIR}/IQKeyboardManagerSwift/IQKeyboardManagerSwift.framework",
-				"${BUILT_PRODUCTS_DIR}/MBProgressHUD/MBProgressHUD.framework",
-				"${BUILT_PRODUCTS_DIR}/SDWebImage/SDWebImage.framework",
-				"${BUILT_PRODUCTS_DIR}/SKPhotoBrowser/SKPhotoBrowser.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-SuperCarsMajlis/Pods-SuperCarsMajlis-frameworks-${CONFIGURATION}-input-files.xcfilelist",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputFileListPaths = (
-			);
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/IQKeyboardManagerSwift.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/MBProgressHUD.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SDWebImage.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SKPhotoBrowser.framework",
+				"${PODS_ROOT}/Target Support Files/Pods-SuperCarsMajlis/Pods-SuperCarsMajlis-frameworks-${CONFIGURATION}-output-files.xcfilelist",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1122,23 +1359,28 @@
 				B4C1FE0423435D2700A4581C /* DocumentViewController.swift in Sources */,
 				B4382FCD234B0CE700FDF560 /* MemberCollectionViewCell.swift in Sources */,
 				B424F60223434D2E00C8BEF6 /* SupercarsModel.swift in Sources */,
+				B45E5F042358C8A20019C05B /* ChangePasswordWebservice.swift in Sources */,
 				B498C34D23508F7800D073F8 /* CarBrands.swift in Sources */,
 				B4089B1923543BDF001E05E8 /* CarModels.swift in Sources */,
 				B4C1BBE62345DDBB00D2A074 /* SettingsViewController.swift in Sources */,
 				B4EDB4A7233E126B0051DA29 /* UITextField+Extension.swift in Sources */,
+				B48BEB632356DA4600271B24 /* RegisterModel.swift in Sources */,
 				B474855B235038B100A4D489 /* ErrorHandler.swift in Sources */,
 				B4382FDB234B446900FDF560 /* SettingsTableViewCell.swift in Sources */,
 				B427DB0B234EEDD2003ACB36 /* EventCheckPointsTableViewCell.swift in Sources */,
 				B4B84AD22342060200607AF4 /* ForgotPasswordViewController.swift in Sources */,
+				B46A35422358B30300C7D58C /* ProfileWebservice.swift in Sources */,
 				B4748559235038B100A4D489 /* APIConstant.swift in Sources */,
 				B4D6C01B234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift in Sources */,
 				B4B84AD723420CB900607AF4 /* RegisterApprovedMemberViewController.swift in Sources */,
 				B474855C235038B100A4D489 /* Connectivity.swift in Sources */,
+				B48BEB5E2356D17400271B24 /* RegisterApprovedMemberWebservice.swift in Sources */,
 				B4B84ADD23425AD700607AF4 /* SupercarsFooterTableViewCell.swift in Sources */,
 				B427DAFB234E2640003ACB36 /* EventRegistrationViewController.swift in Sources */,
 				B4382FC9234AF99600FDF560 /* HomeEventTableViewCell.swift in Sources */,
 				B4382FD4234B259300FDF560 /* MemberGoingListViewController.swift in Sources */,
 				B48CC3202341019F00A4D4D7 /* AlertViewController.swift in Sources */,
+				B429479E23603AC6007345B9 /* HomeModel.swift in Sources */,
 				B4EFC4E6233CAD5D000DC74A /* UIView+Extension.swift in Sources */,
 				B474856123504B7700A4D489 /* PastEventWebservice.swift in Sources */,
 				B4382FD7234B2D8300FDF560 /* MemberGoingTableViewCell.swift in Sources */,
@@ -1147,6 +1389,7 @@
 				B474854E234F34C100A4D489 /* CarCollectionViewCell.swift in Sources */,
 				B4783206233A344D0081735F /* SuperCarsMajlis.xcdatamodeld in Sources */,
 				B4EE4045233B8BEF008FD80D /* WalkthroughParentViewController.swift in Sources */,
+				B4CCF62D235891D60047F5FB /* SettingWebservice.swift in Sources */,
 				B427DB0F234EFF03003ACB36 /* OtherDetailsTableViewCell.swift in Sources */,
 				B40A1B0A233CBC7F0033BB82 /* PastEventTableViewCell.swift in Sources */,
 				B47831FC233A344D0081735F /* AppDelegate.swift in Sources */,
@@ -1154,29 +1397,39 @@
 				B4B84ADA2342209D00607AF4 /* ApprovedMemberSupercarsViewController.swift in Sources */,
 				B498C34923508A6200D073F8 /* RegisterWebservice.swift in Sources */,
 				B4AF95A7234DA50600FE7F90 /* ProfileViewController.swift in Sources */,
+				B48BEB652356ED1200271B24 /* ApprovedMemberDetailModel.swift in Sources */,
 				B48CC32323411FF400A4D4D7 /* LoginViewController.swift in Sources */,
 				B4EE4046233B8BEF008FD80D /* WalkthroughViewController.swift in Sources */,
 				B4EE403A233B87FC008FD80D /* FunctionConstants.swift in Sources */,
 				B4D6C018234DD40300D351E2 /* ChangePasswordViewController.swift in Sources */,
 				B4EE403C233B888A008FD80D /* Constants.swift in Sources */,
+				B429479C236039DA007345B9 /* HomeWebservice.swift in Sources */,
 				B40A1B07233CB8B30033BB82 /* PastEventViewController.swift in Sources */,
 				B4382FD1234B21DA00FDF560 /* EventDetailsViewController.swift in Sources */,
+				B48BEB712358412400271B24 /* DocumentWebservice.swift in Sources */,
 				B4EDB4A5233E018F0051DA29 /* PickerViewController.swift in Sources */,
 				B4B84AE12343091000607AF4 /* SupercarsTableViewCell.swift in Sources */,
 				B4E019F9233B28A1001EBE65 /* AppDelegateExtension.swift in Sources */,
 				B498C344235064E300D073F8 /* PastEventListModel.swift in Sources */,
 				B40A1B1D233DCE3B0033BB82 /* RegisterViewController.swift in Sources */,
+				B48BEB6B2357193300271B24 /* CarColors.swift in Sources */,
 				B4EE4042233B8ACA008FD80D /* SplashViewController.swift in Sources */,
 				B40A1B14233CDC550033BB82 /* BecomeMemberViewController.swift in Sources */,
 				B4748552234F34DD00A4D489 /* SelectedCarCollectionViewCell.swift in Sources */,
+				B48BEB6823570F3E00271B24 /* ApprovedMemberSupercarsWebservice.swift in Sources */,
+				B4CCF62923587CCC0047F5FB /* ForgotPasswordWebservice.swift in Sources */,
 				B4C1BBE32345DDA700D2A074 /* HomeViewController.swift in Sources */,
 				B474855A235038B100A4D489 /* Network.swift in Sources */,
 				B427DAFE234EE671003ACB36 /* EventDescTableViewCell.swift in Sources */,
+				B48BEB6D235763E300271B24 /* String+Extension.swift in Sources */,
+				B48BEB612356D61C00271B24 /* UserDefaultManager.swift in Sources */,
 				B415DD9A23450C4A008F4399 /* ImagePicker.swift in Sources */,
+				B4B07A2B235D6D6600F6EC06 /* ManagerSuperCarsWebservice.swift in Sources */,
 				B427DB13234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.swift in Sources */,
 				B40A1B1A233DC0E30033BB82 /* WebViewController.swift in Sources */,
 				B48CC31D234100F900A4D4D7 /* UIColor+Extension.swift in Sources */,
 				B415DD9D2345ABA4008F4399 /* TabBarViewController.swift in Sources */,
+				B4CCF625235856EF0047F5FB /* LoginWebservice.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1342,6 +1595,7 @@
 			baseConfigurationReference = 8ED761D56DD017F60E1AC0B9 /* Pods-SuperCarsMajlis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SuperCarsMajlis/SuperCarsMajlis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 728A4R9BM6;
@@ -1363,6 +1617,7 @@
 			baseConfigurationReference = 5A86E3975E09B728B6CB438A /* Pods-SuperCarsMajlis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = SuperCarsMajlis/SuperCarsMajlis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 728A4R9BM6;

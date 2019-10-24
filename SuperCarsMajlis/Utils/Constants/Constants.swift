@@ -10,18 +10,26 @@ import Foundation
 import UIKit
 
 class Constants: NSObject {
+    
     /**
-    MARK: - App Constants
-    */
+     MARK: - App Constants
+     */
     static let kAppDelegate    = UIApplication.shared.delegate as! AppDelegate
     static let kUserDefault    = UserDefaults.standard
     static let kScreenWidth    = UIScreen.main.bounds.width
     static let kScreenHeight   = UIScreen.main.bounds.height
-        //end
+    //end
     
     /**
-    MARK: - Storyboard Constants
-    */
+     MARK: - UserDefault Constants
+     */
+    static let kAccessModel    = "accessModel"
+    static let kUserState      = "userState"
+    //end
+    
+    /**
+     MARK: - Storyboard Constants
+     */
     static let walkthroughStoryboard      = UIStoryboard(name: "Walkthrough", bundle: nil)
     static let loginAndSignupStoryboard   = UIStoryboard(name: "LoginAndSignup", bundle: nil)
     static let commonStoryboard           = UIStoryboard(name: "Common", bundle: nil)
