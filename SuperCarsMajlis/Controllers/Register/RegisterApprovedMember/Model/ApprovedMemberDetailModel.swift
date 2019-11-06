@@ -62,7 +62,6 @@ struct ApprovedUsersList : Codable {
         case email = "email"
         case phone = "phone"
         case tiers = "tiers"
-//        case status = "status"
         case img = "img"
         case docs = "docs"
         case licenses = "licenses"

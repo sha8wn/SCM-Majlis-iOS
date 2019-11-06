@@ -73,15 +73,15 @@ class ApprovedMemberSupercarsViewController: UIViewController {
         for model in self.dataArray{
             let (isValidate, errorMessage) = self.getValidate(model: model)
             if isValidate{
-                if model.carRegistraionFrontImage == nil && model.carRegistraionBackImage == nil{
-                }else{
-                    if model.carRegistraionFrontImage != nil && model.carRegistraionBackImage != nil{
-                        
-                    }else{
-                        AlertViewController.openAlertView(title: "Error", message: "Please Add Car Registration Document from both Side (Front and Back)", buttons: ["OK"])
-                        break
-                    }
-                }
+//                if model.carRegistraionFrontImage == nil && model.carRegistraionBackImage == nil{
+//                }else{
+//                    if model.carRegistraionFrontImage != nil && model.carRegistraionBackImage != nil{
+//
+//                    }else{
+//                        AlertViewController.openAlertView(title: "Error", message: "Please Add Car Registration Document from both Side (Front and Back)", buttons: ["OK"])
+//                        break
+//                    }
+//                }
                 
                 var carImageArray: [String] = []
                 //Car Image
@@ -161,6 +161,17 @@ extension ApprovedMemberSupercarsViewController: UITableViewDelegate, UITableVie
             cell.btnCrossCar.tag = indexPath.row
             cell.btnDelete.tag = indexPath.row
             
+            //SETUP DELETE BUTTON
+            if indexPath.row == 0{
+//            if self.dataArray.count == 1{
+                cell.btnDelete.isHidden = true
+                cell.deleteheightConstraint.constant = 0
+            }else{
+                cell.btnDelete.isHidden = false
+                cell.deleteheightConstraint.constant = 50
+            }
+            
+            
             cell.btnBrand.addTarget(self, action: #selector(btnBrandTapped(sender:)), for: .touchUpInside)
             cell.btnModel.addTarget(self, action: #selector(btnModelTapped(sender:)), for: .touchUpInside)
             cell.btnColor.addTarget(self, action: #selector(btnColorTapped(sender:)), for: .touchUpInside)
@@ -215,38 +226,45 @@ extension ApprovedMemberSupercarsViewController: UITableViewDelegate, UITableVie
     }
     
     @objc func btnCRFrontTapped(sender: UIButton){
-        ImagePicker.openImagePicker { (image) in
-            var model = self.dataArray[sender.tag]
-            model.carRegistraionFrontImage = image
-            model.isCarRegistraionFrontImageEdit = true
-            self.dataArray[sender.tag] = model
-            self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+        var model = self.dataArray[sender.tag]
+        if model.carRegistraionFrontImage == nil{
+            ImagePicker.openImagePicker { (image) in
+                model.carRegistraionFrontImage = image
+                model.isCarRegistraionFrontImageEdit = true
+                self.dataArray[sender.tag] = model
+                self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+            }
         }
     }
     
     @objc func btnCRBackTapped(sender: UIButton){
-        ImagePicker.openImagePicker { (image) in
-            var model = self.dataArray[sender.tag]
-            model.carRegistraionBackImage = image
-            model.isCarRegistraionBackImageEdit = true
-            self.dataArray[sender.tag] = model
-            self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+        var model = self.dataArray[sender.tag]
+        if model.carRegistraionBackImage == nil{
+            ImagePicker.openImagePicker { (image) in
+                model.carRegistraionBackImage = image
+                model.isCarRegistraionBackImageEdit = true
+                self.dataArray[sender.tag] = model
+                self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+            }
         }
     }
     
     @objc func btnCarImageTapped(sender: UIButton){
-        ImagePicker.openImagePicker { (image) in
-            var model = self.dataArray[sender.tag]
-            model.carImage = image
-            model.isCarImageEdit = true
-            self.dataArray[sender.tag] = model
-            self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+        var model = self.dataArray[sender.tag]
+        if model.carImage == nil{
+            ImagePicker.openImagePicker { (image) in
+                model.carImage = image
+                model.isCarImageEdit = true
+                self.dataArray[sender.tag] = model
+                self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+            }
         }
     }
     
     @objc func btnCrossFrontTapped(sender: UIButton){
         var model = self.dataArray[sender.tag]
         model.carRegistraionFrontImage = nil
+        model.carRegistraionFrontImageURL = nil
         model.isCarRegistraionFrontImageEdit = true
         self.dataArray[sender.tag] = model
         self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
@@ -255,6 +273,7 @@ extension ApprovedMemberSupercarsViewController: UITableViewDelegate, UITableVie
     @objc func btnCrossBackTapped(sender: UIButton){
         var model = self.dataArray[sender.tag]
         model.carRegistraionBackImage = nil
+        model.carRegistraionBackImageURL = nil
         model.isCarRegistraionBackImageEdit = true
         self.dataArray[sender.tag] = model
         self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
@@ -263,6 +282,7 @@ extension ApprovedMemberSupercarsViewController: UITableViewDelegate, UITableVie
     @objc func btnCrossCarImageTapped(sender: UIButton){
         var model = self.dataArray[sender.tag]
         model.carImage = nil
+        model.carImageURL = nil
         model.isCarImageEdit = true
         self.dataArray[sender.tag] = model
         self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)

@@ -131,7 +131,7 @@ extension ManagerSuperCarsViewController{
         Network.shared.request(urlPath: urlPath, methods: .delete, authType: .auth) { (response, message, statusCode, status) in
             FunctionConstants.getInstance().hideLoader(view: self)
             if status == .Success{
-                AlertViewController.openAlertView(title: "Suceess", message: "Supercar has been successfully removed", buttons: ["Ok"]) { (index) in
+                AlertViewController.openAlertView(title: "Success", message: "Supercar has been successfully removed", buttons: ["Ok"]) { (index) in
                     self.callGetSuperCarsListAPI()
                 }
             }else{

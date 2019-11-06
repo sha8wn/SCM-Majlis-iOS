@@ -26,9 +26,29 @@
 				<string>supercarsmajlisapp</string>
 			</array>
 		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>example</string>
+			</array>
+		</dict>
+		<dict>
+			<key>CFBundleTypeRole</key>
+			<string>Editor</string>
+			<key>CFBundleURLSchemes</key>
+			<array>
+				<string>scm</string>
+			</array>
+		</dict>
 	</array>
 	<key>CFBundleVersion</key>
 	<string>1</string>
+	<key>LSApplicationQueriesSchemes</key>
+	<array>
+		<string>comgooglemaps</string>
+	</array>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
 	<key>NSAppTransportSecurity</key>
@@ -38,15 +58,18 @@
 	</dict>
 	<key>NSCameraUsageDescription</key>
 	<string>SCM requires camera access to pick images.</string>
+	<key>NSLocationUsageDescription</key>
+	<string>SCM requires to access your current location for Event.</string>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>SCM use this to personalize your app expirence. </string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>SCM requires photo library access to pick images.</string>
+	<key>UIBackgroundModes</key>
+	<array>
+		<string>location</string>
+	</array>
 	<key>UILaunchStoryboardName</key>
 	<string>LaunchScreen</string>
-	<key>branch_key</key>
-	<dict>
-		<key>test</key>
-		<string>key_test_noIAWPiHxxtanjoDJnQaggnhFxaW0lNX</string>
-	</dict>
 	<key>UIMainStoryboardFile</key>
 	<string>Walkthrough</string>
 	<key>UIRequiredDeviceCapabilities</key>

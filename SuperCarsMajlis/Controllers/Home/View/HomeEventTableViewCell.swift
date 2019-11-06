@@ -14,7 +14,7 @@ protocol MemberGoingDelegate {
 }
 
 class HomeEventTableViewCell: UITableViewCell {
-
+    
     @IBOutlet weak var collectionView      : UICollectionView!
     @IBOutlet weak var collectionViewWidth : NSLayoutConstraint!
     @IBOutlet weak var imgLive             : UIImageView!
@@ -42,10 +42,10 @@ class HomeEventTableViewCell: UITableViewCell {
         
         // Initialization code
     }
-
+    
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
-
+        
         // Configure the view for the selected state
     }
     
@@ -58,8 +58,8 @@ class HomeEventTableViewCell: UITableViewCell {
         
         // Member Going
         if let userArray = model.users{
-            if userArray.count > 5{
-                self.memberGoingArray = Array(userArray.prefix(5))
+            if userArray.count > 4{
+                self.memberGoingArray = Array(userArray.prefix(4))
             }else{
                 self.memberGoingArray = userArray
             }
@@ -73,23 +73,25 @@ class HomeEventTableViewCell: UITableViewCell {
         }
         
         //Amount
-        if let fee = model.fee{
+        if let fee = dataModel.fee{
             if fee != 0{
                 self.lblAmount.text = "AED \(fee)"
+                self.lblAmount.textColor = .black
                 self.viewAmountBG.backgroundColor = .white
             }else{
                 self.lblAmount.text = "Free"
+                self.lblAmount.textColor = .white
                 self.viewAmountBG.backgroundColor = UIColor.gradient(from: UIColor(red:93.0/255.0, green:194.0/255.0 ,blue:255.0/255.0 , alpha:1.0), to: UIColor(red:26.0/255.0, green:137.0/255.0 ,blue:255.0/255.0 , alpha:1.0), withHeight: Int(self.viewAmountBG.frame.height))
             }
         }else{
             self.lblAmount.text = "Free"
+            self.lblAmount.textColor = .white
             self.viewAmountBG.backgroundColor = UIColor.gradient(from: UIColor(red:93.0/255.0, green:194.0/255.0 ,blue:255.0/255.0 , alpha:1.0), to: UIColor(red:26.0/255.0, green:137.0/255.0 ,blue:255.0/255.0 , alpha:1.0), withHeight: Int(self.viewAmountBG.frame.height))
-            
         }
         
         //Date
         self.lblDateAndTime.text = String(format: "%@\n%@", model.date ?? "", model.start ?? "")
-            
+        
         //Location
         self.lblLocation.text = model.location ?? ""
         
@@ -97,8 +99,10 @@ class HomeEventTableViewCell: UITableViewCell {
         DispatchQueue.main.async {
             self.imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
             self.imgView.sd_setImage(with: URL(string: model.img ?? ""), placeholderImage: UIImage(named: ""), options: .handleCookies, progress: nil, completed: nil)
+            
+            self.collectionView.reloadData()
         }
-       
+        
         
         //Remaning Spot
         let totalSpot = model.limit_guests ?? 0
@@ -116,7 +120,13 @@ class HomeEventTableViewCell: UITableViewCell {
             }
             print("totalOccupiedSpot, ", totalOccupiedSpot)
             vacentSpot = totalSpot - totalOccupiedSpot
-            self.lblNoOfGoing.text = "\(vacentSpot) spots remaining"
+            
+            if vacentSpot > 0{
+                self.lblNoOfGoing.text = "\(vacentSpot) spots remaining"
+            }else{
+                self.lblNoOfGoing.text = "Fully Booked"
+            }
+            
         }else{
             self.imgViewPeople.isHidden = true
             self.lblNoOfGoing.text = ""
@@ -126,22 +136,22 @@ class HomeEventTableViewCell: UITableViewCell {
 
 /*
  MARK: - UICollectionView Delegate and DataSources
-*/
+ */
 extension HomeEventTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         if self.memberGoingArray.count > 0{
-            return self.memberGoingArray.count
+            return self.memberGoingArray.count + 1
         }else{
             return 0
         }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let model = self.memberGoingArray[indexPath.item]
+        
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "MemberCollectionViewCell", for: indexPath) as! MemberCollectionViewCell
         
-       
-        if indexPath.item == self.memberGoingArray.count - 1{
+        
+        if indexPath.item == self.memberGoingArray.count{
             cell.lblTitle.isHidden = false
             if self.dataModel != nil{
                 cell.lblTitle.text = String(format: "%@ going", String(self.dataModel.users!.count))
@@ -151,15 +161,19 @@ extension HomeEventTableViewCell: UICollectionViewDelegate, UICollectionViewData
             cell.bgView.layer.borderWidth = 1
             cell.bgView.layer.borderColor = UIColor.white.cgColor
             cell.bgView.backgroundColor = UIColor(named: "customGreyColor")
+            cell.imgView.image = UIImage(named: "")
         }else{
+            let model = self.memberGoingArray[indexPath.item]
             cell.lblTitle.isHidden = true
             cell.bgView.layer.cornerRadius = cell.frame.width / 2
             cell.bgView.layer.borderWidth = 0
             cell.bgView.layer.borderColor = UIColor.clear.cgColor
-            
-            //Image
-            self.imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
-            self.imgView.sd_setImage(with: URL(string: model.img ?? ""), placeholderImage: UIImage(named: ""), options: .highPriority, progress: nil, completed: nil)
+            cell.bgView.backgroundColor = UIColor.clear
+            DispatchQueue.main.async {
+                //Image
+                cell.imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
+                cell.imgView.sd_setImage(with: URL(string: model.img ?? ""), placeholderImage: UIImage(named: "ic_Default_Image"), options: .highPriority, progress: nil, completed: nil)
+            }
         }
         
         return cell
@@ -177,7 +191,7 @@ extension HomeEventTableViewCell: UICollectionViewDelegate, UICollectionViewData
                         layout collectionViewLayout: UICollectionViewLayout,
                         sizeForItemAt indexPath: IndexPath) -> CGSize {
         if self.memberGoingArray.count > 0{
-            if indexPath.item == self.memberGoingArray.count - 1{
+            if indexPath.item == self.memberGoingArray.count{
                 return CGSize(width: 80, height: 30)
             }else{
                 return CGSize(width: 30, height: 30)

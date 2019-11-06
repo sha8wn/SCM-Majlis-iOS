@@ -58,7 +58,7 @@ public class Network: NSObject
             print("---------------------")
             print("URL: ", "\(urlPath)")
             print("HttpHeaders: ", "\(HttpHeaders)")
-            debugPrint("Request: ", params ?? "")
+//            debugPrint("Request: ", params ?? "")
 
         Alamofire.SessionManager.default.session.configuration.timeoutIntervalForRequest = 120
             Alamofire.request(urlPath, method: methods, parameters: params, encoding: JSONEncoding.default, headers: HttpHeaders).responseJSON { (responseObject) -> Void in

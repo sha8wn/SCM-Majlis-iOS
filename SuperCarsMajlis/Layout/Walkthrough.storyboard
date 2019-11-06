@@ -20,7 +20,7 @@
         <!--Splash View Controller-->
         <scene sceneID="iaZ-ga-6Bc">
             <objects>
-                <viewController storyboardIdentifier="SplashViewController" id="OmX-GI-xJ9" customClass="SplashViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="SplashViewController" id="OmX-GI-xJ9" customClass="SplashViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Yrr-ge-SCM">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -47,7 +47,7 @@
         <!--Walkthrough Parent View Controller-->
         <scene sceneID="mGU-HM-0uj">
             <objects>
-                <viewController storyboardIdentifier="WalkthroughParentViewController" id="Y5i-SV-c1r" customClass="WalkthroughParentViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughParentViewController" id="Y5i-SV-c1r" customClass="WalkthroughParentViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="cNJ-O7-dGI">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -114,7 +114,7 @@
         <!--Walkthrough View Controller-->
         <scene sceneID="U8v-CY-Xo2">
             <objects>
-                <viewController storyboardIdentifier="WalkthroughViewController" id="zuQ-Pa-aa5" customClass="WalkthroughViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WalkthroughViewController" id="zuQ-Pa-aa5" customClass="WalkthroughViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eDH-Ri-Gpi">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -172,7 +172,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="iIb-AP-j4t">
             <objects>
-                <viewController storyboardIdentifier="WelcomeViewController" id="hZI-cF-UlI" customClass="WelcomeViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WelcomeViewController" id="hZI-cF-UlI" customClass="WelcomeViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="zct-iV-vgS">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -254,7 +254,7 @@
     <resources>
         <image name="ic_Background_Black" width="375" height="812"/>
         <image name="ic_Background_Net" width="375" height="812"/>
-        <image name="ic_Splash" width="375" height="812"/>
+        <image name="ic_Splash" width="320" height="568"/>
         <image name="ic_Walkthrough_Next" width="57.5" height="56"/>
         <image name="ic_Welcome_Logo" width="305" height="266"/>
         <namedColor name="customGreyColor">

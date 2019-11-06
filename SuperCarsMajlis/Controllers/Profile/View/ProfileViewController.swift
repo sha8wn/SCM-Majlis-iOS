@@ -71,7 +71,7 @@ class ProfileViewController: UIViewController {
         else if(self.txtPhone.text == ""){
             error = (false, "Please enter phone number")
         }
-        else if(self.txtPhone.text!.count < 9){
+        else if(self.txtPhone.text!.count < 7) || (self.txtPhone.text!.count > 12){
             error = (false, "Please enter valid phone number")
         }
         else{

@@ -108,7 +108,8 @@ extension HomeViewController: UITableViewDelegate, UITableViewDataSource{
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let vc = Constants.eventStoryboard.instantiateViewController(withIdentifier: "EventDetailsViewController") as! EventDetailsViewController
-        vc.dataModel = self.dataArray[indexPath.row]
+        let model = self.dataArray[indexPath.row]
+        vc.eventId = model.id ?? 0
         self.navigationController?.pushViewController(vc, animated: true)
     }
 }

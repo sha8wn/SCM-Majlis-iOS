@@ -36,6 +36,11 @@ let kLoginAPI                      = "/_api/user_auth/"
 let kForgotPasswordAPI             = "/_api/user_remind/"
 let kChangePasswordAPI             = "/_api/user_password/"
 let kEventListAPI                  = "/_api/events/"
+let kGetCheckPointAPI              = "/_api/checkpoints/"
+let kEventRegisterAPI              = "/_api/reservations/"
+let kUpdateCheckPointAPI           = "/_api/reservation_checks/"
+let kGetPromotionAPI               = "/_api/promotions/"
+let kRedeemAPI                     = "/_api/promotions_code/"
 
 //DEV
 var kBaseURL                       = "https://scmajlis.ae"

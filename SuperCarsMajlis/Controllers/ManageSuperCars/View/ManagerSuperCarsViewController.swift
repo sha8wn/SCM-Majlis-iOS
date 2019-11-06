@@ -57,7 +57,7 @@ class ManagerSuperCarsViewController: UIViewController {
         }
         return error
     }
-    
+
     /*
      // MARK: - Navigation
      
@@ -76,26 +76,26 @@ class ManagerSuperCarsViewController: UIViewController {
         for model in self.dataArray{
             let (isValidate, errorMessage) = self.getValidate(model: model)
             if isValidate{
-                var error: Bool = false
-                if model.carRegistraionFrontImage == nil && model.carRegistraionBackImage == nil || model.carRegistraionFrontImageURL == nil && model.carRegistraionBackImageURL == nil{
-                }else{
-                    if model.carRegistraionFrontImage != nil && model.carRegistraionBackImage != nil || model.carRegistraionFrontImageURL != nil && model.carRegistraionBackImageURL != nil{
-                        error = false
-                    }else{
-                        error = true
-                    }
-                }
-                
-                if error {
-                    AlertViewController.openAlertView(title: "Error", message: "Please Add Car Registration Document from both Side (Front and Back)", buttons: ["OK"])
-                }else{
+//                var error: Bool = false
+//                if model.carRegistraionFrontImage == nil && model.carRegistraionBackImage == nil || model.carRegistraionFrontImageURL == nil && model.carRegistraionBackImageURL == nil{
+//                }else{
+//                    if model.carRegistraionFrontImage != nil && model.carRegistraionBackImage != nil || model.carRegistraionFrontImageURL != nil && model.carRegistraionBackImageURL != nil{
+//                        error = false
+//                    }else{
+//                        error = true
+//                    }
+//                }
+//
+//                if error {
+//                    AlertViewController.openAlertView(title: "Error", message: "Please Add Car Registration Document from both Side (Front and Back)", buttons: ["OK"])
+//                    return
+//                }else{
                     var carImageArray: [String] = []
                     //Car Image
                     if let carImage = model.carImage{
                         let carImageData: Data =  carImage.jpegData(compressionQuality: 0.25)!
                         carImageArray = [carImageData.base64EncodedString()]
                     }
-                    
                     var docsImageArray: [String] = []
                     //Docs Image
                     if let frontImage = model.carRegistraionFrontImage{
@@ -124,18 +124,17 @@ class ManagerSuperCarsViewController: UIViewController {
                                                  imageArray: carImageArray,
                                                  docsArray: docsImageArray)
                     }
-                }
-                
-                
+//                }
             }else{
                 AlertViewController.openAlertView(title: "Error", message: errorMessage, buttons: ["OK"])
-                break
+                return
             }
         }
         
         self.dispatchGroup.notify(queue: .main) {
             AlertViewController.openAlertView(title: "Success", message: "SuperCars Updated Successfully!", buttons: ["OK"]) { (index) in
-                self.callGetSuperCarsListAPI()
+//                self.callGetSuperCarsListAPI()
+                self.navigationController?.popViewController(animated: true)
             }
         }
     }
@@ -241,38 +240,45 @@ extension ManagerSuperCarsViewController: UITableViewDelegate, UITableViewDataSo
     }
     
     @objc func btnCRFrontTapped(sender: UIButton){
-        ImagePicker.openImagePicker { (image) in
-            var model = self.dataArray[sender.tag]
-            model.carRegistraionFrontImage = image
-            model.isCarRegistraionFrontImageEdit = true
-            self.dataArray[sender.tag] = model
-            self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+        var model = self.dataArray[sender.tag]
+        if model.carRegistraionFrontImageURL == nil && model.carRegistraionFrontImage == nil{
+            ImagePicker.openImagePicker { (image) in
+                model.carRegistraionFrontImage = image
+                model.isCarRegistraionFrontImageEdit = true
+                self.dataArray[sender.tag] = model
+                self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+            }
         }
     }
     
     @objc func btnCRBackTapped(sender: UIButton){
-        ImagePicker.openImagePicker { (image) in
-            var model = self.dataArray[sender.tag]
-            model.carRegistraionBackImage = image
-            model.isCarRegistraionBackImageEdit = true
-            self.dataArray[sender.tag] = model
-            self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+        var model = self.dataArray[sender.tag]
+        if model.carRegistraionBackImageURL == nil && model.carRegistraionBackImage == nil{
+            ImagePicker.openImagePicker { (image) in
+                model.carRegistraionBackImage = image
+                model.isCarRegistraionBackImageEdit = true
+                self.dataArray[sender.tag] = model
+                self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+            }
         }
     }
     
     @objc func btnCarImageTapped(sender: UIButton){
-        ImagePicker.openImagePicker { (image) in
-            var model = self.dataArray[sender.tag]
-            model.carImage = image
-            model.isCarImageEdit = true
-            self.dataArray[sender.tag] = model
-            self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+        var model = self.dataArray[sender.tag]
+        if model.carImageURL == nil && model.carImage == nil{
+            ImagePicker.openImagePicker { (image) in
+                model.carImage = image
+                model.isCarImageEdit = true
+                self.dataArray[sender.tag] = model
+                self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+            }
         }
     }
     
     @objc func btnCrossFrontTapped(sender: UIButton){
         var model = self.dataArray[sender.tag]
         model.carRegistraionFrontImage = nil
+        model.carRegistraionFrontImageURL = nil
         model.isCarRegistraionFrontImageEdit = true
         var array: [String] = []
         array.append(model.carRegistraionFront_Id ?? "")
@@ -285,6 +291,7 @@ extension ManagerSuperCarsViewController: UITableViewDelegate, UITableViewDataSo
         var model = self.dataArray[sender.tag]
         model.carRegistraionBackImage = nil
         model.isCarRegistraionBackImageEdit = true
+        model.carRegistraionBackImageURL = nil
         var array: [String] = []
         array.append(model.carRegistraionBack_Id ?? "")
         model.deleted_Doc_Array = (model.deleted_Doc_Array ?? []) + array
@@ -296,6 +303,7 @@ extension ManagerSuperCarsViewController: UITableViewDelegate, UITableViewDataSo
         var model = self.dataArray[sender.tag]
         model.carImage = nil
         model.isCarImageEdit = true
+        model.carImageURL = nil
         var array: [String] = []
         array.append(model.carImage_Id ?? "")
         model.deleted_Car_Array = (model.deleted_Car_Array ?? []) + array
@@ -306,7 +314,7 @@ extension ManagerSuperCarsViewController: UITableViewDelegate, UITableViewDataSo
     @objc func btnDeleteTapped(sender: UIButton){
         let model = self.dataArray[sender.tag]
         if model.car_Id != nil{
-            AlertViewController.openAlertView(title: "Warning", message: String(format: "Are you sure you want to delete %@ brand %@ model", model.brand ?? "", model.model ?? ""), buttons: ["Cancle", "Delete"]) { (index) in
+            AlertViewController.openAlertView(title: "Warning", message: String(format: "Are you sure you want to delete %@ %@", model.brand ?? "", model.model ?? ""), buttons: ["Cancle", "Delete"]) { (index) in
                 if index == 0{
                     
                 }else{

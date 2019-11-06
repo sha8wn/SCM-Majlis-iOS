@@ -10,7 +10,6 @@ target 'SuperCarsMajlis' do
   pod 'SDWebImage'
   pod 'MBProgressHUD'
   pod 'SKPhotoBrowser'
-  pod 'Branch'
   
   # Pods for SuperCarsMajlis
 

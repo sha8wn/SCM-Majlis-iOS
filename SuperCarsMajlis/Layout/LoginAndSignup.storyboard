@@ -26,7 +26,7 @@
         <!--Choose User Type View Controller-->
         <scene sceneID="Fdj-3w-CXe">
             <objects>
-                <viewController storyboardIdentifier="ChooseUserTypeViewController" id="VDK-0F-paJ" customClass="ChooseUserTypeViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChooseUserTypeViewController" id="VDK-0F-paJ" customClass="ChooseUserTypeViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="5PL-oR-lNj">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -155,7 +155,7 @@
         <!--Become Member View Controller-->
         <scene sceneID="iT8-Su-qno">
             <objects>
-                <viewController storyboardIdentifier="BecomeMemberViewController" id="Fgb-hL-n7J" customClass="BecomeMemberViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="BecomeMemberViewController" id="Fgb-hL-n7J" customClass="BecomeMemberViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="BuE-Ma-D8b">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -242,7 +242,7 @@
         <!--Register View Controller-->
         <scene sceneID="ySS-tC-eQG">
             <objects>
-                <viewController storyboardIdentifier="RegisterViewController" id="vY8-HW-LA8" customClass="RegisterViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterViewController" id="vY8-HW-LA8" customClass="RegisterViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="K6S-h7-J50">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -604,7 +604,7 @@
         <!--Login View Controller-->
         <scene sceneID="BLB-7f-dDs">
             <objects>
-                <viewController storyboardIdentifier="LoginViewController" id="2N5-lg-eDC" customClass="LoginViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="2N5-lg-eDC" customClass="LoginViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ca4-ko-IA1">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -782,7 +782,7 @@
         <!--Forgot Password View Controller-->
         <scene sceneID="vta-d3-1Dw">
             <objects>
-                <viewController storyboardIdentifier="ForgotPasswordViewController" id="mpi-WB-34d" customClass="ForgotPasswordViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ForgotPasswordViewController" id="mpi-WB-34d" customClass="ForgotPasswordViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="hDb-fC-gMl">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

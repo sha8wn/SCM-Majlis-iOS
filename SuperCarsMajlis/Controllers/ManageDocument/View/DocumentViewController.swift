@@ -34,7 +34,6 @@ class DocumentViewController: UIViewController {
     @IBOutlet var btnEmiratesFrontCross  : UIButton!
     @IBOutlet var btnEmiratesBackCross   : UIButton!
     
-    
     @IBOutlet var btnDriversFront        : UIButton!
     @IBOutlet var btnDriversBack         : UIButton!
     @IBOutlet var btnDriversFrontCross   : UIButton!
@@ -52,6 +51,9 @@ class DocumentViewController: UIViewController {
     var isEmiratesBackEdit               : Bool                     = false
     var isDriverFrontEdit                : Bool                     = false
     var isDriverBackEdit                 : Bool                     = false
+    
+    var uploadDocArray                   : [UIImage]                = []
+    var uploadLicenseArray               : [UIImage]                = []
     
     var deleteDocArray                   : [String]                 = []
     var deleteLicenseArray               : [String]                 = []
@@ -99,7 +101,7 @@ class DocumentViewController: UIViewController {
                             self.btnEmiratesFront.sd_imageIndicator = SDWebImageActivityIndicator.white
                             self.btnEmiratesFront.sd_setBackgroundImage(with: URL(string: frontImage), for: .normal, completed: nil)
                             self.emiratesFront_Id = "\(model.n!)"
-                            self.isEmiratesFrontEdit = true
+                            self.isEmiratesFrontEdit = false
                             self.btnEmiratesFrontCross.isHidden = false
                         }else{
                             self.btnEmiratesFront.setBackgroundImage(UIImage(named: ""), for: .normal)
@@ -109,7 +111,7 @@ class DocumentViewController: UIViewController {
                         if let backImage = model.img{
                             self.btnEmiratesBack.sd_imageIndicator = SDWebImageActivityIndicator.white
                             self.btnEmiratesBack.sd_setBackgroundImage(with: URL(string: backImage), for: .normal, completed: nil)
-                            self.isEmiratesBackEdit = true
+                            self.isEmiratesBackEdit = false
                             self.emiratesBack_Id = "\(model.n!)"
                             self.btnEmiratesBackCross.isHidden = false
                         }else{
@@ -132,6 +134,7 @@ class DocumentViewController: UIViewController {
                             self.btnDriversFront.sd_setBackgroundImage(with: URL(string: frontImage), for: .normal, completed: nil)
                             self.driverFront_Id = "\(model.n!)"
                             self.btnDriversFrontCross.isHidden = false
+                            self.isDriverFrontEdit = false
                         }else{
                             self.btnDriversFront.setBackgroundImage(UIImage(named: ""), for: .normal)
                             self.btnDriversFrontCross.isHidden = true
@@ -142,6 +145,7 @@ class DocumentViewController: UIViewController {
                             self.btnDriversBack.sd_setBackgroundImage(with: URL(string: backImage), for: .normal, completed: nil)
                             self.driverBack_Id = "\(model.n!)"
                             self.btnDriversBackCross.isHidden = false
+                            self.isDriverBackEdit = false
                         }else{
                             self.btnDriversBack.setBackgroundImage(UIImage(named: ""), for: .normal)
                             self.btnDriversBackCross.isHidden = true
@@ -171,99 +175,126 @@ class DocumentViewController: UIViewController {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-//        if self.openFrom == .register{
-            var docsImageArray: [String] = []
-            //Docs Image
-            if let docfrontImage = self.btnEmiratesFront.backgroundImage(for: .normal){
-                let frontImageData: Data =  docfrontImage.jpegData(compressionQuality: 0.25)!
-                docsImageArray.append(frontImageData.base64EncodedString())
-            }
-            
-            if let docbackImage = self.btnEmiratesBack.backgroundImage(for: .normal){
-                let backImageData: Data =  docbackImage.jpegData(compressionQuality: 0.25)!
-                docsImageArray.append(backImageData.base64EncodedString())
-            }
-            
-            
-            var licensesImageArray: [String] = []
-            //Docs Image
-            if let licensesfrontImage = self.btnDriversFront.backgroundImage(for: .normal){
-                let frontImageData: Data =  licensesfrontImage.jpegData(compressionQuality: 0.25)!
-                licensesImageArray.append(frontImageData.base64EncodedString())
-            }
-            
-            if let licensesbackImage = self.btnDriversBack.backgroundImage(for: .normal){
-                let backImageData: Data =  licensesbackImage.jpegData(compressionQuality: 0.25)!
-                licensesImageArray.append(backImageData.base64EncodedString())
-            }
         
-//            if self.isEmiratesFrontEdit && self.emiratesFront_Id != nil{
-//                self.deleteDocArray.append(self.emiratesFront_Id)
-//            }
-//
-//            if self.isEmiratesBackEdit && self.emiratesBack_Id != nil{
-//                self.deleteDocArray.append(self.emiratesBack_Id)
-//            }
-//
-//            if self.isDriverFrontEdit && self.driverFront_Id != nil{
-//                self.deleteLicenseArray.append(self.driverFront_Id)
-//            }
-//
-//            if self.isDriverBackEdit && self.driverBack_Id != nil{
-//                self.deleteLicenseArray.append(self.driverBack_Id)
-//            }
+//        var emiratesError: Bool = false
+//        if self.btnEmiratesFront.currentBackgroundImage != nil && self.btnEmiratesBack.currentBackgroundImage != nil{
+//            emiratesError = false
+//        }else if self.btnEmiratesFront.currentBackgroundImage != nil || self.btnEmiratesBack.currentBackgroundImage != nil{
+//            emiratesError = true
+//            AlertViewController.openAlertView(title: "Error", message: "Please Add Car Emirates ID from both Side (Front and Back)", buttons: ["OK"])
+//            return
+//        }else{
+//            emiratesError = false
+//        }
         
-            if docsImageArray.count == 0 && licensesImageArray.count == 0{
-                AlertViewController.openAlertView(title: "Sucess", message: "You are now a member of SuperCars Majlis.", buttons: ["Continue"]) { (index) in
+//        var licenseError: Bool = false
+//        if self.btnDriversFront.currentBackgroundImage != nil && self.btnDriversBack.currentBackgroundImage != nil{
+//            licenseError = false
+//        }else if self.btnDriversFront.currentBackgroundImage != nil || self.btnDriversBack.currentBackgroundImage != nil{
+//            licenseError = true
+//            AlertViewController.openAlertView(title: "Error", message: "Please Add Drivers License from both Side (Front and Back)", buttons: ["OK"])
+//            return
+//        }else{
+//            licenseError = false
+//        }
+
+        
+        var docsImageArray: [String] = []
+            //Docs Image
+        
+        if self.uploadDocArray.count > 0{
+            for image in self.uploadDocArray{
+                let ImageData: Data =  image.jpegData(compressionQuality: 0.25)!
+                docsImageArray.append(ImageData.base64EncodedString())
+            }
+        }
+
+        var licensesImageArray: [String] = []
+        //Docs Image
+        
+        if self.uploadLicenseArray.count > 0{
+            for image in self.uploadLicenseArray{
+                let ImageData: Data =  image.jpegData(compressionQuality: 0.25)!
+                licensesImageArray.append(ImageData.base64EncodedString())
+            }
+        }
+
+        if self.openFrom == .register{
+            if self.btnEmiratesFront.currentBackgroundImage == nil && self.btnEmiratesBack.currentBackgroundImage == nil && self.btnDriversFront.currentBackgroundImage == nil && self.btnDriversBack.currentBackgroundImage == nil{
+                AlertViewController.openAlertView(title: "Success", message: "You are now a member of SuperCars Majlis.", buttons: ["Continue"]) { (index) in
                     let vc = Constants.homeStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             }else{
-                if docsImageArray.count < 2 && docsImageArray.count != 0{
-                    AlertViewController.openAlertView(title: "Error", message: "Please Add Car Emirates ID from both Side (Front and Back)", buttons: ["OK"])
-                    return
-                }else if licensesImageArray.count < 2 && licensesImageArray.count != 0{
-                    AlertViewController.openAlertView(title: "Error", message: "Please Add Drivers License from both Side (Front and Back)", buttons: ["OK"])
-                    return
-                }else{
-                    var accessTokenModel: RegisterModel!
-                    if getAccessTokenModel() != nil{
-                        accessTokenModel = getAccessTokenModel()
-                    }
-                    
+//               if emiratesError == false && licenseError == false{
+                   var accessTokenModel: RegisterModel!
+                   if getAccessTokenModel() != nil{
+                       accessTokenModel = getAccessTokenModel()
+                   }
+                   self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
+//               }else{
+//
+//               }
+            }
+        }else{
+            
+            
+            
+//            if emiratesError == false && licenseError == false{
+                var accessTokenModel: RegisterModel!
+                if getAccessTokenModel() != nil{
+                    accessTokenModel = getAccessTokenModel()
+                }
+                DispatchQueue.main.async {
                     self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
                 }
-            }
-//        }else{
+//            }else{
 //
-//        }
+//            }
+        }
     }
     
     @IBAction func btnEmiratesFrontTapped(_ sender: Any) {
-        ImagePicker.openImagePicker { (image) in
-            self.btnEmiratesFront.setBackgroundImage(image, for: .normal)
-            self.btnEmiratesFrontCross.isHidden = false
+        if self.btnEmiratesFront.currentBackgroundImage == nil{
+            ImagePicker.openImagePicker { (image) in
+                self.btnEmiratesFront.setBackgroundImage(image, for: .normal)
+                self.btnEmiratesFrontCross.isHidden = false
+                self.isEmiratesFrontEdit = true
+                self.uploadDocArray.append(image)
+            }
         }
     }
     
     @IBAction func btnEmiratesBackTapped(_ sender: Any) {
-        ImagePicker.openImagePicker { (image) in
-            self.btnEmiratesBack.setBackgroundImage(image, for: .normal)
-            self.btnEmiratesBackCross.isHidden = false
+        if self.btnEmiratesBack.currentBackgroundImage == nil{
+            ImagePicker.openImagePicker { (image) in
+                self.btnEmiratesBack.setBackgroundImage(image, for: .normal)
+                self.btnEmiratesBackCross.isHidden = false
+                self.isEmiratesBackEdit = true
+                self.uploadDocArray.append(image)
+            }
         }
     }
     
     @IBAction func btnDriversFrontTapped(_ sender: Any) {
-        ImagePicker.openImagePicker { (image) in
-            self.btnDriversFront.setBackgroundImage(image, for: .normal)
-            self.btnDriversFrontCross.isHidden = false
+        if self.btnDriversFront.currentBackgroundImage == nil{
+            ImagePicker.openImagePicker { (image) in
+                self.btnDriversFront.setBackgroundImage(image, for: .normal)
+                self.btnDriversFrontCross.isHidden = false
+                self.isDriverFrontEdit = true
+                self.uploadLicenseArray.append(image)
+            }
         }
     }
     
     @IBAction func btnDriversBackTapped(_ sender: Any) {
-        ImagePicker.openImagePicker { (image) in
-            self.btnDriversBack.setBackgroundImage(image, for: .normal)
-            self.btnDriversBackCross.isHidden = false
+        if self.btnDriversBack.currentBackgroundImage == nil{
+            ImagePicker.openImagePicker { (image) in
+                self.btnDriversBack.setBackgroundImage(image, for: .normal)
+                self.btnDriversBackCross.isHidden = false
+                self.isDriverBackEdit = true
+                self.uploadLicenseArray.append(image)
+            }
         }
     }
     
@@ -310,5 +341,5 @@ class DocumentViewController: UIViewController {
             self.driverBack_Id = ""
         }
     }
-    
 }
+

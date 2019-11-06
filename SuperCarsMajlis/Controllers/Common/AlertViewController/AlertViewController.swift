@@ -80,9 +80,9 @@ class AlertViewController: UIViewController {
             return
         }
         
-//        if let vc = rootVC.presentedViewController{
-//            rootVC = vc
-//        }
+        if let vc = rootVC.presentedViewController{
+            rootVC = vc
+        }
 
         self.modalPresentationStyle = UIModalPresentationStyle.overCurrentContext
         

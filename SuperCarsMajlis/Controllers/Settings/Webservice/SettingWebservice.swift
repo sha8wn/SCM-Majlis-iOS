@@ -28,11 +28,13 @@ extension SettingsViewController{
                                 let expiry =  list[0].expiry ?? ""
                                 let registration = list[0].created ?? ""
                                 let startDate = registration.toDate()
+                                let expirtDate = expiry.toDate(withFormat: "yyyy-MM-dd")
                                 let strStartDate = convertDateFormater(date: startDate ?? Date(), format: "MMM dd, YYYY")
                                 if expiry.contains("000"){
                                     self.lblDuration.text = "Member since " + strStartDate
                                 }else{
-                                    self.lblDuration.text = strStartDate + " - " + expiry
+                                    let strExpiryDate = convertDateFormater(date: expirtDate ?? Date(), format: "MMM dd, YYYY")
+                                    self.lblDuration.text = strStartDate + " - " + strExpiryDate
                                 }
                             }else{}
                         }else{}

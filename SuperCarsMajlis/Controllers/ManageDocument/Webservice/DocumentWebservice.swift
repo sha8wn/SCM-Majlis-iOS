@@ -23,30 +23,20 @@ extension DocumentViewController{
         Network.shared.request(urlPath: urlPath, methods: .put, authType: .auth, params: requestDict as [String : AnyObject]) { (response, message, statusCode, status) in
             FunctionConstants.getInstance().hideLoader(view: self)
             if status == .Success{
-                
                 if self.openFrom == .register{
                     setUserState(state: .home)
+                    AlertViewController.openAlertView(title: "Success", message: "You are now a member of SuperCars Majlis.", buttons: ["Continue"]) { (index) in
+                        let vc = Constants.homeStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+                        self.navigationController?.pushViewController(vc, animated: true)
+                    }
+                }else{
+                    AlertViewController.openAlertView(title: "Success", message: "Documents updated successfully", buttons: ["Ok"]) { (index) in
+                        self.navigationController?.popViewController(animated: true)
+                    }
                 }
-                
-                AlertViewController.openAlertView(title: "Sucess", message: "You are now a member of SuperCars Majlis.", buttons: ["Continue"]) { (index) in
-                    
-                    self.navigationController?.popViewController(animated: true)
-                    //let vc = Constants.homeStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
-                    //self.navigationController?.pushViewController(vc, animated: true)
-                }
-                
-                //                do {
-                //                    let responseModel = try JSONDecoder().decode(SuperCars_Model.self, from: response?.data ?? Data())
-                //
-                //                    self.dispatchGroup.leave()
-                //                } catch let error {
-                //                    AlertViewController.openAlertView(title: "Error", message: error.localizedDescription, buttons: ["OK"])
-                //                }
             }else{
                 AlertViewController.openAlertView(title: "Error", message: message!, buttons: ["OK"])
             }
         }
-        
     }
-    
 }

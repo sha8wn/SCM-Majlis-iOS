@@ -13,7 +13,7 @@ extension HomeViewController{
     
     func callGetEventListAPi(page: Int){
         FunctionConstants.getInstance().showLoader(message: "Loading", view: self)
-        let urlPath = kBaseURL + kEventListAPI + "?n=" + "\(page)" + "&limit=10"
+        let urlPath = kBaseURL + kEventListAPI + "?n=" + "\(page)" + "&limit=10&type=1" 
         
         Network.shared.request(urlPath: urlPath, methods: .get, authType: .auth) { (response, message, statusCode, status) in
             FunctionConstants.getInstance().hideLoader(view: self)
@@ -36,22 +36,25 @@ extension HomeViewController{
                                 if self.dataArray.count > 0{
                                     for i in 0..<self.dataArray.count{
                                         let model = self.dataArray[i]
-                                        if model.reservation ?? 0 == 1 && (model.status ?? "").lowercased() == "live"{
+                                        if model.reservation ?? 0 > 0 && (model.status ?? "").lowercased() == "live"{
                                             type = .checkIn
                                             break
                                         }
                                     }
                                 }
                                 
-                                if type == .pastEvent{
-                                    //Past event
-                                    self.lblHeaderSideTitle.text = "PAST EVENTS"
-                                    self.imgHeaderSideTitle.image = UIImage(named: "ic_PastEvent")
-                                }else{
-                                    //Check In
-                                    self.lblHeaderSideTitle.text = "CHECK IN"
-                                    self.imgHeaderSideTitle.image = UIImage(named: "ic_Check-In")
-                                }
+                                self.lblHeaderSideTitle.text = "PAST EVENTS"
+                                self.imgHeaderSideTitle.image = UIImage(named: "ic_PastEvent")
+                                
+//                                if type == .pastEvent{
+//                                    //Past event
+//                                    self.lblHeaderSideTitle.text = "PAST EVENTS"
+//                                    self.imgHeaderSideTitle.image = UIImage(named: "ic_PastEvent")
+//                                }else{
+//                                    //Check In
+//                                    self.lblHeaderSideTitle.text = "CHECK IN"
+//                                    self.imgHeaderSideTitle.image = UIImage(named: "ic_Check-In")
+//                                }
                                 
                                 self.tableView.reloadData()
                             }else{

@@ -1,8 +1,5 @@
 PODS:
   - Alamofire (4.9.0)
-  - Branch (0.29.1):
-    - Branch/Core (= 0.29.1)
-  - Branch/Core (0.29.1)
   - IQKeyboardManagerSwift (6.4.2)
   - MBProgressHUD (1.1.0)
   - SDWebImage (5.1.1):
@@ -12,7 +9,6 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
-  - Branch
   - IQKeyboardManagerSwift
   - MBProgressHUD
   - SDWebImage
@@ -25,17 +21,14 @@ SPEC REPOS:
     - MBProgressHUD
     - SDWebImage
     - SKPhotoBrowser
-  trunk:
-    - Branch
 
 SPEC CHECKSUMS:
   Alamofire: afc3e7c6db61476cb45cdd23fed06bad03bbc321
-  Branch: 3833f9691b0c874c81233362c929239c452f2ff0
   IQKeyboardManagerSwift: 79a3ec200dfb41cb66a89b8575417b5378107c5d
   MBProgressHUD: e7baa36a220447d8aeb12769bf0585582f3866d9
   SDWebImage: 96d7f03415ccb28d299d765f93557ff8a617abd8
   SKPhotoBrowser: 343de95d89dc7913763c5dda243cc6e606e4a168
 
-PODFILE CHECKSUM: 935105901b6200bbf0be46b08b02362ce52e2d15
+PODFILE CHECKSUM: f11501f5377a168d50736183999257a386135eed
 
 COCOAPODS: 1.8.3

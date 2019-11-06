@@ -23,7 +23,7 @@
         <!--Web View Controller-->
         <scene sceneID="XKs-iV-MYs">
             <objects>
-                <viewController storyboardIdentifier="WebViewController" id="7M4-jO-RHP" customClass="WebViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="WebViewController" id="7M4-jO-RHP" customClass="WebViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="uxi-cN-Tcp">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -78,7 +78,7 @@
         <!--Picker View Controller-->
         <scene sceneID="HeB-x1-Rn5">
             <objects>
-                <viewController storyboardIdentifier="PickerViewController" id="kXy-ee-vdk" customClass="PickerViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PickerViewController" id="kXy-ee-vdk" customClass="PickerViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Hau-Yd-Was">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -118,7 +118,7 @@
                                 <rect key="frame" x="0.0" y="194" width="414" height="702"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PickerTableViewCell" id="Guj-sa-R6p" customClass="PickerTableViewCell" customModule="SuperCarsMajlis" customModuleProvider="target">
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="none" indentationWidth="10" reuseIdentifier="PickerTableViewCell" id="Guj-sa-R6p" customClass="PickerTableViewCell" customModule="SCM" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="414" height="45.5"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="Guj-sa-R6p" id="hqc-Ib-Jvn">
@@ -220,16 +220,14 @@
         <!--Alert View Controller-->
         <scene sceneID="FIu-K4-qER">
             <objects>
-                <viewController storyboardIdentifier="AlertViewController" id="48s-h4-Atr" customClass="AlertViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlertViewController" id="48s-h4-Atr" customClass="AlertViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ga8-lP-zsA">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Background_Black" translatesAutoresizingMaskIntoConstraints="NO" id="bNj-El-bCY">
+                            <view alpha="0.5" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9I-8Y-pH7">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                            </imageView>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="U9I-8Y-pH7">
-                                <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                                <color key="backgroundColor" white="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SHH-zh-hpm">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
@@ -343,13 +341,9 @@
                             <constraint firstItem="U9I-8Y-pH7" firstAttribute="trailing" secondItem="QiK-0r-ugC" secondAttribute="trailing" id="5sm-Db-Gbg"/>
                             <constraint firstItem="U9I-8Y-pH7" firstAttribute="top" secondItem="ga8-lP-zsA" secondAttribute="top" id="D6M-RG-Hv0"/>
                             <constraint firstItem="SHH-zh-hpm" firstAttribute="leading" secondItem="QiK-0r-ugC" secondAttribute="leading" id="ESu-ks-a2d"/>
-                            <constraint firstItem="bNj-El-bCY" firstAttribute="top" secondItem="ga8-lP-zsA" secondAttribute="top" id="LIA-aw-K3s"/>
-                            <constraint firstItem="bNj-El-bCY" firstAttribute="leading" secondItem="QiK-0r-ugC" secondAttribute="leading" id="eBF-uv-Xs6"/>
                             <constraint firstAttribute="bottom" secondItem="SHH-zh-hpm" secondAttribute="bottom" id="kOM-OF-CHE"/>
                             <constraint firstItem="SHH-zh-hpm" firstAttribute="trailing" secondItem="QiK-0r-ugC" secondAttribute="trailing" id="u3h-8w-ToS"/>
-                            <constraint firstItem="bNj-El-bCY" firstAttribute="trailing" secondItem="QiK-0r-ugC" secondAttribute="trailing" id="ukS-Y1-0Ag"/>
                             <constraint firstAttribute="bottom" secondItem="U9I-8Y-pH7" secondAttribute="bottom" id="wJL-VM-VN6"/>
-                            <constraint firstAttribute="bottom" secondItem="bNj-El-bCY" secondAttribute="bottom" id="xDx-y7-INX"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="QiK-0r-ugC"/>
                     </view>

@@ -29,7 +29,7 @@
         <!--Past Event View Controller-->
         <scene sceneID="16A-sV-oWX">
             <objects>
-                <viewController storyboardIdentifier="PastEventViewController" id="v15-NF-8K7" customClass="PastEventViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="PastEventViewController" id="v15-NF-8K7" customClass="PastEventViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="wzW-qA-UGL">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -128,15 +128,18 @@
         <!--Event Details View Controller-->
         <scene sceneID="RAb-rw-3ZK">
             <objects>
-                <viewController storyboardIdentifier="EventDetailsViewController" id="mGz-x8-M6g" customClass="EventDetailsViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventDetailsViewController" id="mGz-x8-M6g" customClass="EventDetailsViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ADY-rW-aBW">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" alpha="0.30000001192092896" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yNh-ny-Q0c">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="yNh-ny-Q0c">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="344"/>
-                                <color key="backgroundColor" systemColor="systemGreenColor" red="0.20392156859999999" green="0.78039215689999997" blue="0.34901960780000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </imageView>
+                            <view alpha="0.20000000000000001" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tF4-GT-S1S">
+                                <rect key="frame" x="0.0" y="0.0" width="414" height="344"/>
+                                <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </view>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mhP-07-6ZA">
                                 <rect key="frame" x="0.0" y="94" width="414" height="250"/>
                                 <subviews>
@@ -317,7 +320,10 @@
                         <constraints>
                             <constraint firstItem="hgh-Iy-wV8" firstAttribute="leading" secondItem="dcI-zi-A9P" secondAttribute="leading" constant="25" id="0A4-fg-AsN"/>
                             <constraint firstItem="yNh-ny-Q0c" firstAttribute="bottom" secondItem="mhP-07-6ZA" secondAttribute="bottom" id="4N6-3p-DPK"/>
+                            <constraint firstItem="tF4-GT-S1S" firstAttribute="trailing" secondItem="yNh-ny-Q0c" secondAttribute="trailing" id="8RE-Kv-RSp"/>
                             <constraint firstItem="LWn-68-mUU" firstAttribute="leading" secondItem="dcI-zi-A9P" secondAttribute="leading" id="9CP-Lk-xud"/>
+                            <constraint firstItem="tF4-GT-S1S" firstAttribute="top" secondItem="yNh-ny-Q0c" secondAttribute="top" id="Cam-Au-raz"/>
+                            <constraint firstItem="tF4-GT-S1S" firstAttribute="bottom" secondItem="yNh-ny-Q0c" secondAttribute="bottom" id="DfO-Jx-gm5"/>
                             <constraint firstItem="dcI-zi-A9P" firstAttribute="trailing" secondItem="mhP-07-6ZA" secondAttribute="trailing" id="Fdr-Tl-sbe"/>
                             <constraint firstItem="JN1-Uh-IOj" firstAttribute="leading" secondItem="dcI-zi-A9P" secondAttribute="leading" constant="15" id="Kdc-tE-Iei"/>
                             <constraint firstItem="mhP-07-6ZA" firstAttribute="leading" secondItem="dcI-zi-A9P" secondAttribute="leading" id="SDr-dr-b0D"/>
@@ -327,6 +333,7 @@
                             <constraint firstItem="LWn-68-mUU" firstAttribute="top" secondItem="yNh-ny-Q0c" secondAttribute="bottom" constant="-30" id="dUA-2V-JVG"/>
                             <constraint firstItem="dcI-zi-A9P" firstAttribute="trailing" secondItem="hgh-Iy-wV8" secondAttribute="trailing" constant="25" id="duP-si-fgi"/>
                             <constraint firstItem="yNh-ny-Q0c" firstAttribute="trailing" secondItem="dcI-zi-A9P" secondAttribute="trailing" id="hOE-qn-o1e"/>
+                            <constraint firstItem="tF4-GT-S1S" firstAttribute="leading" secondItem="yNh-ny-Q0c" secondAttribute="leading" id="k8G-pJ-vMS"/>
                             <constraint firstItem="LWn-68-mUU" firstAttribute="trailing" secondItem="dcI-zi-A9P" secondAttribute="trailing" id="lsU-zH-HOy"/>
                             <constraint firstItem="yNh-ny-Q0c" firstAttribute="leading" secondItem="dcI-zi-A9P" secondAttribute="leading" id="pdr-9W-mIo"/>
                             <constraint firstAttribute="bottom" secondItem="LWn-68-mUU" secondAttribute="bottom" id="sTv-Jo-KGa"/>
@@ -339,7 +346,18 @@
                         <outlet property="btnReserve" destination="hgh-Iy-wV8" id="tof-Af-FAQ"/>
                         <outlet property="collectionView" destination="sca-h0-atv" id="MLH-BH-Swq"/>
                         <outlet property="collectionViewWidth" destination="AvZ-x4-lrJ" id="9lc-H2-GBb"/>
+                        <outlet property="imgLive" destination="dp4-nl-IKT" id="eX0-Q1-33H"/>
+                        <outlet property="imgView" destination="yNh-ny-Q0c" id="GkG-IS-oTc"/>
+                        <outlet property="imgViewLocation" destination="zkg-cb-zqZ" id="298-Z6-3Vt"/>
+                        <outlet property="imgViewPeople" destination="nLN-G8-oz9" id="ZvI-2E-QpP"/>
+                        <outlet property="lblAmount" destination="Eej-BN-cbx" id="04u-Uj-3kM"/>
+                        <outlet property="lblDateAndTime" destination="7sk-rf-HGM" id="Vgs-Id-wB6"/>
+                        <outlet property="lblEventTitle" destination="AkG-7W-ln3" id="uvE-wM-9XM"/>
+                        <outlet property="lblLocation" destination="eVr-3c-gBs" id="2Ad-Gg-c6H"/>
+                        <outlet property="lblNoOfGoing" destination="crq-0g-7wr" id="Fet-6q-H7A"/>
+                        <outlet property="lblSepratorDate" destination="whq-CJ-vwW" id="ajz-h8-Zh4"/>
                         <outlet property="tableView" destination="LWn-68-mUU" id="CDN-wY-GOy"/>
+                        <outlet property="viewAmountBG" destination="nPE-7L-uNw" id="vQ0-KN-hPJ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="A0W-G8-c01" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -349,7 +367,7 @@
         <!--Event Registration View Controller-->
         <scene sceneID="irt-tD-HAI">
             <objects>
-                <viewController storyboardIdentifier="EventRegistrationViewController" id="oEn-e1-FQ4" customClass="EventRegistrationViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="EventRegistrationViewController" id="oEn-e1-FQ4" customClass="EventRegistrationViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="N8M-n8-bDw">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

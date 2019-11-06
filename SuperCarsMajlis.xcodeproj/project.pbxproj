@@ -47,7 +47,12 @@
 		B4382FD8234B2D8300FDF560 /* MemberGoingTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4382FD6234B2D8300FDF560 /* MemberGoingTableViewCell.xib */; };
 		B4382FDB234B446900FDF560 /* SettingsTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4382FD9234B446900FDF560 /* SettingsTableViewCell.swift */; };
 		B4382FDC234B446900FDF560 /* SettingsTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B4382FDA234B446900FDF560 /* SettingsTableViewCell.xib */; };
+		B457D04523716B9900902254 /* RedeemViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B457D04423716B9900902254 /* RedeemViewController.swift */; };
+		B457D0492371805700902254 /* VPMOTPView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B457D0472371805600902254 /* VPMOTPView.swift */; };
+		B457D04A2371805700902254 /* VPMOTPTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B457D0482371805600902254 /* VPMOTPTextField.swift */; };
+		B457D04D237192C400902254 /* RedeemWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B457D04C237192C400902254 /* RedeemWebservice.swift */; };
 		B45E5F042358C8A20019C05B /* ChangePasswordWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B45E5F032358C8A20019C05B /* ChangePasswordWebservice.swift */; };
+		B466BCF12362360B00F5A208 /* EventRegistrationWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B466BCF02362360A00F5A208 /* EventRegistrationWebservice.swift */; };
 		B46A35422358B30300C7D58C /* ProfileWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B46A35412358B30300C7D58C /* ProfileWebservice.swift */; };
 		B474854E234F34C100A4D489 /* CarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B474854C234F34C100A4D489 /* CarCollectionViewCell.swift */; };
 		B474854F234F34C100A4D489 /* CarCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = B474854D234F34C100A4D489 /* CarCollectionViewCell.xib */; };
@@ -78,6 +83,12 @@
 		B498C344235064E300D073F8 /* PastEventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C343235064E300D073F8 /* PastEventListModel.swift */; };
 		B498C34923508A6200D073F8 /* RegisterWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C34823508A6200D073F8 /* RegisterWebservice.swift */; };
 		B498C34D23508F7800D073F8 /* CarBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C34C23508F7800D073F8 /* CarBrands.swift */; };
+		B4ACF646236FE72A0042100E /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACF645236FE72A0042100E /* PromotionsViewController.swift */; };
+		B4ACF64C236FFB430042100E /* PromotionWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACF64B236FFB430042100E /* PromotionWebservice.swift */; };
+		B4ACF64E237000C50042100E /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACF64D237000C50042100E /* PromotionModel.swift */; };
+		B4ACF654237044F10042100E /* PromotionDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACF653237044F10042100E /* PromotionDetailViewController.swift */; };
+		B4AF48962361B40C00CC1D1B /* EventDetailWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF48952361B40C00CC1D1B /* EventDetailWebservice.swift */; };
+		B4AF48982361BAB100CC1D1B /* CheckPointModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF48972361BAB100CC1D1B /* CheckPointModel.swift */; };
 		B4AF95A7234DA50600FE7F90 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4AF95A6234DA50600FE7F90 /* ProfileViewController.swift */; };
 		B4B07A2B235D6D6600F6EC06 /* ManagerSuperCarsWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B07A2A235D6D6600F6EC06 /* ManagerSuperCarsWebservice.swift */; };
 		B4B84AD22342060200607AF4 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4B84AD12342060200607AF4 /* ForgotPasswordViewController.swift */; };
@@ -199,7 +210,12 @@
 		B4382FD6234B2D8300FDF560 /* MemberGoingTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MemberGoingTableViewCell.xib; sourceTree = "<group>"; };
 		B4382FD9234B446900FDF560 /* SettingsTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsTableViewCell.swift; sourceTree = "<group>"; };
 		B4382FDA234B446900FDF560 /* SettingsTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SettingsTableViewCell.xib; sourceTree = "<group>"; };
+		B457D04423716B9900902254 /* RedeemViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemViewController.swift; sourceTree = "<group>"; };
+		B457D0472371805600902254 /* VPMOTPView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPMOTPView.swift; sourceTree = "<group>"; };
+		B457D0482371805600902254 /* VPMOTPTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VPMOTPTextField.swift; sourceTree = "<group>"; };
+		B457D04C237192C400902254 /* RedeemWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RedeemWebservice.swift; sourceTree = "<group>"; };
 		B45E5F032358C8A20019C05B /* ChangePasswordWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordWebservice.swift; sourceTree = "<group>"; };
+		B466BCF02362360A00F5A208 /* EventRegistrationWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventRegistrationWebservice.swift; sourceTree = "<group>"; };
 		B46A35412358B30300C7D58C /* ProfileWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileWebservice.swift; sourceTree = "<group>"; };
 		B474854C234F34C100A4D489 /* CarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarCollectionViewCell.swift; sourceTree = "<group>"; };
 		B474854D234F34C100A4D489 /* CarCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CarCollectionViewCell.xib; sourceTree = "<group>"; };
@@ -210,7 +226,7 @@
 		B4748557235038B100A4D489 /* ErrorHandler.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ErrorHandler.swift; sourceTree = "<group>"; };
 		B4748558235038B100A4D489 /* Connectivity.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Connectivity.swift; sourceTree = "<group>"; };
 		B474856023504B7700A4D489 /* PastEventWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventWebservice.swift; sourceTree = "<group>"; };
-		B47831F8233A344D0081735F /* SuperCarsMajlis.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SuperCarsMajlis.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		B47831F8233A344D0081735F /* SCM.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SCM.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B47831FB233A344D0081735F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B4783205233A344D0081735F /* SuperCarsMajlis.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SuperCarsMajlis.xcdatamodel; sourceTree = "<group>"; };
 		B4783207233A34510081735F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -237,6 +253,12 @@
 		B498C343235064E300D073F8 /* PastEventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventListModel.swift; sourceTree = "<group>"; };
 		B498C34823508A6200D073F8 /* RegisterWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWebservice.swift; sourceTree = "<group>"; };
 		B498C34C23508F7800D073F8 /* CarBrands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrands.swift; sourceTree = "<group>"; };
+		B4ACF645236FE72A0042100E /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
+		B4ACF64B236FFB430042100E /* PromotionWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionWebservice.swift; sourceTree = "<group>"; };
+		B4ACF64D237000C50042100E /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
+		B4ACF653237044F10042100E /* PromotionDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionDetailViewController.swift; sourceTree = "<group>"; };
+		B4AF48952361B40C00CC1D1B /* EventDetailWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EventDetailWebservice.swift; sourceTree = "<group>"; };
+		B4AF48972361BAB100CC1D1B /* CheckPointModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckPointModel.swift; sourceTree = "<group>"; };
 		B4AF95A6234DA50600FE7F90 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		B4B07A2A235D6D6600F6EC06 /* ManagerSuperCarsWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSuperCarsWebservice.swift; sourceTree = "<group>"; };
 		B4B84AD12342060200607AF4 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -433,11 +455,9 @@
 		B427DAF9234E05FC003ACB36 /* EventRegistration */ = {
 			isa = PBXGroup;
 			children = (
-				B427DAFA234E2640003ACB36 /* EventRegistrationViewController.swift */,
-				B474854C234F34C100A4D489 /* CarCollectionViewCell.swift */,
-				B474854D234F34C100A4D489 /* CarCollectionViewCell.xib */,
-				B4748550234F34DD00A4D489 /* SelectedCarCollectionViewCell.swift */,
-				B4748551234F34DD00A4D489 /* SelectedCarCollectionViewCell.xib */,
+				B466BCEF236235EE00F5A208 /* View */,
+				B466BCEE236235E700F5A208 /* Webservice */,
+				B466BCED236235E200F5A208 /* Model */,
 			);
 			path = EventRegistration;
 			sourceTree = "<group>";
@@ -501,6 +521,40 @@
 			path = MemberGoingList;
 			sourceTree = "<group>";
 		};
+		B457D04223716B7E00902254 /* Redeem */ = {
+			isa = PBXGroup;
+			children = (
+				B457D04323716B8700902254 /* View */,
+				B457D04B2371929B00902254 /* Webservice */,
+			);
+			path = Redeem;
+			sourceTree = "<group>";
+		};
+		B457D04323716B8700902254 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B457D04423716B9900902254 /* RedeemViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B457D0462371805600902254 /* VPMOTPView */ = {
+			isa = PBXGroup;
+			children = (
+				B457D0472371805600902254 /* VPMOTPView.swift */,
+				B457D0482371805600902254 /* VPMOTPTextField.swift */,
+			);
+			path = VPMOTPView;
+			sourceTree = "<group>";
+		};
+		B457D04B2371929B00902254 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B457D04C237192C400902254 /* RedeemWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
 		B45E5F012358C53E0019C05B /* Webservice */ = {
 			isa = PBXGroup;
 			children = (
@@ -513,6 +567,33 @@
 			isa = PBXGroup;
 			children = (
 				B4D6C017234DD40300D351E2 /* ChangePasswordViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B466BCED236235E200F5A208 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B466BCEE236235E700F5A208 /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B466BCF02362360A00F5A208 /* EventRegistrationWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B466BCEF236235EE00F5A208 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B427DAFA234E2640003ACB36 /* EventRegistrationViewController.swift */,
+				B474854C234F34C100A4D489 /* CarCollectionViewCell.swift */,
+				B474854D234F34C100A4D489 /* CarCollectionViewCell.xib */,
+				B4748550234F34DD00A4D489 /* SelectedCarCollectionViewCell.swift */,
+				B4748551234F34DD00A4D489 /* SelectedCarCollectionViewCell.xib */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -587,7 +668,7 @@
 		B47831F9233A344D0081735F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B47831F8233A344D0081735F /* SuperCarsMajlis.app */,
+				B47831F8233A344D0081735F /* SCM.app */,
 				B4783211233A34510081735F /* SuperCarsMajlisTests.xctest */,
 				B478321C233A34510081735F /* SuperCarsMajlisUITests.xctest */,
 			);
@@ -638,6 +719,9 @@
 		B478322F233A38300081735F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B457D04223716B7E00902254 /* Redeem */,
+				B4ACF64F23703A0D0042100E /* PromotionDetails */,
+				B4ACF641236FE6FB0042100E /* Promotions */,
 				B427DAF9234E05FC003ACB36 /* EventRegistration */,
 				B4D6C019234DDD5200D351E2 /* ManageSuperCars */,
 				B4D6C016234DD39500D351E2 /* ChangePassword */,
@@ -709,6 +793,7 @@
 		B487A00A2361A36800053E31 /* Model */ = {
 			isa = PBXGroup;
 			children = (
+				B4AF48972361BAB100CC1D1B /* CheckPointModel.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -716,6 +801,7 @@
 		B487A00B2361A36E00053E31 /* Webservice */ = {
 			isa = PBXGroup;
 			children = (
+				B4AF48952361B40C00CC1D1B /* EventDetailWebservice.swift */,
 			);
 			path = Webservice;
 			sourceTree = "<group>";
@@ -832,6 +918,72 @@
 			isa = PBXGroup;
 			children = (
 				B40A1B1C233DCE3B0033BB82 /* RegisterViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4ACF641236FE6FB0042100E /* Promotions */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACF644236FE7120042100E /* View */,
+				B4ACF643236FE70B0042100E /* Webservice */,
+				B4ACF642236FE7050042100E /* Model */,
+			);
+			path = Promotions;
+			sourceTree = "<group>";
+		};
+		B4ACF642236FE7050042100E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACF64D237000C50042100E /* PromotionModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4ACF643236FE70B0042100E /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACF64B236FFB430042100E /* PromotionWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B4ACF644236FE7120042100E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACF645236FE72A0042100E /* PromotionsViewController.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		B4ACF64F23703A0D0042100E /* PromotionDetails */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACF65223703A250042100E /* View */,
+				B4ACF65123703A1E0042100E /* Webservice */,
+				B4ACF65023703A180042100E /* Model */,
+			);
+			path = PromotionDetails;
+			sourceTree = "<group>";
+		};
+		B4ACF65023703A180042100E /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4ACF65123703A1E0042100E /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B4ACF65223703A250042100E /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4ACF653237044F10042100E /* PromotionDetailViewController.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -989,6 +1141,7 @@
 		B4E019FA233B35DC001EBE65 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
+				B457D0462371805600902254 /* VPMOTPView */,
 			);
 			path = ThirdParty;
 			sourceTree = "<group>";
@@ -1110,7 +1263,7 @@
 			);
 			name = SuperCarsMajlis;
 			productName = SuperCarsMajlis;
-			productReference = B47831F8233A344D0081735F /* SuperCarsMajlis.app */;
+			productReference = B47831F8233A344D0081735F /* SCM.app */;
 			productType = "com.apple.product-type.application";
 		};
 		B4783210233A34510081735F /* SuperCarsMajlisTests */ = {
@@ -1373,6 +1526,7 @@
 				B4748559235038B100A4D489 /* APIConstant.swift in Sources */,
 				B4D6C01B234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift in Sources */,
 				B4B84AD723420CB900607AF4 /* RegisterApprovedMemberViewController.swift in Sources */,
+				B466BCF12362360B00F5A208 /* EventRegistrationWebservice.swift in Sources */,
 				B474855C235038B100A4D489 /* Connectivity.swift in Sources */,
 				B48BEB5E2356D17400271B24 /* RegisterApprovedMemberWebservice.swift in Sources */,
 				B4B84ADD23425AD700607AF4 /* SupercarsFooterTableViewCell.swift in Sources */,
@@ -1389,7 +1543,9 @@
 				B474854E234F34C100A4D489 /* CarCollectionViewCell.swift in Sources */,
 				B4783206233A344D0081735F /* SuperCarsMajlis.xcdatamodeld in Sources */,
 				B4EE4045233B8BEF008FD80D /* WalkthroughParentViewController.swift in Sources */,
+				B4AF48982361BAB100CC1D1B /* CheckPointModel.swift in Sources */,
 				B4CCF62D235891D60047F5FB /* SettingWebservice.swift in Sources */,
+				B457D0492371805700902254 /* VPMOTPView.swift in Sources */,
 				B427DB0F234EFF03003ACB36 /* OtherDetailsTableViewCell.swift in Sources */,
 				B40A1B0A233CBC7F0033BB82 /* PastEventTableViewCell.swift in Sources */,
 				B47831FC233A344D0081735F /* AppDelegate.swift in Sources */,
@@ -1410,18 +1566,26 @@
 				B4EDB4A5233E018F0051DA29 /* PickerViewController.swift in Sources */,
 				B4B84AE12343091000607AF4 /* SupercarsTableViewCell.swift in Sources */,
 				B4E019F9233B28A1001EBE65 /* AppDelegateExtension.swift in Sources */,
+				B457D04D237192C400902254 /* RedeemWebservice.swift in Sources */,
 				B498C344235064E300D073F8 /* PastEventListModel.swift in Sources */,
 				B40A1B1D233DCE3B0033BB82 /* RegisterViewController.swift in Sources */,
 				B48BEB6B2357193300271B24 /* CarColors.swift in Sources */,
 				B4EE4042233B8ACA008FD80D /* SplashViewController.swift in Sources */,
+				B457D04523716B9900902254 /* RedeemViewController.swift in Sources */,
+				B4ACF646236FE72A0042100E /* PromotionsViewController.swift in Sources */,
 				B40A1B14233CDC550033BB82 /* BecomeMemberViewController.swift in Sources */,
 				B4748552234F34DD00A4D489 /* SelectedCarCollectionViewCell.swift in Sources */,
 				B48BEB6823570F3E00271B24 /* ApprovedMemberSupercarsWebservice.swift in Sources */,
+				B4ACF654237044F10042100E /* PromotionDetailViewController.swift in Sources */,
 				B4CCF62923587CCC0047F5FB /* ForgotPasswordWebservice.swift in Sources */,
 				B4C1BBE32345DDA700D2A074 /* HomeViewController.swift in Sources */,
 				B474855A235038B100A4D489 /* Network.swift in Sources */,
 				B427DAFE234EE671003ACB36 /* EventDescTableViewCell.swift in Sources */,
+				B457D04A2371805700902254 /* VPMOTPTextField.swift in Sources */,
+				B4AF48962361B40C00CC1D1B /* EventDetailWebservice.swift in Sources */,
 				B48BEB6D235763E300271B24 /* String+Extension.swift in Sources */,
+				B4ACF64C236FFB430042100E /* PromotionWebservice.swift in Sources */,
+				B4ACF64E237000C50042100E /* PromotionModel.swift in Sources */,
 				B48BEB612356D61C00271B24 /* UserDefaultManager.swift in Sources */,
 				B415DD9A23450C4A008F4399 /* ImagePicker.swift in Sources */,
 				B4B07A2B235D6D6600F6EC06 /* ManagerSuperCarsWebservice.swift in Sources */,
@@ -1606,9 +1770,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nibouapp.niboucustomer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SCM;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1628,9 +1792,9 @@
 					"@executable_path/Frameworks",
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.nibouapp.niboucustomer;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = SCM;
 				SWIFT_VERSION = 5.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

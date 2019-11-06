@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Branch
 
 class RegisterViewController: UIViewController {
     
@@ -35,27 +34,6 @@ class RegisterViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
-        
-        
-        let buo = BranchUniversalObject.init(canonicalIdentifier: "content/12345")
-               buo.title = "ehghjegr"
-        //self.homeList[sender.tag].title
-               buo.contentDescription = "My Content Description"
-               //  buo.imageUrl = self.homeList[sender.tag].images[0]
-               buo.publiclyIndex = true
-               buo.locallyIndex = true
-               buo.contentMetadata.customMetadata["data"] = "Testing"
-
-         let lp: BranchLinkProperties = BranchLinkProperties()
-               
-               
-               var brachioUrl = String()
-               
-               buo.getShortUrl(with: lp) { (url, error) in
-                   print(url ?? "")
-                   brachioUrl = url ?? ""
-        }
-        
         // Do any additional setup after loading the view.
     }
     
@@ -85,7 +63,7 @@ class RegisterViewController: UIViewController {
         else if(self.txtPhone.text == ""){
             error = (false, "Please enter phone number")
         }
-        else if(self.txtPhone.text!.count < 9){
+        else if(self.txtPhone.text!.count < 7) || (self.txtPhone.text!.count > 12){
             error = (false, "Please enter valid phone number")
         }
         else if(self.txtBrand.text == ""){

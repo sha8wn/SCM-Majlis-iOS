@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import SDWebImage
 
 class OtherDetailsTableViewCell: UITableViewCell {
 
@@ -15,6 +16,10 @@ class OtherDetailsTableViewCell: UITableViewCell {
      */
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var lblTitle: UILabel!
+    var partnerArray: [HomePartners] = []
+    var brandArray: [HomeBrands] = []
+    var type: String = ""
+    
     //end
     
     override func awakeFromNib() {
@@ -29,6 +34,24 @@ class OtherDetailsTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
+    func setUpCell(type: String, array: [Any]){
+        self.type = type
+        
+        if let _ = array as? [HomeBrands]{
+            self.brandArray = array as! [HomeBrands]
+        }else {
+            self.brandArray = []
+        }
+        
+        if let _ = array as? [HomePartners]{
+            self.partnerArray = array as! [HomePartners]
+        }else {
+            self.partnerArray = []
+        }
+        
+        self.collectionView.reloadData()
+    }
+    
 }
 
 /*
@@ -36,11 +59,41 @@ class OtherDetailsTableViewCell: UITableViewCell {
 */
 extension OtherDetailsTableViewCell: UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 5
+        if type == "brand"{
+            if self.brandArray.count > 0{
+                return self.brandArray.count
+            }else{
+                return 0
+            }
+        }else if type == "partner"{
+            if self.partnerArray.count > 0{
+                return self.partnerArray.count
+            }else{
+                return 0
+            }
+        }else{
+            return 0
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "EventOtherDetailsCollectionViewCell", for: indexPath) as! EventOtherDetailsCollectionViewCell
+        if type == "brand"{
+            let model = self.brandArray[indexPath.item]
+            cell.imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
+            cell.imgView.sd_setImage(with: URL(string: model.img ?? ""), placeholderImage: UIImage(named: ""), options: .handleCookies, progress: nil, completed: nil)
+            
+            cell.lblTitle.text = model.name ?? ""
+        }else if type == "partner"{
+            let model = self.partnerArray[indexPath.item]
+            cell.imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
+            cell.imgView.sd_setImage(with: URL(string: model.img ?? ""), placeholderImage: UIImage(named: ""), options: .handleCookies, progress: nil, completed: nil)
+            
+            cell.lblTitle.text = model.name ?? ""
+        }else{
+            cell.imgView.image = UIImage(named: "")
+            cell.lblTitle.text = "-"
+        }
         return cell
     }
     

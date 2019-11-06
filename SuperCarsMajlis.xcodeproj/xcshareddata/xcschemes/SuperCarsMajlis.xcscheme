@@ -15,7 +15,7 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B47831F7233A344D0081735F"
-               BuildableName = "SuperCarsMajlis.app"
+               BuildableName = "SCM.app"
                BlueprintName = "SuperCarsMajlis"
                ReferencedContainer = "container:SuperCarsMajlis.xcodeproj">
             </BuildableReference>
@@ -65,7 +65,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B47831F7233A344D0081735F"
-            BuildableName = "SuperCarsMajlis.app"
+            BuildableName = "SCM.app"
             BlueprintName = "SuperCarsMajlis"
             ReferencedContainer = "container:SuperCarsMajlis.xcodeproj">
          </BuildableReference>
@@ -82,7 +82,7 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B47831F7233A344D0081735F"
-            BuildableName = "SuperCarsMajlis.app"
+            BuildableName = "SCM.app"
             BlueprintName = "SuperCarsMajlis"
             ReferencedContainer = "container:SuperCarsMajlis.xcodeproj">
          </BuildableReference>
