@@ -29,6 +29,14 @@ extension DocumentViewController{
                         let vc = Constants.homeStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
                         self.navigationController?.pushViewController(vc, animated: true)
                     }
+                }else if self.openFrom == .partiallyRegister{
+                    AlertViewController.openAlertView(title: "Thank you", message: "We have received your application. You will be contacted shortly.", buttons: ["Continue"]) { (index) in
+                    
+                        let viewController = Constants.eventStoryboard.instantiateViewController(withIdentifier: "PastEventViewController") as! PastEventViewController
+                        viewController.openFrom = .chooseUser
+                        self.navigationController?.pushViewController( viewController, animated: true)
+
+                    }
                 }else{
                     AlertViewController.openAlertView(title: "Success", message: "Documents updated successfully", buttons: ["Ok"]) { (index) in
                         self.navigationController?.popViewController(animated: true)

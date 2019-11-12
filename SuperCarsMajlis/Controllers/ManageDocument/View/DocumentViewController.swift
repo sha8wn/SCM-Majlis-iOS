@@ -16,6 +16,7 @@ import SDWebImage
 enum DocumentOpenType{
     case register
     case sideMenu
+    case partiallyRegister
 }
 //end
 
@@ -77,7 +78,7 @@ class DocumentViewController: UIViewController {
      */
     func setUp(){
         //Setup Header
-        if self.openFrom == .register{
+        if self.openFrom == .register || self.openFrom == .partiallyRegister{
             self.sideMenuHeaderView.isHidden = true
             self.btnSubmit.setTitle("Finish", for: .normal)
         }else{
@@ -175,32 +176,8 @@ class DocumentViewController: UIViewController {
     }
     
     @IBAction func btnSubmitTapped(_ sender: Any) {
-        
-//        var emiratesError: Bool = false
-//        if self.btnEmiratesFront.currentBackgroundImage != nil && self.btnEmiratesBack.currentBackgroundImage != nil{
-//            emiratesError = false
-//        }else if self.btnEmiratesFront.currentBackgroundImage != nil || self.btnEmiratesBack.currentBackgroundImage != nil{
-//            emiratesError = true
-//            AlertViewController.openAlertView(title: "Error", message: "Please Add Car Emirates ID from both Side (Front and Back)", buttons: ["OK"])
-//            return
-//        }else{
-//            emiratesError = false
-//        }
-        
-//        var licenseError: Bool = false
-//        if self.btnDriversFront.currentBackgroundImage != nil && self.btnDriversBack.currentBackgroundImage != nil{
-//            licenseError = false
-//        }else if self.btnDriversFront.currentBackgroundImage != nil || self.btnDriversBack.currentBackgroundImage != nil{
-//            licenseError = true
-//            AlertViewController.openAlertView(title: "Error", message: "Please Add Drivers License from both Side (Front and Back)", buttons: ["OK"])
-//            return
-//        }else{
-//            licenseError = false
-//        }
-
-        
         var docsImageArray: [String] = []
-            //Docs Image
+        //Docs Image
         
         if self.uploadDocArray.count > 0{
             for image in self.uploadDocArray{
@@ -208,7 +185,7 @@ class DocumentViewController: UIViewController {
                 docsImageArray.append(ImageData.base64EncodedString())
             }
         }
-
+        
         var licensesImageArray: [String] = []
         //Docs Image
         
@@ -218,7 +195,7 @@ class DocumentViewController: UIViewController {
                 licensesImageArray.append(ImageData.base64EncodedString())
             }
         }
-
+        
         if self.openFrom == .register{
             if self.btnEmiratesFront.currentBackgroundImage == nil && self.btnEmiratesBack.currentBackgroundImage == nil && self.btnDriversFront.currentBackgroundImage == nil && self.btnDriversBack.currentBackgroundImage == nil{
                 AlertViewController.openAlertView(title: "Success", message: "You are now a member of SuperCars Majlis.", buttons: ["Continue"]) { (index) in
@@ -226,31 +203,38 @@ class DocumentViewController: UIViewController {
                     self.navigationController?.pushViewController(vc, animated: true)
                 }
             }else{
-//               if emiratesError == false && licenseError == false{
-                   var accessTokenModel: RegisterModel!
-                   if getAccessTokenModel() != nil{
-                       accessTokenModel = getAccessTokenModel()
-                   }
-                   self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
-//               }else{
-//
-//               }
-            }
-        }else{
-            
-            
-            
-//            if emiratesError == false && licenseError == false{
                 var accessTokenModel: RegisterModel!
                 if getAccessTokenModel() != nil{
                     accessTokenModel = getAccessTokenModel()
                 }
-                DispatchQueue.main.async {
-                    self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
+                self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
+            }
+        }else if self.openFrom == .partiallyRegister{
+            
+            if licensesImageArray.count > 0 && docsImageArray.count > 0{
+                var accessTokenModel: RegisterModel!
+                if getAccessTokenModel() != nil{
+                    accessTokenModel = getAccessTokenModel()
                 }
-//            }else{
-//
-//            }
+                self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
+            }else{
+                if docsImageArray.count == 0{
+                    AlertViewController.openAlertView(title: "Error", message: "Please upload emirates id", buttons: ["OK"])
+                }else if licensesImageArray.count == 0{
+                    AlertViewController.openAlertView(title: "Error", message: "Please upload drivers license", buttons: ["OK"])
+                }else{
+                    
+                }
+//                AlertViewController.openAlertView(title: "Error", message: "Please upload emirates id and drivers license", buttons: ["OK"])
+            }
+        }else{
+            var accessTokenModel: RegisterModel!
+            if getAccessTokenModel() != nil{
+                accessTokenModel = getAccessTokenModel()
+            }
+            DispatchQueue.main.async {
+                self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
+            }
         }
     }
     

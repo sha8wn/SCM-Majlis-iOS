@@ -9,6 +9,11 @@
 import UIKit
 import Photos
 
+enum ApprovedMemberSupercarsOpenFrom{
+    case partiallyRegister
+    case approvedRegister
+}
+
 class ApprovedMemberSupercarsViewController: UIViewController {
     
     /*
@@ -17,14 +22,22 @@ class ApprovedMemberSupercarsViewController: UIViewController {
     @IBOutlet var btnBack             : UIButton!
     @IBOutlet var btnNext             : UIButton!
     @IBOutlet var tableView           : UITableView!
+    @IBOutlet var lblTitle            : UILabel!
+
     var dispatchGroup                                      = DispatchGroup()
     var dataArray                     : [SupercarsModel]   = [SupercarsModel()]
+    var isOpenFrom                    : ApprovedMemberSupercarsOpenFrom!
     //end
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setupView()
-        self.callGetSuperCarsListAPI()
+        
+        if self.isOpenFrom == .approvedRegister{
+            self.callGetSuperCarsListAPI()
+        }else{}
+        
+        
         // Do any additional setup after loading the view.
     }
     
@@ -34,6 +47,12 @@ class ApprovedMemberSupercarsViewController: UIViewController {
     func setupView(){
         self.tableView.register(UINib(nibName: "SupercarsFooterTableViewCell", bundle: nil), forCellReuseIdentifier: "SupercarsFooterTableViewCell")
         self.tableView.register(UINib(nibName: "SupercarsTableViewCell", bundle: nil), forCellReuseIdentifier: "SupercarsTableViewCell")
+        
+        if self.isOpenFrom == .partiallyRegister{
+            self.lblTitle.text = "Register your interest"
+        }else{
+            self.lblTitle.text = "Become a member"
+        }
     }
     //end
     
@@ -55,6 +74,22 @@ class ApprovedMemberSupercarsViewController: UIViewController {
         return error
     }
     
+    func checkOneModelWithAllData() -> Bool{
+           var isCompleteData: Bool = false
+           if self.isOpenFrom == .partiallyRegister{
+               for model in self.dataArray{
+                   if model.carImage != nil && (model.carRegistraionFrontImage != nil || model.carRegistraionBackImage != nil){
+                       return true
+                   }else{
+                       isCompleteData = false
+                   }
+               }
+           }else{
+               return true
+           }
+           return isCompleteData
+       }
+    
     /*
      // MARK: - Navigation
      
@@ -65,24 +100,17 @@ class ApprovedMemberSupercarsViewController: UIViewController {
      }
      */
     
+   
+    
     @IBAction func btnBackTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)
     }
     
     @IBAction func btnNextTapped(_ sender: Any) {
+
         for model in self.dataArray{
             let (isValidate, errorMessage) = self.getValidate(model: model)
             if isValidate{
-//                if model.carRegistraionFrontImage == nil && model.carRegistraionBackImage == nil{
-//                }else{
-//                    if model.carRegistraionFrontImage != nil && model.carRegistraionBackImage != nil{
-//
-//                    }else{
-//                        AlertViewController.openAlertView(title: "Error", message: "Please Add Car Registration Document from both Side (Front and Back)", buttons: ["OK"])
-//                        break
-//                    }
-//                }
-                
                 var carImageArray: [String] = []
                 //Car Image
                 if let carImage = model.carImage{
@@ -101,6 +129,22 @@ class ApprovedMemberSupercarsViewController: UIViewController {
                     let backImageData: Data =  backImage.jpegData(compressionQuality: 0.25)!
                     docsImageArray.append(backImageData.base64EncodedString())
                 }
+                
+                if self.isOpenFrom == .partiallyRegister{
+                    if docsImageArray.count == 0{
+                        AlertViewController.openAlertView(title: "Error", message: "Please upload car registration document.", buttons: ["OK"])
+                        break
+                    }else if carImageArray.count == 0{
+                        AlertViewController.openAlertView(title: "Error", message: "Please upload car image.", buttons: ["OK"])
+                        break
+                    }else{
+                        
+                    }
+                }else{
+                    
+                }
+                
+                
                 
                 if model.car_Id != nil{
                     self.callUpdateSuperCarsAPI(car_Id: model.car_Id!,
@@ -122,9 +166,65 @@ class ApprovedMemberSupercarsViewController: UIViewController {
             }
         }
         
+        
+        /*
+        let isComplete = checkOneModelWithAllData()
+        
+        if isComplete{
+            for model in self.dataArray{
+                let (isValidate, errorMessage) = self.getValidate(model: model)
+                if isValidate{
+                    var carImageArray: [String] = []
+                    //Car Image
+                    if let carImage = model.carImage{
+                        let carImageData: Data =  carImage.jpegData(compressionQuality: 0.25)!
+                        carImageArray = [carImageData.base64EncodedString()]
+                    }
+                    
+                    var docsImageArray: [String] = []
+                    //Docs Image
+                    if let frontImage = model.carRegistraionFrontImage{
+                        let frontImageData: Data =  frontImage.jpegData(compressionQuality: 0.25)!
+                        docsImageArray.append(frontImageData.base64EncodedString())
+                    }
+                    
+                    if let backImage = model.carRegistraionBackImage{
+                        let backImageData: Data =  backImage.jpegData(compressionQuality: 0.25)!
+                        docsImageArray.append(backImageData.base64EncodedString())
+                    }
+                    
+                    if model.car_Id != nil{
+                        self.callUpdateSuperCarsAPI(car_Id: model.car_Id!,
+                                                    brand_Id: Int(model.brand_Id!) ?? 0,
+                                                    model_Id: Int(model.model_Id!) ?? 0,
+                                                    color_Id: Int(model.color_Id!) ?? 0,
+                                                    imageArray: carImageArray,
+                                                    docsArray: docsImageArray)
+                    }else{
+                        self.callAddSuperCarsAPI(brand_Id: Int(model.brand_Id!) ?? 0,
+                                                 model_Id: Int(model.model_Id!) ?? 0,
+                                                 color_Id: Int(model.color_Id!) ?? 0,
+                                                 imageArray: carImageArray,
+                                                 docsArray: docsImageArray)
+                    }
+                }else{
+                    AlertViewController.openAlertView(title: "Error", message: errorMessage, buttons: ["OK"])
+                    break
+                }
+            }
+        }else{
+            AlertViewController.openAlertView(title: "Error", message: "Please upload car registration document and car image.", buttons: ["OK"])
+        }
+        */
+        
+        
         self.dispatchGroup.notify(queue: .main) {
             let vc = Constants.homeStoryboard.instantiateViewController( withIdentifier: "DocumentViewController") as! DocumentViewController
-            vc.openFrom = .register
+            if self.isOpenFrom == .partiallyRegister{
+                vc.openFrom = .partiallyRegister
+            }else{
+                vc.openFrom = .register
+            }
             self.navigationController?.pushViewController(vc, animated: true)
         }
         

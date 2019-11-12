@@ -43,7 +43,7 @@ class PromotionDetailViewController: UIViewController {
             self.lblPartnerDesc.text = self.dataModel.partner_phone ?? ""
             
             self.lblPartnerLongDesc.text  = self.dataModel.text ?? ""
-            
+    
             self.lblTC.text = self.dataModel.terms ?? ""
         }
     }

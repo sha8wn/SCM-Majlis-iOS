@@ -22,4 +22,12 @@ extension AppDelegate{
         //IQKeyboard Manager Setup
         IQKeyboardManager.shared.enable = true
     }
+    
+    func openRegisterFlowForApprovedUser(){
+        let navigationController: UINavigationController = Constants.walkthroughStoryboard.instantiateInitialViewController() as! UINavigationController
+        let rootViewController: UIViewController = Constants.registerStoryboard.instantiateViewController(withIdentifier: "RegisterApprovedMemberViewController") as UIViewController
+        navigationController.viewControllers = [rootViewController]
+        navigationController.navigationBar.isHidden = true
+        Constants.kAppDelegate.window?.rootViewController = navigationController
+    }
 }

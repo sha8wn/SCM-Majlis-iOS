@@ -53,7 +53,7 @@ class SplashViewController: UIViewController {
     
     func openRegisterFlowForApprovedUser(){
         let navigationController: UINavigationController = Constants.walkthroughStoryboard.instantiateInitialViewController() as! UINavigationController
-        let rootViewController: UIViewController = Constants.walkthroughStoryboard.instantiateViewController(withIdentifier: "RegisterApprovedMemberViewController") as UIViewController
+        let rootViewController: UIViewController = Constants.registerStoryboard.instantiateViewController(withIdentifier: "RegisterApprovedMemberViewController") as UIViewController
         navigationController.viewControllers = [rootViewController]
         navigationController.navigationBar.isHidden = true
         Constants.kAppDelegate.window?.rootViewController = navigationController

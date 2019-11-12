@@ -20,7 +20,7 @@
         <!--Register Approved Member View Controller-->
         <scene sceneID="yul-oM-FqK">
             <objects>
-                <viewController storyboardIdentifier="RegisterApprovedMemberViewController" id="J4d-8h-RQX" customClass="RegisterApprovedMemberViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RegisterApprovedMemberViewController" id="J4d-8h-RQX" customClass="RegisterApprovedMemberViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="upe-tK-ini">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -332,7 +332,7 @@
         <!--Approved Member Supercars View Controller-->
         <scene sceneID="srS-uA-QPz">
             <objects>
-                <viewController storyboardIdentifier="ApprovedMemberSupercarsViewController" id="Tlm-PN-ZRP" customClass="ApprovedMemberSupercarsViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ApprovedMemberSupercarsViewController" id="Tlm-PN-ZRP" customClass="ApprovedMemberSupercarsViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="eWX-No-qic">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -359,7 +359,7 @@
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="rals" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJC-Cv-eaK">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="eral" textAlignment="natural" lineBreakMode="clip" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZJC-Cv-eaK">
                                 <rect key="frame" x="0.0" y="150" width="59" height="35"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="59" id="R1r-5o-cg9"/>
@@ -449,6 +449,7 @@
                     <connections>
                         <outlet property="btnBack" destination="Gp0-cw-czk" id="Or6-Ml-gFE"/>
                         <outlet property="btnNext" destination="UeM-YK-H37" id="bgD-Aa-wli"/>
+                        <outlet property="lblTitle" destination="Bj4-h4-hqz" id="GA8-ft-xyF"/>
                         <outlet property="tableView" destination="EOn-aw-Hri" id="5do-ln-IUf"/>
                     </connections>
                 </viewController>

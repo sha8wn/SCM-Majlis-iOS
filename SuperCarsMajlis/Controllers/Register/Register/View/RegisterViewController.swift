@@ -15,16 +15,16 @@ class RegisterViewController: UIViewController {
      */
     @IBOutlet var btnBack       : UIButton!
     @IBOutlet var btnSubmit     : UIButton!
-    @IBOutlet var btnModel      : UIButton!
-    @IBOutlet var btnBrand      : UIButton!
+//    @IBOutlet var btnModel      : UIButton!
+//    @IBOutlet var btnBrand      : UIButton!
     @IBOutlet var txtFullName   : UITextField!
     @IBOutlet var txtEmail      : UITextField!
     @IBOutlet var txtCountryCode: UITextField!
     @IBOutlet var txtPhone      : UITextField!
-    @IBOutlet var txtBrand      : UITextField!
-    @IBOutlet var txtModel      : UITextField!
-    var selectedBrandId         : String        = ""
-    var selectedModelId         : String        = ""
+//    @IBOutlet var txtBrand      : UITextField!
+//    @IBOutlet var txtModel      : UITextField!
+//    var selectedBrandId         : String        = ""
+//    var selectedModelId         : String        = ""
     //end
     
     
@@ -41,10 +41,10 @@ class RegisterViewController: UIViewController {
      MARK: - Set Up View
      */
     func setup(){
-        self.txtBrand.setRightPaddingPoints(20)
-        self.txtModel.setRightPaddingPoints(20)
-        self.txtBrand.isUserInteractionEnabled = false
-        self.txtModel.isUserInteractionEnabled = false
+//        self.txtBrand.setRightPaddingPoints(20)
+//        self.txtModel.setRightPaddingPoints(20)
+//        self.txtBrand.isUserInteractionEnabled = false
+//        self.txtModel.isUserInteractionEnabled = false
     }
     //end
     
@@ -66,12 +66,12 @@ class RegisterViewController: UIViewController {
         else if(self.txtPhone.text!.count < 7) || (self.txtPhone.text!.count > 12){
             error = (false, "Please enter valid phone number")
         }
-        else if(self.txtBrand.text == ""){
-            error = (false, "Please select brand")
-        }
-        else if(self.txtModel.text == ""){
-            error = (false, "Please select model")
-        }
+//        else if(self.txtBrand.text == ""){
+//            error = (false, "Please select brand")
+//        }
+//        else if(self.txtModel.text == ""){
+//            error = (false, "Please select model")
+//        }
         else{
             error = (true, "")
         }
@@ -88,26 +88,26 @@ class RegisterViewController: UIViewController {
      }
      */
     
-    @IBAction func btnModelTapped(_ sender: Any) {
-        self.view.endEditing(true)
-        if self.selectedBrandId == ""{
-            AlertViewController.openAlertView(title: "Error", message: "Please select Brand!", buttons: ["OK"])
-        }else{
-            PickerViewController.openPickerView(type: .model, title: "Model", lastSelectedValue: self.txtModel.text!, lastSelectedIndex: self.selectedBrandId) { (value, index) in
-                self.txtModel.text = value
-                self.selectedModelId = String(index!)
-            }
-        }
-    }
+//    @IBAction func btnModelTapped(_ sender: Any) {
+//        self.view.endEditing(true)
+//        if self.selectedBrandId == ""{
+//            AlertViewController.openAlertView(title: "Error", message: "Please select Brand!", buttons: ["OK"])
+//        }else{
+//            PickerViewController.openPickerView(type: .model, title: "Model", lastSelectedValue: self.txtModel.text!, lastSelectedIndex: self.selectedBrandId) { (value, index) in
+//                self.txtModel.text = value
+//                self.selectedModelId = String(index!)
+//            }
+//        }
+//    }
     
-    @IBAction func btnBrandTapped(_ sender: Any) {
-        self.view.endEditing(true)
-        PickerViewController.openPickerView(type: .brand, title: "Brand", lastSelectedValue: self.txtBrand.text!) { (value, index) in
-            self.txtBrand.text = value
-            self.selectedBrandId = "\(String(describing: index!))"
-            self.txtModel.text = ""
-        }
-    }
+//    @IBAction func btnBrandTapped(_ sender: Any) {
+//        self.view.endEditing(true)
+//        PickerViewController.openPickerView(type: .brand, title: "Brand", lastSelectedValue: self.txtBrand.text!) { (value, index) in
+//            self.txtBrand.text = value
+//            self.selectedBrandId = "\(String(describing: index!))"
+//            self.txtModel.text = ""
+//        }
+//    }
     
     @IBAction func btnBackTapped(_ sender: Any) {
         self.navigationController?.popViewController(animated: true)

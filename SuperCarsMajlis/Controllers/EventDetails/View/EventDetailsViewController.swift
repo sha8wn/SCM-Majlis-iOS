@@ -216,8 +216,10 @@ class EventDetailsViewController: UIViewController {
                 if reserved > 0{
                     if (dataModel.status ?? "").lowercased() == "live"{
                         self.btnReserve.isHidden = true
+                        self.btnReserve.isEnabled = true
                     }else{
                         self.btnReserve.isHidden = false
+                        self.btnReserve.isEnabled = true
                         self.btnReserve.setTitle("Cancel Reservation", for: .normal)
                         self.btnReserve.setBackgroundImage(UIImage(named: ""), for: .normal)
                         self.btnReserve.backgroundColor = UIColor(red: 166/255, green: 166/255, blue: 170/255, alpha: 1.0)
@@ -225,18 +227,23 @@ class EventDetailsViewController: UIViewController {
                 }else{
                     if vacentSpot > 0{
                         self.btnReserve.isHidden = false
+                        self.btnReserve.isEnabled = true
                         self.btnReserve.setTitle("Reserve my spot", for: .normal)
                         self.btnReserve.setBackgroundImage(UIImage(named: "ic_Button_BG_Red"), for: .normal)
                     }else{
-                        self.btnReserve.isHidden = true
+//                        self.btnReserve.isHidden = true
+                        self.btnReserve.isEnabled = false
+                        self.btnReserve.isEnabled = false
                     }
                 }
             }else{
                 if vacentSpot > 0{
+                    self.btnReserve.isEnabled = true
                     self.btnReserve.isHidden = false
                     self.btnReserve.setTitle("Reserve my spot", for: .normal)
                     self.btnReserve.setBackgroundImage(UIImage(named: "ic_Button_BG_Red"), for: .normal)
                 }else{
+                    self.btnReserve.isEnabled = true
                     self.btnReserve.isHidden = true
                 }
             }

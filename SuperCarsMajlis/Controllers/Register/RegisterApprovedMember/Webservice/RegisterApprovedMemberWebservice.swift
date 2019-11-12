@@ -60,6 +60,7 @@ extension RegisterApprovedMemberViewController{
                     setAccessTokenModel(model: responseModel)
                     
                     let vc = Constants.registerStoryboard.instantiateViewController(withIdentifier: "ApprovedMemberSupercarsViewController") as! ApprovedMemberSupercarsViewController
+                    vc.isOpenFrom = .approvedRegister
                     self.navigationController?.pushViewController(vc, animated: true)
                     
                 } catch let error {

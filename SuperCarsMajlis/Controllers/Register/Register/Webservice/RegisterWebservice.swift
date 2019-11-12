@@ -20,10 +20,16 @@ extension RegisterViewController{
         let requestDict = ["name"      : self.txtFullName.text!,
                            "email"     : self.txtEmail.text!,
                            "phone"     : String(format: "00971%@", self.txtPhone.text!),
-                           "brand"     : Int(self.selectedBrandId)!,
-                           "model"     : Int(self.selectedModelId)!,
                            "uid"       : "",
-            ] as [String : Any]
+        ] as [String : Any]
+        
+//        let requestDict = ["name"      : self.txtFullName.text!,
+//                           "email"     : self.txtEmail.text!,
+//                           "phone"     : String(format: "00971%@", self.txtPhone.text!),
+//                           "brand"     : Int(self.selectedBrandId)!,
+//                           "model"     : Int(self.selectedModelId)!,
+//                           "uid"       : "",
+//            ] as [String : Any]
         
         Network.shared.request(urlPath: urlPath, methods: .post, authType: .basic, params: requestDict as [String : AnyObject]) { (response, message, statusCode, status) in
             FunctionConstants.getInstance().hideLoader(view: self)
@@ -32,11 +38,21 @@ extension RegisterViewController{
                     let responseModel = try JSONDecoder().decode(RegisterModel.self, from: response?.data ?? Data())
                     setAccessTokenModel(model: responseModel)
                     setUserState(state: .pastEvent)
-                    AlertViewController.openAlertView(title: "Thank you", message: "We have received your application. You will be contacted shortly.", buttons: ["Continue"]) { (index) in
-                        let vc = Constants.registerStoryboard.instantiateViewController(withIdentifier: "RegisterApprovedMemberViewController") as! RegisterApprovedMemberViewController
-                        self.navigationController?.pushViewController(vc, animated: true)
-                    }
                     
+                    
+                    let vc = Constants.registerStoryboard.instantiateViewController(withIdentifier: "ApprovedMemberSupercarsViewController") as! ApprovedMemberSupercarsViewController
+                    vc.isOpenFrom = .partiallyRegister
+                    self.navigationController?.pushViewController(vc, animated: true)
+                    
+                    /*
+                    AlertViewController.openAlertView(title: "Thank you", message: "We have received your application. You will be contacted shortly.", buttons: ["Continue"]) { (index) in
+                        
+                        let viewController = Constants.eventStoryboard.instantiateViewController(withIdentifier: "PastEventViewController") as! PastEventViewController
+                        viewController.openFrom = .chooseUser
+                        self.navigationController?.pushViewController( viewController, animated: true)
+
+                    }
+                    */
                 } catch let error {
                     AlertViewController.openAlertView(title: "Error", message: error.localizedDescription, buttons: ["OK"])
                 }

@@ -53,11 +53,26 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         print(url)
         print(url.host)
+        
+        if url.absoluteString.contains("scm://user/complete?token"){
+            var parameters: [String: String] = [:]
+            URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
+                parameters[$0.name] = $0.value
+            
+                var accessTokenModel: RegisterModel!
+                if getAccessTokenModel() != nil{
+                    accessTokenModel = getAccessTokenModel()
+                }else{
+                    accessTokenModel = RegisterModel(error: nil, error_text: nil, user: nil, token: nil)
+                }
+                accessTokenModel.token = parameters[$0.name] ?? ""
+                setAccessTokenModel(model: accessTokenModel)
 
-        var parameters: [String: String] = [:]
-        URLComponents(url: url, resolvingAgainstBaseURL: false)?.queryItems?.forEach {
-            parameters[$0.name] = $0.value
+                self.openRegisterFlowForApprovedUser()
+                
+            }
         }
+        
         // do other deep link routing for the Facebook SDK, Pinterest SDK, etc
         return true
     }
