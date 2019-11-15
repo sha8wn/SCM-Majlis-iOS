@@ -93,7 +93,7 @@ class DocumentViewController: UIViewController {
         self.btnDriversBackCross.isHidden = true
         
         //Set Data
-        if self.openFrom == .sideMenu{
+        if self.openFrom == .sideMenu || self.openFrom == .register{
             if self.arrayOfDocs.count > 0{
                 for i in 0..<self.arrayOfDocs.count{
                     let model = self.arrayOfDocs[i]
@@ -196,21 +196,21 @@ class DocumentViewController: UIViewController {
             }
         }
         
-        if self.openFrom == .register{
-            if self.btnEmiratesFront.currentBackgroundImage == nil && self.btnEmiratesBack.currentBackgroundImage == nil && self.btnDriversFront.currentBackgroundImage == nil && self.btnDriversBack.currentBackgroundImage == nil{
-                AlertViewController.openAlertView(title: "Success", message: "You are now a member of SuperCars Majlis.", buttons: ["Continue"]) { (index) in
-                    let vc = Constants.homeStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
-                    self.navigationController?.pushViewController(vc, animated: true)
-                }
-            }else{
-                var accessTokenModel: RegisterModel!
-                if getAccessTokenModel() != nil{
-                    accessTokenModel = getAccessTokenModel()
-                }
-                self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
-            }
-        }else if self.openFrom == .partiallyRegister{
-            
+//        if self.openFrom == .register{
+//            if self.btnEmiratesFront.currentBackgroundImage == nil && self.btnEmiratesBack.currentBackgroundImage == nil && self.btnDriversFront.currentBackgroundImage == nil && self.btnDriversBack.currentBackgroundImage == nil{
+//                AlertViewController.openAlertView(title: "Success", message: "You are now a member of SuperCars Majlis.", buttons: ["Continue"]) { (index) in
+//                    let vc = Constants.homeStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController
+//                    self.navigationController?.pushViewController(vc, animated: true)
+//                }
+//            }else{
+//                var accessTokenModel: RegisterModel!
+//                if getAccessTokenModel() != nil{
+//                    accessTokenModel = getAccessTokenModel()
+//                }
+//                self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
+//            }
+//        }else
+        if self.openFrom == .partiallyRegister{
             if licensesImageArray.count > 0 && docsImageArray.count > 0{
                 var accessTokenModel: RegisterModel!
                 if getAccessTokenModel() != nil{
@@ -225,7 +225,6 @@ class DocumentViewController: UIViewController {
                 }else{
                     
                 }
-//                AlertViewController.openAlertView(title: "Error", message: "Please upload emirates id and drivers license", buttons: ["OK"])
             }
         }else{
             var accessTokenModel: RegisterModel!

@@ -16,6 +16,8 @@ class WebViewController: UIViewController {
      MARK: Properties
      */
     @IBOutlet weak var webView          : WKWebView!
+    @IBOutlet weak var txtView          : UITextView!
+    @IBOutlet weak var lblTitle         : UILabel!
     @IBOutlet weak var btn_back         : UIButton!
     var urlString                       : String        = ""
     //end
@@ -25,10 +27,19 @@ class WebViewController: UIViewController {
     */
     override func viewDidLoad() {
         super.viewDidLoad()
+        self.webView.isOpaque = false
+        self.webView.backgroundColor = UIColor.clear
+        
+        
         self.webView.navigationDelegate = self
-        if urlString == "Terms" || urlString == "Privacy"{
+        if urlString == "Terms"{
+            self.lblTitle.text = "Terms & Conditions"
+            self.callGetPages(endPoint: urlString)
+        }else if urlString == "Privacy"{
+            self.lblTitle.text = "Privacy Policy"
             self.callGetPages(endPoint: urlString)
         }else{
+            self.lblTitle.text = ""
             if FunctionConstants.getInstance().isValidUrl(urlString: self.urlString){
                let url = URL(string: urlString)
                self.webView.load(URLRequest(url: url!))
@@ -90,7 +101,12 @@ extension WebViewController{
                                     let title = dict.value(forKey: "title") as! String
                                     if title.lowercased() == endPoint.lowercased(){
                                         if let text = dict.value(forKey: "text") as? String{
-                                            self.webView.loadHTMLString(text, baseURL: nil)
+//                                            self.webView.loadHTMLString(text, baseURL: nil)
+                                            
+//                                            self.txtView.attributedText = text.htmlAttributed(using: UIFont(name: "Poppins-Medium", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0), color: UIColor.white)
+                                            
+                                            self.txtView.attributedText = text.htmlAttributed(using: UIFont(), color: UIColor.white)
+                                            
                                         }else{
                                             
                                         }
@@ -123,4 +139,39 @@ extension WebViewController{
             }
         }
     }
+}
+
+
+extension String{
+    func htmlAttributed(using font: UIFont, color: UIColor) -> NSAttributedString? {
+            do {
+                let htmlCSSString = "<style>" +
+                    "html *" +
+                    "{" +
+                    "font-size: \(font.pointSize)pt !important;" +
+                    "color: #ffffff !important;" +
+                    "font-family: \(font.familyName), Helvetica !important;" +
+                "}</style> \(self)"
+
+                
+    //            let htmlCSSString = "<style>" +
+    //                "html *" +
+    //                "{" +
+    //                "color: #\(color.hexString!) !important;" +
+    //                "font-family: \(font.familyName), Helvetica !important;" +
+    //            "}</style> \(self)"
+    //
+                guard let data = htmlCSSString.data(using: String.Encoding.utf8) else {
+                    return nil
+                }
+                
+                return try NSAttributedString(data: data,
+                                              options: [.documentType: NSAttributedString.DocumentType.html,
+                                                        .characterEncoding: String.Encoding.utf8.rawValue],
+                                              documentAttributes: nil)
+            } catch {
+                print("error: ", error)
+                return nil
+            }
+        }
 }

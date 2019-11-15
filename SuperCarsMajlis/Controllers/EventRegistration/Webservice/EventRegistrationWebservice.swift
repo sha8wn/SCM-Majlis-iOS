@@ -30,7 +30,11 @@ extension EventRegistrationViewController{
                                     superCars.car_Id = "\(modelData.id ?? 0)"
                                     superCars.brand = modelData.brand_name ?? ""
                                     superCars.model = modelData.model_name ?? ""
-                                    superCars.carImageURL = modelData.model_img ?? ""
+                                    if modelData.model_img ?? "" != ""{
+                                        superCars.carImageURL = modelData.model_img ?? ""
+                                    }else{
+                                        superCars.carImageURL = modelData.brand_img ?? ""
+                                    }
                                     self.dataArray.append(superCars)
                                 }
                             }

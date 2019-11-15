@@ -21,6 +21,7 @@ class RegisterApprovedMemberViewController: UIViewController {
     @IBOutlet var txtCountryCode      : UITextField!
     @IBOutlet var txtPhone            : UITextField!
     @IBOutlet var txtPassword         : UITextField!
+    var userModel                     : ApprovedUsersList!
     var userId                        : String        = ""
     var isShowPassword                : Bool          = false
     

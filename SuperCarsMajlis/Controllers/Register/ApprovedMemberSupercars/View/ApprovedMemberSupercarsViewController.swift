@@ -23,7 +23,7 @@ class ApprovedMemberSupercarsViewController: UIViewController {
     @IBOutlet var btnNext             : UIButton!
     @IBOutlet var tableView           : UITableView!
     @IBOutlet var lblTitle            : UILabel!
-
+    var userModel                     : ApprovedUsersList!
     var dispatchGroup                                      = DispatchGroup()
     var dataArray                     : [SupercarsModel]   = [SupercarsModel()]
     var isOpenFrom                    : ApprovedMemberSupercarsOpenFrom!
@@ -224,6 +224,8 @@ class ApprovedMemberSupercarsViewController: UIViewController {
                 vc.openFrom = .partiallyRegister
             }else{
                 vc.openFrom = .register
+                vc.arrayOfDocs = self.userModel.docs ?? []
+                vc.arrayOfLicense = self.userModel.licenses ?? []
             }
             self.navigationController?.pushViewController(vc, animated: true)
         }

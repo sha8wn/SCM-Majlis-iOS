@@ -25,6 +25,7 @@ extension RegisterApprovedMemberViewController{
                     if let userDetails = responseModel.users{
                         if let list = userDetails.list{
                             if list.count > 0{
+                                self.userModel = list[0]
                                 self.txtFullName.text = list[0].name ?? ""
                                 self.txtEmail.text = list[0].email ?? ""
                                 let phone = list[0].phone ?? "00971"
@@ -60,6 +61,7 @@ extension RegisterApprovedMemberViewController{
                     setAccessTokenModel(model: responseModel)
                     
                     let vc = Constants.registerStoryboard.instantiateViewController(withIdentifier: "ApprovedMemberSupercarsViewController") as! ApprovedMemberSupercarsViewController
+                    vc.userModel = self.userModel
                     vc.isOpenFrom = .approvedRegister
                     self.navigationController?.pushViewController(vc, animated: true)
                     

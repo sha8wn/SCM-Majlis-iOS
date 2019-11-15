@@ -150,7 +150,11 @@ class EventDetailsViewController: UIViewController {
             }
             
             //Date
-            self.lblDateAndTime.text = String(format: "%@\n%@", dataModel.date ?? "", dataModel.start ?? "")
+            let eventDate = (dataModel.date ?? "").toDate(withFormat: "yyyy-MM-dd")
+            let strEventDate = convertDateFormater(date: eventDate ?? Date(), format: "dd MMMM YY")
+            self.lblDateAndTime.text = String(format: "%@\n%@ - %@", strEventDate, dataModel.start ?? "", dataModel.end ?? "")
+//
+//            self.lblDateAndTime.text = String(format: "%@\n%@", dataModel.date ?? "", dataModel.start ?? "")
             
             //Location
             self.lblLocation.text = dataModel.location ?? ""
@@ -231,9 +235,11 @@ class EventDetailsViewController: UIViewController {
                         self.btnReserve.setTitle("Reserve my spot", for: .normal)
                         self.btnReserve.setBackgroundImage(UIImage(named: "ic_Button_BG_Red"), for: .normal)
                     }else{
-//                        self.btnReserve.isHidden = true
+                        self.btnReserve.isHidden = false
                         self.btnReserve.isEnabled = false
-                        self.btnReserve.isEnabled = false
+                        self.btnReserve.setTitle("Fully Booked", for: .normal)
+                        self.btnReserve.setBackgroundImage(UIImage(named: ""), for: .normal)
+                        self.btnReserve.backgroundColor = UIColor(red: 166/255, green: 166/255, blue: 170/255, alpha: 1.0)
                     }
                 }
             }else{

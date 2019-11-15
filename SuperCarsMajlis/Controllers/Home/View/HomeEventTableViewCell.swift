@@ -90,7 +90,9 @@ class HomeEventTableViewCell: UITableViewCell {
         }
         
         //Date
-        self.lblDateAndTime.text = String(format: "%@\n%@", model.date ?? "", model.start ?? "")
+        let eventDate = (model.date ?? "").toDate(withFormat: "yyyy-MM-dd")
+        let strEventDate = convertDateFormater(date: eventDate ?? Date(), format: "dd MMMM YY")
+        self.lblDateAndTime.text = String(format: "%@\n%@ - %@", strEventDate, model.start ?? "", model.end ?? "")
         
         //Location
         self.lblLocation.text = model.location ?? ""
@@ -99,7 +101,6 @@ class HomeEventTableViewCell: UITableViewCell {
         DispatchQueue.main.async {
             self.imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
             self.imgView.sd_setImage(with: URL(string: model.img ?? ""), placeholderImage: UIImage(named: ""), options: .handleCookies, progress: nil, completed: nil)
-            
             self.collectionView.reloadData()
         }
         
@@ -161,7 +162,9 @@ extension HomeEventTableViewCell: UICollectionViewDelegate, UICollectionViewData
             cell.bgView.layer.borderWidth = 1
             cell.bgView.layer.borderColor = UIColor.white.cgColor
             cell.bgView.backgroundColor = UIColor(named: "customGreyColor")
-            cell.imgView.image = UIImage(named: "")
+            DispatchQueue.main.async {
+                cell.imgView.isHidden = true
+            }
         }else{
             let model = self.memberGoingArray[indexPath.item]
             cell.lblTitle.isHidden = true
@@ -171,11 +174,11 @@ extension HomeEventTableViewCell: UICollectionViewDelegate, UICollectionViewData
             cell.bgView.backgroundColor = UIColor.clear
             DispatchQueue.main.async {
                 //Image
+                cell.imgView.isHidden = false
                 cell.imgView.sd_imageIndicator = SDWebImageActivityIndicator.white
                 cell.imgView.sd_setImage(with: URL(string: model.img ?? ""), placeholderImage: UIImage(named: "ic_Default_Image"), options: .highPriority, progress: nil, completed: nil)
             }
         }
-        
         return cell
     }
     
@@ -207,3 +210,4 @@ extension HomeEventTableViewCell: UICollectionViewDelegate, UICollectionViewData
         }
     }
 }
+
