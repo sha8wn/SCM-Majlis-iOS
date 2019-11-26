@@ -27,6 +27,7 @@ class RegisterViewController: UIViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        print(Constants.kAppDelegate.kdeviceFCMToken!)
         // Do any additional setup after loading the view.
     }
     

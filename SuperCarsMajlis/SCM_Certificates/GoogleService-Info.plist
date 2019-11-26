@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>1095754849480-e2tifu3d0e6p185umrfv7cd4ing1etjd.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.1095754849480-e2tifu3d0e6p185umrfv7cd4ing1etjd</string>
+	<key>ANDROID_CLIENT_ID</key>
+	<string>1095754849480-769ujt97b79htvf1itmu8uulgjp00crg.apps.googleusercontent.com</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCX4qYPMlhpGhWdCbOb2QznnLM4ku5_D9Q</string>
+	<key>GCM_SENDER_ID</key>
+	<string>1095754849480</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>ae.scmajlis.scm-app</string>
+	<key>PROJECT_ID</key>
+	<string>supercars-majlis</string>
+	<key>STORAGE_BUCKET</key>
+	<string>supercars-majlis.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:1095754849480:ios:e68dd1e8d23976aa68d9fd</string>
+	<key>DATABASE_URL</key>
+	<string>https://supercars-majlis.firebaseio.com</string>
+</dict>
+</plist>

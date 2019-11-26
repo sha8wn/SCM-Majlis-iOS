@@ -15,7 +15,7 @@ extension LoginViewController{
         
         let requestDict = ["email"     : self.txtEmail.text!,
                            "password"  : self.txtPassword.text!,
-                           "uid"       : "q213"
+                           "uid"       : "\(Constants.kAppDelegate.kdeviceFCMToken!)"
             ] as [String : Any]
         
         Network.shared.request(urlPath: urlPath, methods: .post, authType: .basic, params: requestDict as [String : AnyObject]) { (response, message, statusCode, status) in

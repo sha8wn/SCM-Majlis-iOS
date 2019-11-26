@@ -20,7 +20,7 @@ extension RegisterViewController{
         let requestDict = ["name"      : self.txtFullName.text!,
                            "email"     : self.txtEmail.text!,
                            "phone"     : String(format: "00971%@", self.txtPhone.text!),
-                           "uid"       : "",
+                           "uid"       : "\(Constants.kAppDelegate.kdeviceFCMToken!)",
         ] as [String : Any]
         
 //        let requestDict = ["name"      : self.txtFullName.text!,

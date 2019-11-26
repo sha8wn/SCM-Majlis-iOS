@@ -107,6 +107,17 @@
 		B4CCF625235856EF0047F5FB /* LoginWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CCF624235856EF0047F5FB /* LoginWebservice.swift */; };
 		B4CCF62923587CCC0047F5FB /* ForgotPasswordWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CCF62823587CCC0047F5FB /* ForgotPasswordWebservice.swift */; };
 		B4CCF62D235891D60047F5FB /* SettingWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4CCF62C235891D60047F5FB /* SettingWebservice.swift */; };
+		B4D34F19238D0BFC00F8140E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F18238D0BFC00F8140E /* GoogleService-Info.plist */; };
+		B4D34F25238D222900F8140E /* SCM_Push_Dev.p12 in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F1B238D222900F8140E /* SCM_Push_Dev.p12 */; };
+		B4D34F26238D222900F8140E /* aps_development.cer in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F1C238D222900F8140E /* aps_development.cer */; };
+		B4D34F27238D222900F8140E /* SCM_Push_Dis.p12 in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F1D238D222900F8140E /* SCM_Push_Dis.p12 */; };
+		B4D34F28238D222900F8140E /* CertificateSigningRequest.certSigningRequest in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F1E238D222900F8140E /* CertificateSigningRequest.certSigningRequest */; };
+		B4D34F29238D222900F8140E /* aps.cer in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F1F238D222900F8140E /* aps.cer */; };
+		B4D34F2A238D222900F8140E /* ios_distribution.cer in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F20238D222900F8140E /* ios_distribution.cer */; };
+		B4D34F2B238D222900F8140E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F21238D222900F8140E /* GoogleService-Info.plist */; };
+		B4D34F2C238D222900F8140E /* SCM_Dis.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F22238D222900F8140E /* SCM_Dis.mobileprovision */; };
+		B4D34F2D238D222900F8140E /* SCM_Dev.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F23238D222900F8140E /* SCM_Dev.mobileprovision */; };
+		B4D34F2E238D222900F8140E /* ios_development.cer in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F24238D222900F8140E /* ios_development.cer */; };
 		B4D6C018234DD40300D351E2 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D6C017234DD40300D351E2 /* ChangePasswordViewController.swift */; };
 		B4D6C01B234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D6C01A234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift */; };
 		B4E019F9233B28A1001EBE65 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E019F8233B28A1001EBE65 /* AppDelegateExtension.swift */; };
@@ -277,6 +288,17 @@
 		B4CCF624235856EF0047F5FB /* LoginWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginWebservice.swift; sourceTree = "<group>"; };
 		B4CCF62823587CCC0047F5FB /* ForgotPasswordWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordWebservice.swift; sourceTree = "<group>"; };
 		B4CCF62C235891D60047F5FB /* SettingWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingWebservice.swift; sourceTree = "<group>"; };
+		B4D34F18238D0BFC00F8140E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B4D34F1B238D222900F8140E /* SCM_Push_Dev.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCM_Push_Dev.p12; sourceTree = "<group>"; };
+		B4D34F1C238D222900F8140E /* aps_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = aps_development.cer; sourceTree = "<group>"; };
+		B4D34F1D238D222900F8140E /* SCM_Push_Dis.p12 */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCM_Push_Dis.p12; sourceTree = "<group>"; };
+		B4D34F1E238D222900F8140E /* CertificateSigningRequest.certSigningRequest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CertificateSigningRequest.certSigningRequest; sourceTree = "<group>"; };
+		B4D34F1F238D222900F8140E /* aps.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = aps.cer; sourceTree = "<group>"; };
+		B4D34F20238D222900F8140E /* ios_distribution.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ios_distribution.cer; sourceTree = "<group>"; };
+		B4D34F21238D222900F8140E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		B4D34F22238D222900F8140E /* SCM_Dis.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCM_Dis.mobileprovision; sourceTree = "<group>"; };
+		B4D34F23238D222900F8140E /* SCM_Dev.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCM_Dev.mobileprovision; sourceTree = "<group>"; };
+		B4D34F24238D222900F8140E /* ios_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ios_development.cer; sourceTree = "<group>"; };
 		B4D6C017234DD40300D351E2 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		B4D6C01A234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSuperCarsViewController.swift; sourceTree = "<group>"; };
 		B4E019F8233B28A1001EBE65 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
@@ -678,6 +700,7 @@
 		B47831FA233A344D0081735F /* SuperCarsMajlis */ = {
 			isa = PBXGroup;
 			children = (
+				B4D34F1A238D222900F8140E /* SCM_Certificates */,
 				B48BEB59235474DE00271B24 /* SuperCarsMajlis.entitlements */,
 				B478322E233A38100081735F /* AppDelegate */,
 				B478322F233A38300081735F /* Controllers */,
@@ -773,6 +796,7 @@
 				B4783207233A34510081735F /* Assets.xcassets */,
 				B4783209233A34510081735F /* LaunchScreen.storyboard */,
 				B478320C233A34510081735F /* Info.plist */,
+				B4D34F18238D0BFC00F8140E /* GoogleService-Info.plist */,
 				B4783204233A344D0081735F /* SuperCarsMajlis.xcdatamodeld */,
 			);
 			path = SupportFiles;
@@ -1120,6 +1144,23 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		B4D34F1A238D222900F8140E /* SCM_Certificates */ = {
+			isa = PBXGroup;
+			children = (
+				B4D34F1B238D222900F8140E /* SCM_Push_Dev.p12 */,
+				B4D34F1C238D222900F8140E /* aps_development.cer */,
+				B4D34F1D238D222900F8140E /* SCM_Push_Dis.p12 */,
+				B4D34F1E238D222900F8140E /* CertificateSigningRequest.certSigningRequest */,
+				B4D34F1F238D222900F8140E /* aps.cer */,
+				B4D34F20238D222900F8140E /* ios_distribution.cer */,
+				B4D34F21238D222900F8140E /* GoogleService-Info.plist */,
+				B4D34F22238D222900F8140E /* SCM_Dis.mobileprovision */,
+				B4D34F23238D222900F8140E /* SCM_Dev.mobileprovision */,
+				B4D34F24238D222900F8140E /* ios_development.cer */,
+			);
+			path = SCM_Certificates;
+			sourceTree = "<group>";
+		};
 		B4D6C016234DD39500D351E2 /* ChangePassword */ = {
 			isa = PBXGroup;
 			children = (
@@ -1357,6 +1398,8 @@
 				B427DB06234EE9BA003ACB36 /* seguisb.ttf in Resources */,
 				B4EE4038233B87D6008FD80D /* Poppins-MediumItalic.ttf in Resources */,
 				B40A1B0B233CBC7F0033BB82 /* PastEventTableViewCell.xib in Resources */,
+				B4D34F29238D222900F8140E /* aps.cer in Resources */,
+				B4D34F26238D222900F8140E /* aps_development.cer in Resources */,
 				B4EFC4E1233C9E2F000DC74A /* LoginAndSignup.storyboard in Resources */,
 				B4EE4034233B87D6008FD80D /* Poppins-Bold.ttf in Resources */,
 				B4EE403F233B8AA5008FD80D /* Walkthrough.storyboard in Resources */,
@@ -1370,9 +1413,11 @@
 				B4EE4026233B87D6008FD80D /* Poppins-ExtraLight.ttf in Resources */,
 				B4B84ADE23425AD700607AF4 /* SupercarsFooterTableViewCell.xib in Resources */,
 				B4EE4029233B87D6008FD80D /* Poppins-BoldItalic.ttf in Resources */,
+				B4D34F28238D222900F8140E /* CertificateSigningRequest.certSigningRequest in Resources */,
 				B4EE4036233B87D6008FD80D /* Poppins-Thin.ttf in Resources */,
 				B4C1FE0723435DC200A4581C /* Home.storyboard in Resources */,
 				B4EE402A233B87D6008FD80D /* Poppins-Light.ttf in Resources */,
+				B4D34F2E238D222900F8140E /* ios_development.cer in Resources */,
 				B4EE402E233B87D6008FD80D /* Poppins-ExtraBold.ttf in Resources */,
 				B4EFC4DF233C9D34000DC74A /* start.mp3 in Resources */,
 				B40A1B16233DC0830033BB82 /* Common.storyboard in Resources */,
@@ -1381,11 +1426,13 @@
 				B4382FCE234B0CE700FDF560 /* MemberCollectionViewCell.xib in Resources */,
 				B4EE402C233B87D6008FD80D /* Poppins-SemiBoldItalic.ttf in Resources */,
 				B4EE4031233B87D6008FD80D /* Poppins-Regular.ttf in Resources */,
+				B4D34F2C238D222900F8140E /* SCM_Dis.mobileprovision in Resources */,
 				B4382FD8234B2D8300FDF560 /* MemberGoingTableViewCell.xib in Resources */,
 				B4EE4037233B87D6008FD80D /* Poppins-SemiBold.ttf in Resources */,
 				B4EE402D233B87D6008FD80D /* Poppins-ExtraBoldItalic.ttf in Resources */,
 				B4748553234F34DD00A4D489 /* SelectedCarCollectionViewCell.xib in Resources */,
 				B40A1B04233CB87A0033BB82 /* Event.storyboard in Resources */,
+				B4D34F2D238D222900F8140E /* SCM_Dev.mobileprovision in Resources */,
 				B40A1B0F233CC1530033BB82 /* PaseEventCollectionViewCell.xib in Resources */,
 				B427DB08234EE9BA003ACB36 /* segoeuil.ttf in Resources */,
 				B4382FDC234B446900FDF560 /* SettingsTableViewCell.xib in Resources */,
@@ -1393,12 +1440,17 @@
 				B4EE402B233B87D6008FD80D /* Poppins-Medium.ttf in Resources */,
 				B427DB14234F03E1003ACB36 /* EventOtherDetailsCollectionViewCell.xib in Resources */,
 				B474854F234F34C100A4D489 /* CarCollectionViewCell.xib in Resources */,
+				B4D34F19238D0BFC00F8140E /* GoogleService-Info.plist in Resources */,
 				B4B84AD423420C0600607AF4 /* Register.storyboard in Resources */,
 				B4783208233A34510081735F /* Assets.xcassets in Resources */,
 				B427DB07234EE9BA003ACB36 /* segoeui.ttf in Resources */,
 				B4B84AE22343091000607AF4 /* SupercarsTableViewCell.xib in Resources */,
 				B427DB0C234EEDD2003ACB36 /* EventCheckPointsTableViewCell.xib in Resources */,
+				B4D34F2A238D222900F8140E /* ios_distribution.cer in Resources */,
 				B427DAFF234EE671003ACB36 /* EventDescTableViewCell.xib in Resources */,
+				B4D34F2B238D222900F8140E /* GoogleService-Info.plist in Resources */,
+				B4D34F27238D222900F8140E /* SCM_Push_Dis.p12 in Resources */,
+				B4D34F25238D222900F8140E /* SCM_Push_Dev.p12 in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1762,14 +1814,14 @@
 				CODE_SIGN_ENTITLEMENTS = SuperCarsMajlis/SuperCarsMajlis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 728A4R9BM6;
+				DEVELOPMENT_TEAM = 393WND98C8;
 				INFOPLIST_FILE = /Users/himanshugoyal/Project/SCM/SuperCarsMajlis/SuperCarsMajlis/SupportFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nibouapp.niboucustomer;
+				PRODUCT_BUNDLE_IDENTIFIER = "ae.scmajlis.scm-app";
 				PRODUCT_NAME = SCM;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;
@@ -1784,14 +1836,14 @@
 				CODE_SIGN_ENTITLEMENTS = SuperCarsMajlis/SuperCarsMajlis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_ASSET_PATHS = "";
-				DEVELOPMENT_TEAM = 728A4R9BM6;
+				DEVELOPMENT_TEAM = 393WND98C8;
 				INFOPLIST_FILE = /Users/himanshugoyal/Project/SCM/SuperCarsMajlis/SuperCarsMajlis/SupportFiles/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
-				PRODUCT_BUNDLE_IDENTIFIER = com.nibouapp.niboucustomer;
+				PRODUCT_BUNDLE_IDENTIFIER = "ae.scmajlis.scm-app";
 				PRODUCT_NAME = SCM;
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = 1;

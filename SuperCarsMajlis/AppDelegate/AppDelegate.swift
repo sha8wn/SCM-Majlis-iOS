@@ -8,15 +8,24 @@
 
 import UIKit
 import CoreData
+import Firebase
+import FirebaseMessaging
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window : UIWindow?
+    var kdeviceIdValueKey   : String! = "simulator"
+    var kdeviceFCMToken     : String! = "simulator"
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplication.LaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         self.setUp()
+        FirebaseApp.configure()
+        Messaging.messaging().delegate = self
+        Messaging.messaging().isAutoInitEnabled = true
+        UNUserNotificationCenter.current().delegate = self
+        self.setupPushNotfication(application: application)
         return true
     }
     
@@ -133,3 +142,47 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 }
 
+extension AppDelegate{
+    func application(_ application: UIApplication, didFailToRegisterForRemoteNotificationsWithError error: Error) {
+        print(error)
+    }
+    
+    func application(_ application: UIApplication, didRegisterForRemoteNotificationsWithDeviceToken deviceToken: Data) {
+        kdeviceIdValueKey = deviceToken.reduce("", {$0 + String(format: "%02X", $1)})
+        print("---------------------------------------")
+        print("APNs device token: \(kdeviceIdValueKey!)")
+        print("---------------------------------------")
+    }
+}
+
+
+extension AppDelegate: MessagingDelegate, UNUserNotificationCenterDelegate{
+    func messaging(_ messaging: Messaging, didReceiveRegistrationToken fcmToken: String) {
+        kdeviceFCMToken = fcmToken
+        print("---------------------------------------")
+        print("fcmToken===\(fcmToken)")
+        print("---------------------------------------")
+    }
+    
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        completionHandler()
+    }
+    
+    //MARK: - PushNotfication
+    /**
+     This function is used to receieve PushNotfication
+     */
+    func setupPushNotfication(application : UIApplication){
+        if #available(iOS 10, *) {
+            UNUserNotificationCenter.current().requestAuthorization(options:[.badge, .alert, .sound]){ (granted, error) in }
+            application.registerForRemoteNotifications()
+        }else {
+            application.registerForRemoteNotifications(matching: [.badge, .sound, .alert])
+        }
+    }
+}

@@ -10,6 +10,8 @@ target 'SuperCarsMajlis' do
   pod 'SDWebImage'
   pod 'MBProgressHUD'
   pod 'SKPhotoBrowser'
+  pod 'Firebase/Core'
+  pod 'Firebase/Messaging'
   
   # Pods for SuperCarsMajlis
 
