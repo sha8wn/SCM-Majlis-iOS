@@ -114,7 +114,6 @@
 		B4D34F28238D222900F8140E /* CertificateSigningRequest.certSigningRequest in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F1E238D222900F8140E /* CertificateSigningRequest.certSigningRequest */; };
 		B4D34F29238D222900F8140E /* aps.cer in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F1F238D222900F8140E /* aps.cer */; };
 		B4D34F2A238D222900F8140E /* ios_distribution.cer in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F20238D222900F8140E /* ios_distribution.cer */; };
-		B4D34F2B238D222900F8140E /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F21238D222900F8140E /* GoogleService-Info.plist */; };
 		B4D34F2C238D222900F8140E /* SCM_Dis.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F22238D222900F8140E /* SCM_Dis.mobileprovision */; };
 		B4D34F2D238D222900F8140E /* SCM_Dev.mobileprovision in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F23238D222900F8140E /* SCM_Dev.mobileprovision */; };
 		B4D34F2E238D222900F8140E /* ios_development.cer in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F24238D222900F8140E /* ios_development.cer */; };
@@ -295,7 +294,6 @@
 		B4D34F1E238D222900F8140E /* CertificateSigningRequest.certSigningRequest */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = CertificateSigningRequest.certSigningRequest; sourceTree = "<group>"; };
 		B4D34F1F238D222900F8140E /* aps.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = aps.cer; sourceTree = "<group>"; };
 		B4D34F20238D222900F8140E /* ios_distribution.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ios_distribution.cer; sourceTree = "<group>"; };
-		B4D34F21238D222900F8140E /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		B4D34F22238D222900F8140E /* SCM_Dis.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCM_Dis.mobileprovision; sourceTree = "<group>"; };
 		B4D34F23238D222900F8140E /* SCM_Dev.mobileprovision */ = {isa = PBXFileReference; lastKnownFileType = file; path = SCM_Dev.mobileprovision; sourceTree = "<group>"; };
 		B4D34F24238D222900F8140E /* ios_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ios_development.cer; sourceTree = "<group>"; };
@@ -700,8 +698,8 @@
 		B47831FA233A344D0081735F /* SuperCarsMajlis */ = {
 			isa = PBXGroup;
 			children = (
-				B4D34F1A238D222900F8140E /* SCM_Certificates */,
 				B48BEB59235474DE00271B24 /* SuperCarsMajlis.entitlements */,
+				B4D34F1A238D222900F8140E /* SCM_Certificates */,
 				B478322E233A38100081735F /* AppDelegate */,
 				B478322F233A38300081735F /* Controllers */,
 				B4783230233A383A0081735F /* Managers */,
@@ -1153,7 +1151,6 @@
 				B4D34F1E238D222900F8140E /* CertificateSigningRequest.certSigningRequest */,
 				B4D34F1F238D222900F8140E /* aps.cer */,
 				B4D34F20238D222900F8140E /* ios_distribution.cer */,
-				B4D34F21238D222900F8140E /* GoogleService-Info.plist */,
 				B4D34F22238D222900F8140E /* SCM_Dis.mobileprovision */,
 				B4D34F23238D222900F8140E /* SCM_Dev.mobileprovision */,
 				B4D34F24238D222900F8140E /* ios_development.cer */,
@@ -1448,7 +1445,6 @@
 				B427DB0C234EEDD2003ACB36 /* EventCheckPointsTableViewCell.xib in Resources */,
 				B4D34F2A238D222900F8140E /* ios_distribution.cer in Resources */,
 				B427DAFF234EE671003ACB36 /* EventDescTableViewCell.xib in Resources */,
-				B4D34F2B238D222900F8140E /* GoogleService-Info.plist in Resources */,
 				B4D34F27238D222900F8140E /* SCM_Push_Dis.p12 in Resources */,
 				B4D34F25238D222900F8140E /* SCM_Push_Dev.p12 in Resources */,
 			);
