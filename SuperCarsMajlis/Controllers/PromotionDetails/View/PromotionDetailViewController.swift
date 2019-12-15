@@ -11,7 +11,9 @@ import SDWebImage
 
 class PromotionDetailViewController: UIViewController {
 
+    @IBOutlet weak var scrollView: UIScrollView!
     @IBOutlet weak var lblTC: UILabel!
+    @IBOutlet weak var lblHeader: UILabel!
     @IBOutlet weak var lblPartnerLongDesc: UILabel!
     @IBOutlet weak var lblPartnerDesc: UILabel!
     @IBOutlet weak var lblPatnerTitle: UILabel!
@@ -26,11 +28,16 @@ class PromotionDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.PromotionDetailActivity.rawValue)
         // Do any additional setup after loading the view.
     }
     
     func setUpView(){
         if self.dataModel != nil{
+            
+            self.lblHeader.text = ""
             
             self.lblPromotionTitle.text = self.dataModel.partner_name ?? ""
             self.lblPromotionDesc.text = self.dataModel.name ?? ""
@@ -67,4 +74,27 @@ class PromotionDetailViewController: UIViewController {
         self.present(vc, animated: true, completion: nil)
     }
     
+}
+
+
+extension PromotionDetailViewController: UIScrollViewDelegate{
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        if scrollView.scrolledToTop{
+            self.lblHeader.text = ""
+        }else{
+            self.lblHeader.text = self.lblPromotionTitle.text
+        }
+    }
+}
+
+extension UIScrollView {
+    var scrolledToTop: Bool {
+        let topEdge = 0 - contentInset.top
+        return contentOffset.y <= topEdge
+    }
+
+    var scrolledToBottom: Bool {
+        let bottomEdge = contentSize.height + contentInset.bottom - bounds.height
+        return contentOffset.y >= bottomEdge
+    }
 }

@@ -24,12 +24,13 @@ class DocumentViewController: UIViewController {
     
     /*
      MARK: - Properties
+     
      */
     @IBOutlet weak var sideMenuHeaderView: UIView!
     @IBOutlet weak var registerHeaderView: UIView!
     @IBOutlet var btnBack                : UIButton!
     @IBOutlet var btnSubmit              : UIButton!
-    
+    @IBOutlet weak var bgImageView       : UIImageView!
     @IBOutlet var btnEmiratesFront       : UIButton!
     @IBOutlet var btnEmiratesBack        : UIButton!
     @IBOutlet var btnEmiratesFrontCross  : UIButton!
@@ -69,6 +70,9 @@ class DocumentViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUp()
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.ManageDocumentActivity.rawValue)
         // Do any additional setup after loading the view.
     }
     //end
@@ -81,9 +85,11 @@ class DocumentViewController: UIViewController {
         if self.openFrom == .register || self.openFrom == .partiallyRegister{
             self.sideMenuHeaderView.isHidden = true
             self.btnSubmit.setTitle("Finish", for: .normal)
+            self.bgImageView.image = UIImage(named: "ic_Background_Net")
         }else{
             self.registerHeaderView.isHidden = true
             self.btnSubmit.setTitle("Save", for: .normal)
+            self.bgImageView.image = UIImage(named: "ic_Background_Black")
         }
         
         //Setup Cross Button

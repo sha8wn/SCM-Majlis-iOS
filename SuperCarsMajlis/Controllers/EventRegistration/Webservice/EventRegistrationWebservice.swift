@@ -64,6 +64,10 @@ extension EventRegistrationViewController{
         Network.shared.request(urlPath: urlPath, methods: .post, authType: .auth, params: requestDict as [String : AnyObject]) { (response, message, statusCode, status) in
             FunctionConstants.getInstance().hideLoader(view: self)
             if status == .Success{
+                
+                //Firebase Analytics
+                FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.EventRegisteredSuccess.rawValue)
+                
                 AlertViewController.openAlertView(title: "Success", message: String(format: "You have successfully registered for %@.", self.eventName), buttons: ["Ok"]) { (index) in
                     self.navigationController?.popViewController(animated: true)
                 }

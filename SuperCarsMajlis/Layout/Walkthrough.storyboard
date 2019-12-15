@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9ID-0X-Oxo">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="9ID-0X-Oxo">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -69,7 +69,7 @@
                                 <color key="currentPageIndicatorTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </pageControl>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bmw-eR-wdZ">
-                                <rect key="frame" x="274" y="773" width="115" height="112"/>
+                                <rect key="frame" x="279" y="774" width="110" height="110"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="55" id="5IL-EA-Ing"/>
                                     <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="55" id="OuL-5b-8Xb"/>
@@ -119,16 +119,16 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Background_Black" translatesAutoresizingMaskIntoConstraints="NO" id="xgd-nv-KcW">
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Splash" translatesAutoresizingMaskIntoConstraints="NO" id="xgd-nv-KcW">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to SuperCars Majlis" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf4-iM-0CA">
-                                <rect key="frame" x="25" y="79" width="364" height="70"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to SuperCars Majlis" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Cf4-iM-0CA">
+                                <rect key="frame" x="25" y="104" width="364" height="70"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="BUZ-WI-Nqz">
+                            <textView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleToFill" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="BUZ-WI-Nqz">
                                 <rect key="frame" x="25" y="603" width="364" height="120"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -154,7 +154,7 @@
                             <constraint firstItem="BUZ-WI-Nqz" firstAttribute="centerX" secondItem="xgd-nv-KcW" secondAttribute="centerX" id="YNl-o8-7uU"/>
                             <constraint firstAttribute="bottom" secondItem="xgd-nv-KcW" secondAttribute="bottom" id="ajp-KP-J1F"/>
                             <constraint firstItem="VRb-Zq-eeb" firstAttribute="trailing" secondItem="Cf4-iM-0CA" secondAttribute="trailing" constant="25" id="p1A-NR-J3Q"/>
-                            <constraint firstItem="Cf4-iM-0CA" firstAttribute="top" secondItem="VRb-Zq-eeb" secondAttribute="top" constant="35" id="pjk-yK-5PQ"/>
+                            <constraint firstItem="Cf4-iM-0CA" firstAttribute="top" secondItem="VRb-Zq-eeb" secondAttribute="top" constant="60" id="pjk-yK-5PQ"/>
                             <constraint firstItem="xgd-nv-KcW" firstAttribute="top" secondItem="eDH-Ri-Gpi" secondAttribute="top" id="rVG-M1-zIb"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="VRb-Zq-eeb"/>
@@ -180,15 +180,23 @@
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Background_Net" translatesAutoresizingMaskIntoConstraints="NO" id="Hk6-Wx-VNk">
                                 <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Welcome to SCM, lets begin!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09u-qn-m8Q">
-                                <rect key="frame" x="25" y="79" width="364" height="84"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="09u-qn-m8Q">
+                                <rect key="frame" x="25" y="94" width="364" height="0.0"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Let's begin" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="B1J-2v-nVX">
+                                <rect key="frame" x="25" y="154" width="364" height="42"/>
+                                <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="30"/>
+                                <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ic_Welcome_Logo" translatesAutoresizingMaskIntoConstraints="NO" id="j1L-Iq-8OD">
+                                <rect key="frame" x="25" y="272" width="364" height="266"/>
+                            </imageView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7Xr-xU-ugT">
-                                <rect key="frame" x="54.5" y="315" width="305" height="266"/>
-                                <state key="normal" image="ic_Welcome_Logo"/>
+                                <rect key="frame" x="25" y="272" width="364" height="266"/>
                                 <connections>
                                     <action selector="btnStartTappedWithSender:" destination="hZI-cF-UlI" eventType="touchUpInside" id="2G7-MZ-Xeq"/>
                                 </connections>
@@ -196,13 +204,22 @@
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="09u-qn-m8Q" firstAttribute="top" secondItem="8NU-zf-2Dd" secondAttribute="top" constant="35" id="4qu-hD-pPH"/>
+                            <constraint firstItem="7Xr-xU-ugT" firstAttribute="trailing" secondItem="j1L-Iq-8OD" secondAttribute="trailing" id="2KJ-Ja-3jM"/>
+                            <constraint firstItem="09u-qn-m8Q" firstAttribute="top" secondItem="8NU-zf-2Dd" secondAttribute="top" constant="50" id="4qu-hD-pPH"/>
+                            <constraint firstItem="7Xr-xU-ugT" firstAttribute="bottom" secondItem="j1L-Iq-8OD" secondAttribute="bottom" id="8Se-dq-Wy0"/>
                             <constraint firstItem="Hk6-Wx-VNk" firstAttribute="top" secondItem="zct-iV-vgS" secondAttribute="top" id="D3l-QV-Dh5"/>
+                            <constraint firstItem="B1J-2v-nVX" firstAttribute="leading" secondItem="8NU-zf-2Dd" secondAttribute="leading" constant="25" id="Gef-Iu-DSO"/>
+                            <constraint firstItem="7Xr-xU-ugT" firstAttribute="top" secondItem="j1L-Iq-8OD" secondAttribute="top" id="H0D-S5-338"/>
                             <constraint firstItem="8NU-zf-2Dd" firstAttribute="trailing" secondItem="09u-qn-m8Q" secondAttribute="trailing" constant="25" id="KU3-5X-HdH"/>
-                            <constraint firstItem="7Xr-xU-ugT" firstAttribute="centerY" secondItem="zct-iV-vgS" secondAttribute="centerY" id="LHo-P2-KEG"/>
                             <constraint firstItem="09u-qn-m8Q" firstAttribute="leading" secondItem="8NU-zf-2Dd" secondAttribute="leading" constant="25" id="RAu-CH-t6L"/>
+                            <constraint firstItem="B1J-2v-nVX" firstAttribute="top" secondItem="09u-qn-m8Q" secondAttribute="bottom" constant="60" id="UlK-v1-aoO"/>
+                            <constraint firstItem="j1L-Iq-8OD" firstAttribute="leading" secondItem="8NU-zf-2Dd" secondAttribute="leading" constant="25" id="VFI-u7-tip"/>
+                            <constraint firstItem="7Xr-xU-ugT" firstAttribute="leading" secondItem="j1L-Iq-8OD" secondAttribute="leading" id="WGd-E0-Mtm"/>
                             <constraint firstItem="7Xr-xU-ugT" firstAttribute="centerX" secondItem="zct-iV-vgS" secondAttribute="centerX" id="Xmj-Un-gIp"/>
+                            <constraint firstItem="j1L-Iq-8OD" firstAttribute="top" secondItem="B1J-2v-nVX" secondAttribute="bottom" constant="76" id="bJF-pc-ER0"/>
+                            <constraint firstItem="8NU-zf-2Dd" firstAttribute="trailing" secondItem="B1J-2v-nVX" secondAttribute="trailing" constant="25" id="may-0S-EDq"/>
                             <constraint firstItem="Hk6-Wx-VNk" firstAttribute="leading" secondItem="8NU-zf-2Dd" secondAttribute="leading" id="mfb-rg-ERq"/>
+                            <constraint firstItem="8NU-zf-2Dd" firstAttribute="trailing" secondItem="j1L-Iq-8OD" secondAttribute="trailing" constant="25" id="nh2-cj-Dfy"/>
                             <constraint firstAttribute="bottom" secondItem="Hk6-Wx-VNk" secondAttribute="bottom" id="s9L-jx-dwg"/>
                             <constraint firstItem="Hk6-Wx-VNk" firstAttribute="trailing" secondItem="8NU-zf-2Dd" secondAttribute="trailing" id="uti-EZ-srU"/>
                         </constraints>
@@ -210,6 +227,7 @@
                     </view>
                     <connections>
                         <outlet property="btnStart" destination="7Xr-xU-ugT" id="rvR-jv-nMQ"/>
+                        <outlet property="imgView" destination="j1L-Iq-8OD" id="HEh-cT-83d"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="spx-sh-wfi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -254,8 +272,8 @@
     <resources>
         <image name="ic_Background_Black" width="375" height="812"/>
         <image name="ic_Background_Net" width="375" height="812"/>
-        <image name="ic_Splash" width="320" height="568"/>
-        <image name="ic_Walkthrough_Next" width="57.5" height="56"/>
+        <image name="ic_Splash" width="375" height="812"/>
+        <image name="ic_Walkthrough_Next" width="55" height="55"/>
         <image name="ic_Welcome_Logo" width="305" height="266"/>
         <namedColor name="customGreyColor">
             <color red="0.62745098039215685" green="0.63137254901960782" blue="0.63921568627450975" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

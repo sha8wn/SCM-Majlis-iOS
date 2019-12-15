@@ -27,9 +27,11 @@ extension PromotionsViewController{
                                     self.lblNoRecord.isHidden = true
                                     self.dataArray = list
                                 }else{
+                                    self.dataArray = []
                                     self.lblNoRecord.isHidden = false
                                 }
                             }else{
+                                self.dataArray = []
                                 self.lblNoRecord.isHidden = false
                             }
                         }else{

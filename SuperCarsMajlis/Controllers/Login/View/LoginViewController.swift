@@ -28,6 +28,9 @@ class LoginViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setup()
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.LoginActivity.rawValue)
         // Do any additional setup after loading the view.
     }
     //end

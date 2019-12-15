@@ -41,6 +41,7 @@ let kEventRegisterAPI              = "/_api/reservations/"
 let kUpdateCheckPointAPI           = "/_api/reservation_checks/"
 let kGetPromotionAPI               = "/_api/promotions/"
 let kRedeemAPI                     = "/_api/promotions_code/"
+let kFeedbackAPI                   = "/_api/feedback/"
 
 //DEV
 var kBaseURL                       = "https://scmajlis.ae"

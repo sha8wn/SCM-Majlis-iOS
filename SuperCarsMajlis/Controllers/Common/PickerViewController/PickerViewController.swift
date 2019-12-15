@@ -85,6 +85,12 @@ class PickerViewController: UIViewController {
         
         self.lblTitle.text = title
         
+        self.searchBar.tintColor = .white
+        
+        self.searchBar.barTintColor = .white
+        
+        self.searchBar.searchTextField.textColor = .white
+        
         self.searchBar.isHidden = true
         
         self.searchActive = false
@@ -122,6 +128,12 @@ class PickerViewController: UIViewController {
         self.lblTitle.text = title
         
         self.searchBar.isHidden = true
+        
+        self.searchBar.tintColor = .white
+        
+        self.searchBar.barTintColor = .white
+        
+        self.searchBar.searchTextField.textColor = .white
         
         self.searchActive = false
         

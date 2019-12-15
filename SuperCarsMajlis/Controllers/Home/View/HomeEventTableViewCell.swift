@@ -104,34 +104,54 @@ class HomeEventTableViewCell: UITableViewCell {
             self.collectionView.reloadData()
         }
         
-        
-        //Remaning Spot
-        let totalSpot = model.limit_guests ?? 0
-        var totalOccupiedSpot: Int = 0
-        var vacentSpot: Int = 0
-        
-        if totalSpot != 0{
-            self.imgViewPeople.isHidden = false
-            if let userArray = model.users{
-                if userArray.count > 0{
-                    for model in userArray{
-                        totalOccupiedSpot = totalOccupiedSpot + (model.guests ?? 0)
-                    }
-                }
-            }
-            print("totalOccupiedSpot, ", totalOccupiedSpot)
-            vacentSpot = totalSpot - totalOccupiedSpot
-            
-            if vacentSpot > 0{
+   
+        let carLimit = model.limit_cars ?? 0
+        if carLimit != 0
+        {
+            let totalGoingUser = model.users?.count ?? 0
+            if totalGoingUser <  carLimit
+            {
+                let vacentSpot = carLimit - totalGoingUser
                 self.lblNoOfGoing.text = "\(vacentSpot) spots remaining"
-            }else{
+            }
+            else if totalGoingUser >= carLimit
+            {
                 self.lblNoOfGoing.text = "Fully Booked"
             }
-            
-        }else{
+        }
+        else
+        {
             self.imgViewPeople.isHidden = true
             self.lblNoOfGoing.text = ""
         }
+        
+        //Remaning Spot
+//        let totalSpot = model.limit_guests ?? 0
+//        var totalOccupiedSpot: Int = 0
+//        var vacentSpot: Int = 0
+//
+//        if totalSpot != 0{
+//            self.imgViewPeople.isHidden = false
+//            if let userArray = model.users{
+//                if userArray.count > 0{
+//                    for model in userArray{
+//                        totalOccupiedSpot = totalOccupiedSpot + (model.guests ?? 0)
+//                    }
+//                }
+//            }
+//            print("totalOccupiedSpot, ", totalOccupiedSpot)
+//            vacentSpot = totalSpot - totalOccupiedSpot
+//
+//            if vacentSpot > 0{
+//                self.lblNoOfGoing.text = "\(vacentSpot) spots remaining"
+//            }else{
+//                self.lblNoOfGoing.text = "Fully Booked"
+//            }
+//
+//        }else{
+//            self.imgViewPeople.isHidden = true
+//            self.lblNoOfGoing.text = ""
+//        }
     }
 }
 

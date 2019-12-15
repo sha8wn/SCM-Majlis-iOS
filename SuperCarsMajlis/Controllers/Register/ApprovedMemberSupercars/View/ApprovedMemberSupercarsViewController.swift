@@ -37,6 +37,8 @@ class ApprovedMemberSupercarsViewController: UIViewController {
             self.callGetSuperCarsListAPI()
         }else{}
         
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.ManageSuperCarsActivity.rawValue)
         
         // Do any additional setup after loading the view.
     }

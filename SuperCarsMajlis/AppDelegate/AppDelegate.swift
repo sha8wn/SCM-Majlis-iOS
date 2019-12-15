@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 import FirebaseMessaging
+import SKPhotoBrowser
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -183,6 +184,16 @@ extension AppDelegate: MessagingDelegate, UNUserNotificationCenterDelegate{
             application.registerForRemoteNotifications()
         }else {
             application.registerForRemoteNotifications(matching: [.badge, .sound, .alert])
+        }
+    }
+}
+
+extension AppDelegate{
+    func application(_ application: UIApplication, supportedInterfaceOrientationsFor window: UIWindow?) -> UIInterfaceOrientationMask {
+        if let _ = self.window?.rootViewController?.presentedViewController as? SKPhotoBrowser{
+            return UIInterfaceOrientationMask.all
+        } else {
+            return UIInterfaceOrientationMask.portrait
         }
     }
 }

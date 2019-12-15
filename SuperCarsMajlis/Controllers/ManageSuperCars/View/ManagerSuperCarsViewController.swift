@@ -13,6 +13,7 @@ class ManagerSuperCarsViewController: UIViewController {
     /*
      MARK: - Properties
      */
+    @IBOutlet weak var bgImageView: UIImageView!
     @IBOutlet var btnBack             : UIButton!
     @IBOutlet var btnSave             : UIButton!
     @IBOutlet var tableView           : UITableView!
@@ -27,6 +28,9 @@ class ManagerSuperCarsViewController: UIViewController {
         super.viewDidLoad()
         self.setupView()
         self.callGetSuperCarsListAPI()
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.ManageSuperCarsActivity.rawValue)
         // Do any additional setup after loading the view.
     }
     //end

@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15400" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15404"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -20,7 +20,7 @@
         <!--Profile View Controller-->
         <scene sceneID="g95-vU-uQ1">
             <objects>
-                <viewController storyboardIdentifier="ProfileViewController" id="VQp-YE-9Jh" customClass="ProfileViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ProfileViewController" id="VQp-YE-9Jh" customClass="ProfileViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="MaH-Bd-F44">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -74,7 +74,7 @@
                                                         </constraints>
                                                         <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
+                                                        <textInputTraits key="textInputTraits" autocapitalizationType="words"/>
                                                         <connections>
                                                             <outlet property="delegate" destination="VQp-YE-9Jh" id="KZX-oY-O9F"/>
                                                         </connections>
@@ -334,7 +334,7 @@
         <!--Change Password View Controller-->
         <scene sceneID="lsR-4X-eWu">
             <objects>
-                <viewController storyboardIdentifier="ChangePasswordViewController" id="n8C-qb-xqa" customClass="ChangePasswordViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ChangePasswordViewController" id="n8C-qb-xqa" customClass="ChangePasswordViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ycB-tk-uuv">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -589,7 +589,7 @@
         <!--Manager Super Cars View Controller-->
         <scene sceneID="zD4-R4-VOX">
             <objects>
-                <viewController storyboardIdentifier="ManagerSuperCarsViewController" id="LLt-yI-hUY" customClass="ManagerSuperCarsViewController" customModule="SuperCarsMajlis" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="ManagerSuperCarsViewController" id="LLt-yI-hUY" customClass="ManagerSuperCarsViewController" customModule="SCM" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0ob-SA-7KO">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -663,6 +663,7 @@
                         <viewLayoutGuide key="safeArea" id="OKW-97-swY"/>
                     </view>
                     <connections>
+                        <outlet property="bgImageView" destination="s5D-wP-GBY" id="lGo-R9-QVc"/>
                         <outlet property="btnBack" destination="XX0-da-wRh" id="YSG-aa-aL6"/>
                         <outlet property="btnSave" destination="ie0-jL-jxc" id="G0Z-vu-TP9"/>
                         <outlet property="tableView" destination="Ger-IV-ml7" id="O3m-qd-D1b"/>

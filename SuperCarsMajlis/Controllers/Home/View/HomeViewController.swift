@@ -44,6 +44,9 @@ class HomeViewController: UIViewController {
         self.setUpView()
         self.dataArray = []
         self.callGetEventListAPi(page: 1)
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.EventListActivity.rawValue)
     }
     //end
     

@@ -30,13 +30,20 @@ class PastEventViewController: UIViewController {
     var pageNumber                      : Int                   = 1
     //end
     
+  
     override func viewDidLoad() {
         super.viewDidLoad()
+
         self.getPastEventAPI(page: 1)
         self.setUpView()
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.PastEventActivity.rawValue)
         // Do any additional setup after loading the view.
     }
-    
+
+    @objc func canRotate() -> Void {}
+
     func setUpView(){
         //Register TableView Cell
         self.tableView.register(UINib(nibName: "PastEventTableViewCell", bundle: nil), forCellReuseIdentifier: "PastEventTableViewCell")
@@ -119,6 +126,10 @@ extension PastEventViewController: UITableViewDelegate, UITableViewDataSource{
  */
 extension PastEventViewController: PastEventDelegate{
     func eventSelected(index: Int, imageArray: [PastEventImages]) {
+        
+        SKPhotoBrowserOptions.displayAction = false
+        SKPhotoBrowserOptions.swapCloseAndDeleteButtons = true
+        
         var images = [SKPhoto]()
         for imageData in imageArray{
             let photo = SKPhoto.photoWithImageURL(imageData.img ?? "")
@@ -127,8 +138,19 @@ extension PastEventViewController: PastEventDelegate{
         }
         // 2. create PhotoBrowser Instance, and present.
         let browser = SKPhotoBrowser(photos: images)
+        
+        browser.delegate = self
         browser.initializePageIndex(index)
         present(browser, animated: true, completion: {})
+    }
+}
+
+extension PastEventViewController: SKPhotoBrowserDelegate{
+    func didDismissAtPageIndex(_ index: Int) {
+    }
+    
+    func willDismissAtPageIndex(_ index: Int) {
+        UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
     }
 }
 

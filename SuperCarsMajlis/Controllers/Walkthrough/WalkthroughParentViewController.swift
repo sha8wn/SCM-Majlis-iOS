@@ -26,7 +26,7 @@ class WalkthroughParentViewController: UIViewController {
     */
     override func viewDidLoad() {
         super.viewDidLoad()
-        scrollView.contentInset = UIEdgeInsets.zero;
+        scrollView.contentInset = UIEdgeInsets.zero
         scrollView.scrollIndicatorInsets = UIEdgeInsets.zero
         scrollView.contentOffset = CGPoint(x: 0, y: 0)
         
@@ -59,16 +59,16 @@ class WalkthroughParentViewController: UIViewController {
         self.scrollView.showsHorizontalScrollIndicator = false
         self.scrollView.showsVerticalScrollIndicator = false
 
-        let dictView1 = ["imageDesc" : "Many brands, one passion.\nSuper Cars",
-                         "imageURL"  : "ic_ScreenA",
+        let dictView1 = ["imageDesc" : "Many brands, one passion.\nSuperCars",
+                         "imageURL"  : "ic_Splash",
                          "title"     : "Welcome to\nSuperCars Majlis"]
         
         let dictView2 = ["imageDesc" : "Get notified about the latest events and RSVP to them using the app",
-                         "imageURL"  : "ic_ScreenB",
+                         "imageURL"  : "ic_Splash",
                          "title"     : "Events"]
         
         let dictView3 = ["imageDesc" : "Get connected to our partners and get exclusive offers available only to SCM members.",
-                         "imageURL"  : "ic_ScreenC",
+                         "imageURL"  : "ic_Splash",
                          "title"     : "Promotions"]
    
         self.pageArray = [dictView1, dictView2, dictView3]

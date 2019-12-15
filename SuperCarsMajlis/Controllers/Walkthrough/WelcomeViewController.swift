@@ -16,12 +16,18 @@ class WelcomeViewController: UIViewController {
      MARK: - Properties
      */
     @IBOutlet var btnStart: UIButton!
+    @IBOutlet var imgView: UIImageView!
     var audioPlayer       : AVAudioPlayer?
 
     //end
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        self.imgView.image = UIImage(named: "ic_Welcome_Logo")
+        
+//        self.btnStart.setImage(UIImage(named: "ic_Welcome_Logo"), for: .normal)
+//        self.btnStart.setImage(UIImage(named: "ic_Welcome_Logo_Hightlight"), for: .highlighted)
         
         self.audioPlayer?.delegate = self
         // Do any additional setup after loading the view.
@@ -39,6 +45,10 @@ class WelcomeViewController: UIViewController {
     */
 
     @IBAction func btnStartTapped(sender: UIButton){
+        
+        self.imgView.image = UIImage(named: "ic_Welcome_Logo_Hightlight")
+
+        
         let viewController = Constants.loginAndSignupStoryboard.instantiateViewController(withIdentifier: "ChooseUserTypeViewController") as! ChooseUserTypeViewController
         self.navigationController?.pushViewController(viewController, animated: true)
 //        guard let url = Bundle.main.url(forResource: "start", withExtension: "mp3") else { return }

@@ -57,6 +57,9 @@ class EventDetailsViewController: UIViewController {
         
         self.callGetEventDetailAPI(event_Id: self.eventId)
         self.setupView()
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.EventDetailActivity.rawValue)
     }
     //end
     
@@ -187,25 +190,14 @@ class EventDetailsViewController: UIViewController {
                 self.partnerArray = []
             }
             
-            //Remaning Spot
-            let totalSpot = dataModel.limit_guests ?? 0
-            var totalOccupiedSpot: Int = 0
             var vacentSpot: Int = 0
-            
-            if totalSpot != 0{
-                self.imgViewPeople.isHidden = false
-                if let userArray = dataModel.users{
-                    if userArray.count > 0{
-                        for model in userArray{
-                            totalOccupiedSpot = totalOccupiedSpot + (model.guests ?? 0)
-                        }
-                    }
-                }
-                print("totalOccupiedSpot, ", totalOccupiedSpot)
-                vacentSpot = totalSpot - totalOccupiedSpot
-                if vacentSpot > 0{
+            let carLimit = dataModel.limit_cars ?? 0
+            if  carLimit != 0{
+                let totalGoingUser = dataModel.users?.count ?? 0
+                vacentSpot = carLimit - totalGoingUser
+                if totalGoingUser < carLimit{
                     self.lblNoOfGoing.text = "\(vacentSpot) spots remaining"
-                }else{
+                }else if totalGoingUser >= carLimit{
                     self.lblNoOfGoing.text = "Fully Booked"
                 }
             }else{
@@ -213,6 +205,33 @@ class EventDetailsViewController: UIViewController {
                 self.lblNoOfGoing.text = ""
                 vacentSpot = 1
             }
+            
+//            //Remaning Spot
+//            let totalSpot = dataModel.limit_guests ?? 0
+//            var totalOccupiedSpot: Int = 0
+//            var vacentSpot: Int = 0
+//
+//            if totalSpot != 0{
+//                self.imgViewPeople.isHidden = false
+//                if let userArray = dataModel.users{
+//                    if userArray.count > 0{
+//                        for model in userArray{
+//                            totalOccupiedSpot = totalOccupiedSpot + (model.guests ?? 0)
+//                        }
+//                    }
+//                }
+//                print("totalOccupiedSpot, ", totalOccupiedSpot)
+//                vacentSpot = totalSpot - totalOccupiedSpot
+//                if vacentSpot > 0{
+//                    self.lblNoOfGoing.text = "\(vacentSpot) spots remaining"
+//                }else{
+//                    self.lblNoOfGoing.text = "Fully Booked"
+//                }
+//            }else{
+//                self.imgViewPeople.isHidden = true
+//                self.lblNoOfGoing.text = ""
+//                vacentSpot = 1
+//            }
             
             
             //Reserved

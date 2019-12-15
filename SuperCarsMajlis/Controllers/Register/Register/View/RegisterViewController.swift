@@ -27,6 +27,10 @@ class RegisterViewController: UIViewController {
      */
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.RegisterActivity.rawValue)
+        
         // Do any additional setup after loading the view.
     }
     

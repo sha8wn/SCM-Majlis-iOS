@@ -18,18 +18,12 @@ class SettingsViewController: UIViewController {
     @IBOutlet var lblUserId           : UILabel!
     @IBOutlet var lblDuration         : UILabel!
     var userModel                     : ApprovedUsersList!
-    var dataArray                     = ["Profile",
-                                         "Change Password",
-                                         "Manage Supercars",
-                                         "Manage Documents",
-                                         "Terms and Conditions",
-                                         "Instagram",
-                                         "Logout"]
+    var dataArray                     : [String] = []
     //end
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpView()
+        
         
         // Do any additional setup after loading the view.
     }
@@ -37,7 +31,24 @@ class SettingsViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
+        dataArray = ["Profile",
+                     "Change Password",
+                     "Manage Supercars",
+                     "Manage Documents",
+                     "Contact",
+                     "Terms and Conditions",
+                     "Instagram",
+                     "Logout"
+                    ]
+        
+        self.setUpView()
+        
+        self.tableView.contentOffset = .zero
+        
         self.callGetUserDetailAPI()
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.SettingActivity.rawValue)
     }
     
     /*
@@ -119,10 +130,13 @@ extension SettingsViewController: UITableViewDelegate, UITableViewDataSource{
             vc.arrayOfLicense = userModel.licenses ?? []
             self.navigationController?.pushViewController(vc, animated: true)
         }else if indexPath.row == 4{
+            let viewController = Constants.homeStoryboard.instantiateViewController(withIdentifier: "FeedbackViewController") as! FeedbackViewController
+            self.navigationController?.pushViewController(viewController, animated: true)
+        }else if indexPath.row == 5{
             let viewController = Constants.commonStoryboard.instantiateViewController(withIdentifier: "WebViewController") as! WebViewController
             viewController.urlString = "Terms"
             self.navigationController?.pushViewController(viewController, animated: true)
-        }else if indexPath.row == 5{
+        }else if indexPath.row == 6{
             self.openInstagram(instagramHandle: "supercarsmajlis")
         }else{
             AlertViewController.openAlertView(title: "Logout", message: "Do you want to Logout?", buttons: ["LOGOUT", "CANCEL"]) { (index) in

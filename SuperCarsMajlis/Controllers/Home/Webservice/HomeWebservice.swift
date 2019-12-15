@@ -55,17 +55,19 @@ extension HomeViewController{
 //                                    self.lblHeaderSideTitle.text = "CHECK IN"
 //                                    self.imgHeaderSideTitle.image = UIImage(named: "ic_Check-In")
 //                                }
-                                
-                                self.tableView.reloadData()
                             }else{
+                                self.dataArray = []
                                 self.lbl_NoData.isHidden = false
                             }
                         }else{
+                            self.dataArray = []
                             self.lbl_NoData.isHidden = false
                         }
                     }else{
+                        self.dataArray = []
                         self.lbl_NoData.isHidden = false
                     }
+                    self.tableView.reloadData()
                 } catch let error {
                     AlertViewController.openAlertView(title: "Error", message: error.localizedDescription, buttons: ["OK"])
                 }

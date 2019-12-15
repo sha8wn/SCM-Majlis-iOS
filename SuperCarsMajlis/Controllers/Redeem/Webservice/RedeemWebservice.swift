@@ -18,11 +18,13 @@ extension RedeemViewController {
                            "promotion"   : promotionId
             ] as [String : Any]
         
-        print(requestDict)
-        
         Network.shared.request(urlPath: urlPath, methods: .post, authType: .auth, params: requestDict as [String : AnyObject]) { (response, message, statusCode, status) in
             FunctionConstants.getInstance().hideLoader(view: self)
             if status == .Success{
+                
+                //Firebase Analytics
+                FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.PromotionRedeemedSuccess.rawValue)
+                
                 AlertViewController.openAlertView(title: "Success", message: "Promotion coupon has be redeemed", buttons: ["Ok"]) { (index) in
                     let navigationController: UINavigationController = Constants.walkthroughStoryboard.instantiateInitialViewController() as! UINavigationController
                     let rootViewController: TabBarViewController = Constants.homeStoryboard.instantiateViewController(withIdentifier: "TabBarViewController") as! TabBarViewController

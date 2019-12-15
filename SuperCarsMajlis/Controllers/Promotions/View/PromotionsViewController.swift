@@ -12,18 +12,26 @@ import SDWebImage
 class PromotionsViewController: UIViewController {
 
     @IBOutlet weak var tableView: UITableView!
+    @IBOutlet weak var lblHeader: UILabel!
     @IBOutlet weak var lblNoRecord: UILabel!
     var dataArray : [PromotionsList]   = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.setUpView()
+        
+
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
+        self.setUpView()
+        
         self.callGetPromotionListAPI()
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.PromotionActivity.rawValue)
     }
     
     /*

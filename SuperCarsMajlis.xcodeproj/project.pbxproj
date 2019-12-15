@@ -119,6 +119,7 @@
 		B4D34F2E238D222900F8140E /* ios_development.cer in Resources */ = {isa = PBXBuildFile; fileRef = B4D34F24238D222900F8140E /* ios_development.cer */; };
 		B4D6C018234DD40300D351E2 /* ChangePasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D6C017234DD40300D351E2 /* ChangePasswordViewController.swift */; };
 		B4D6C01B234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4D6C01A234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift */; };
+		B4DCC615239FAAC0008B587A /* FirebaseAnalyticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4DCC614239FAAC0008B587A /* FirebaseAnalyticsManager.swift */; };
 		B4E019F9233B28A1001EBE65 /* AppDelegateExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4E019F8233B28A1001EBE65 /* AppDelegateExtension.swift */; };
 		B4EDB4A5233E018F0051DA29 /* PickerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDB4A4233E018F0051DA29 /* PickerViewController.swift */; };
 		B4EDB4A7233E126B0051DA29 /* UITextField+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EDB4A6233E126B0051DA29 /* UITextField+Extension.swift */; };
@@ -152,6 +153,8 @@
 		B4EFC4E1233C9E2F000DC74A /* LoginAndSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EFC4E0233C9E2F000DC74A /* LoginAndSignup.storyboard */; };
 		B4EFC4E4233C9EDC000DC74A /* ChooseUserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EFC4E3233C9EDC000DC74A /* ChooseUserTypeViewController.swift */; };
 		B4EFC4E6233CAD5D000DC74A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EFC4E5233CAD5D000DC74A /* UIView+Extension.swift */; };
+		B4F8FD4B239FA2C50030648A /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8FD4A239FA2C50030648A /* FeedbackViewController.swift */; };
+		B4F8FD4D239FA2D40030648A /* FeedbackWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8FD4C239FA2D40030648A /* FeedbackWebservice.swift */; };
 		B9569C550D51144C371B04AA /* Pods_SuperCarsMajlisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA51CEAF90E2CB90C1F339 /* Pods_SuperCarsMajlisUITests.framework */; };
 		BF0A5EC42202EA39355FF24D /* Pods_SuperCarsMajlisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21ED808E30A848FCA1AD363 /* Pods_SuperCarsMajlisTests.framework */; };
 /* End PBXBuildFile section */
@@ -299,6 +302,7 @@
 		B4D34F24238D222900F8140E /* ios_development.cer */ = {isa = PBXFileReference; lastKnownFileType = file; path = ios_development.cer; sourceTree = "<group>"; };
 		B4D6C017234DD40300D351E2 /* ChangePasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChangePasswordViewController.swift; sourceTree = "<group>"; };
 		B4D6C01A234DDD6A00D351E2 /* ManagerSuperCarsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ManagerSuperCarsViewController.swift; sourceTree = "<group>"; };
+		B4DCC614239FAAC0008B587A /* FirebaseAnalyticsManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirebaseAnalyticsManager.swift; sourceTree = "<group>"; };
 		B4E019F8233B28A1001EBE65 /* AppDelegateExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegateExtension.swift; sourceTree = "<group>"; };
 		B4EDB4A4233E018F0051DA29 /* PickerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PickerViewController.swift; sourceTree = "<group>"; };
 		B4EDB4A6233E126B0051DA29 /* UITextField+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+Extension.swift"; sourceTree = "<group>"; };
@@ -332,6 +336,8 @@
 		B4EFC4E0233C9E2F000DC74A /* LoginAndSignup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginAndSignup.storyboard; sourceTree = "<group>"; };
 		B4EFC4E3233C9EDC000DC74A /* ChooseUserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserTypeViewController.swift; sourceTree = "<group>"; };
 		B4EFC4E5233CAD5D000DC74A /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
+		B4F8FD4A239FA2C50030648A /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
+		B4F8FD4C239FA2D40030648A /* FeedbackWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackWebservice.swift; sourceTree = "<group>"; };
 		B6DAC2E0C3B4B013FBF98245 /* Pods-SuperCarsMajlisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlisTests.debug.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlisTests/Pods-SuperCarsMajlisTests.debug.xcconfig"; sourceTree = "<group>"; };
 		C61F3548793A01BF7AA399F4 /* Pods-SuperCarsMajlisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlisUITests.release.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlisUITests/Pods-SuperCarsMajlisUITests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -740,6 +746,7 @@
 		B478322F233A38300081735F /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				B4F8FD46239FA2920030648A /* Feedback */,
 				B457D04223716B7E00902254 /* Redeem */,
 				B4ACF64F23703A0D0042100E /* PromotionDetails */,
 				B4ACF641236FE6FB0042100E /* Promotions */,
@@ -768,6 +775,7 @@
 		B4783230233A383A0081735F /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				B4DCC613239FAA39008B587A /* FirebaseAnalyticsManager */,
 				B48BEB5F2356D61400271B24 /* UserDefaultManager */,
 				B4748554235038B100A4D489 /* NetworkManager */,
 			);
@@ -1176,6 +1184,14 @@
 			path = ManageSuperCars;
 			sourceTree = "<group>";
 		};
+		B4DCC613239FAA39008B587A /* FirebaseAnalyticsManager */ = {
+			isa = PBXGroup;
+			children = (
+				B4DCC614239FAAC0008B587A /* FirebaseAnalyticsManager.swift */,
+			);
+			path = FirebaseAnalyticsManager;
+			sourceTree = "<group>";
+		};
 		B4E019FA233B35DC001EBE65 /* ThirdParty */ = {
 			isa = PBXGroup;
 			children = (
@@ -1280,6 +1296,39 @@
 				B4EFC4E3233C9EDC000DC74A /* ChooseUserTypeViewController.swift */,
 			);
 			path = ChooseUser;
+			sourceTree = "<group>";
+		};
+		B4F8FD46239FA2920030648A /* Feedback */ = {
+			isa = PBXGroup;
+			children = (
+				B4F8FD49239FA2AF0030648A /* View */,
+				B4F8FD48239FA2A50030648A /* Webservice */,
+				B4F8FD47239FA29F0030648A /* Model */,
+			);
+			path = Feedback;
+			sourceTree = "<group>";
+		};
+		B4F8FD47239FA29F0030648A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		B4F8FD48239FA2A50030648A /* Webservice */ = {
+			isa = PBXGroup;
+			children = (
+				B4F8FD4C239FA2D40030648A /* FeedbackWebservice.swift */,
+			);
+			path = Webservice;
+			sourceTree = "<group>";
+		};
+		B4F8FD49239FA2AF0030648A /* View */ = {
+			isa = PBXGroup;
+			children = (
+				B4F8FD4A239FA2C50030648A /* FeedbackViewController.swift */,
+			);
+			path = View;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -1578,6 +1627,7 @@
 				B474855C235038B100A4D489 /* Connectivity.swift in Sources */,
 				B48BEB5E2356D17400271B24 /* RegisterApprovedMemberWebservice.swift in Sources */,
 				B4B84ADD23425AD700607AF4 /* SupercarsFooterTableViewCell.swift in Sources */,
+				B4DCC615239FAAC0008B587A /* FirebaseAnalyticsManager.swift in Sources */,
 				B427DAFB234E2640003ACB36 /* EventRegistrationViewController.swift in Sources */,
 				B4382FC9234AF99600FDF560 /* HomeEventTableViewCell.swift in Sources */,
 				B4382FD4234B259300FDF560 /* MemberGoingListViewController.swift in Sources */,
@@ -1594,6 +1644,7 @@
 				B4AF48982361BAB100CC1D1B /* CheckPointModel.swift in Sources */,
 				B4CCF62D235891D60047F5FB /* SettingWebservice.swift in Sources */,
 				B457D0492371805700902254 /* VPMOTPView.swift in Sources */,
+				B4F8FD4B239FA2C50030648A /* FeedbackViewController.swift in Sources */,
 				B427DB0F234EFF03003ACB36 /* OtherDetailsTableViewCell.swift in Sources */,
 				B40A1B0A233CBC7F0033BB82 /* PastEventTableViewCell.swift in Sources */,
 				B47831FC233A344D0081735F /* AppDelegate.swift in Sources */,
@@ -1613,6 +1664,7 @@
 				B48BEB712358412400271B24 /* DocumentWebservice.swift in Sources */,
 				B4EDB4A5233E018F0051DA29 /* PickerViewController.swift in Sources */,
 				B4B84AE12343091000607AF4 /* SupercarsTableViewCell.swift in Sources */,
+				B4F8FD4D239FA2D40030648A /* FeedbackWebservice.swift in Sources */,
 				B4E019F9233B28A1001EBE65 /* AppDelegateExtension.swift in Sources */,
 				B457D04D237192C400902254 /* RedeemWebservice.swift in Sources */,
 				B498C344235064E300D073F8 /* PastEventListModel.swift in Sources */,

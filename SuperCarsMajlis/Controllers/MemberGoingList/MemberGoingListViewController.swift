@@ -26,6 +26,9 @@ class MemberGoingListViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         self.setUpView()
+        
+        //Firebase Analytics
+        FirebaseAnalyticsManager.shared.logEvent(eventName: FirebaseEvent.UserGoingActivity.rawValue)
         // Do any additional setup after loading the view.
     }
     
