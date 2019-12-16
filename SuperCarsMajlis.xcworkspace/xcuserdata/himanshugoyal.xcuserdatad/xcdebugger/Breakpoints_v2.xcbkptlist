@@ -302,9 +302,152 @@
             filePath = "SuperCarsMajlis/Controllers/Home/View/HomeEventTableViewCell.swift"
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "115"
-            endingLineNumber = "115"
+            startingLineNumber = "116"
+            endingLineNumber = "116"
             landmarkName = "setUpCell(model:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "E16414EF-0789-43A4-BB69-2EC4879CF94C"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SKPhotoBrowser/SKPhotoBrowser/SKPhotoBrowser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "409"
+            endingLineNumber = "409"
+            landmarkName = "frameForPaginationAtOrientation()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "ED1FBADB-BBF5-4FFC-806D-A1A043D0437A"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SKPhotoBrowser/SKPhotoBrowser/SKPhotoBrowser.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "274"
+            endingLineNumber = "274"
+            landmarkName = "updateDeleteButton(_:size:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "6269CE0D-A1BD-4A15-9584-9378309AA583"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "SuperCarsMajlis/Controllers/PastEvent/View/PastEventViewController.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "144"
+            endingLineNumber = "144"
+            landmarkName = "eventSelected(index:imageArray:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "97A02A42-B2BC-469C-B243-75311021FF8E"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "51"
+            endingLineNumber = "51"
+            landmarkName = "updateCloseButton(image:size:)"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "13257D09-8F90-4150-9802-5F269776FD1B"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "90"
+            endingLineNumber = "90"
+            landmarkName = "configureCloseButton(image:size:)"
+            landmarkType = "7">
+            <Locations>
+               <Location
+                  uuid = "13257D09-8F90-4150-9802-5F269776FD1B - d4ab4503fff81ab3"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 0 of SKPhotoBrowser.SKActionView.configureCloseButton(image: Swift.Optional&lt;__C.UIImage&gt;, size: Swift.Optional&lt;__C.CGSize&gt;) -&gt; ()"
+                  moduleName = "SKPhotoBrowser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/himanshugoyal/Project/SCM/SuperCarsMajlis/Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "6">
+               </Location>
+               <Location
+                  uuid = "13257D09-8F90-4150-9802-5F269776FD1B - 39292d7f6e47648c"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "default argument 1 of SKPhotoBrowser.SKActionView.configureCloseButton(image: Swift.Optional&lt;__C.UIImage&gt;, size: Swift.Optional&lt;__C.CGSize&gt;) -&gt; ()"
+                  moduleName = "SKPhotoBrowser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/himanshugoyal/Project/SCM/SuperCarsMajlis/Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "90"
+                  endingLineNumber = "90"
+                  offsetFromSymbolStart = "10">
+               </Location>
+               <Location
+                  uuid = "13257D09-8F90-4150-9802-5F269776FD1B - cf1c7b46a6443c1b"
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "SKPhotoBrowser.SKActionView.configureCloseButton(image: Swift.Optional&lt;__C.UIImage&gt;, size: Swift.Optional&lt;__C.CGSize&gt;) -&gt; ()"
+                  moduleName = "SKPhotoBrowser"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/himanshugoyal/Project/SCM/SuperCarsMajlis/Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "91"
+                  endingLineNumber = "91"
+                  offsetFromSymbolStart = "234">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            uuid = "8918AC8E-1839-4EFD-8220-99B80E57CAF9"
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "103"
+            endingLineNumber = "103"
+            landmarkName = "configureCloseButton(image:size:)"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

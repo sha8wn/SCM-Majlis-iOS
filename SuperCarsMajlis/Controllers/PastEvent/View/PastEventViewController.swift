@@ -127,8 +127,10 @@ extension PastEventViewController: UITableViewDelegate, UITableViewDataSource{
 extension PastEventViewController: PastEventDelegate{
     func eventSelected(index: Int, imageArray: [PastEventImages]) {
         
+        
         SKPhotoBrowserOptions.displayAction = false
-        SKPhotoBrowserOptions.swapCloseAndDeleteButtons = true
+//        SKPhotoBrowserOptions.swapCloseAndDeleteButtons = true
+//        SKPhotoBrowserOptions.closeAndDeleteButtonPadding = 20
         
         var images = [SKPhoto]()
         for imageData in imageArray{
@@ -138,21 +140,14 @@ extension PastEventViewController: PastEventDelegate{
         }
         // 2. create PhotoBrowser Instance, and present.
         let browser = SKPhotoBrowser(photos: images)
-        
-        browser.delegate = self
+//        let image = UIImage(named: "ic_Cross")
+//        browser.updateCloseButton(image  ?? UIImage(), size: CGSize(width: 30, height: 30))
+//        browser.delegate = self
         browser.initializePageIndex(index)
         present(browser, animated: true, completion: {})
     }
 }
 
-extension PastEventViewController: SKPhotoBrowserDelegate{
-    func didDismissAtPageIndex(_ index: Int) {
-    }
-    
-    func willDismissAtPageIndex(_ index: Int) {
-        UIDevice.current.setValue(Int(UIInterfaceOrientation.portrait.rawValue), forKey: "orientation")
-    }
-}
 
 //MARK: - UIScrollView Delegate
 extension PastEventViewController: UIScrollViewDelegate{
@@ -166,3 +161,4 @@ extension PastEventViewController: UIScrollViewDelegate{
     }
 }
 // end
+

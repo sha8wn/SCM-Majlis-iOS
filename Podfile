@@ -9,9 +9,10 @@ target 'SuperCarsMajlis' do
   pod 'IQKeyboardManagerSwift'
   pod 'SDWebImage'
   pod 'MBProgressHUD'
-  pod 'SKPhotoBrowser'
   pod 'Firebase/Core'
   pod 'Firebase/Messaging'
+  pod 'SKPhotoBrowser'
+
   
   # Pods for SuperCarsMajlis
 

@@ -108,6 +108,7 @@ class HomeEventTableViewCell: UITableViewCell {
         let carLimit = model.limit_cars ?? 0
         if carLimit != 0
         {
+            self.imgViewPeople.isHidden = false
             let totalGoingUser = model.users?.count ?? 0
             if totalGoingUser <  carLimit
             {
