@@ -222,7 +222,14 @@ class DocumentViewController: UIViewController {
                 if getAccessTokenModel() != nil{
                     accessTokenModel = getAccessTokenModel()
                 }
-                self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
+                
+                AlertViewController.openAlertView(title: "Alert", message: "By submitting your registration, you are agreeing to Supercars Majlis' terms and privacy policy.", buttons: ["Cancel", "Register"]) { (index) in
+                    if index == 1{
+                        self.callUpdateDocumentAPI(user_Id: String(accessTokenModel.user!.id!), licensesArray: licensesImageArray, docsArray: docsImageArray, licenseDeleteArray: self.deleteLicenseArray, docsDeleteArray: self.deleteDocArray)
+                    }else{
+                        print("Cancel")
+                    }
+                }
             }else{
                 if docsImageArray.count == 0{
                     AlertViewController.openAlertView(title: "Error", message: "Please upload emirates id", buttons: ["OK"])

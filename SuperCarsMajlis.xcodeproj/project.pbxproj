@@ -69,6 +69,7 @@
 		B478320B233A34510081735F /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4783209233A34510081735F /* LaunchScreen.storyboard */; };
 		B4783216233A34510081735F /* SuperCarsMajlisTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4783215233A34510081735F /* SuperCarsMajlisTests.swift */; };
 		B4783221233A34510081735F /* SuperCarsMajlisUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4783220233A34510081735F /* SuperCarsMajlisUITests.swift */; };
+		B480A56523B0D8280048FCC3 /* video.mp4 in Resources */ = {isa = PBXBuildFile; fileRef = B480A56423B0D8280048FCC3 /* video.mp4 */; };
 		B48BEB5E2356D17400271B24 /* RegisterApprovedMemberWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB5D2356D17400271B24 /* RegisterApprovedMemberWebservice.swift */; };
 		B48BEB612356D61C00271B24 /* UserDefaultManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB602356D61C00271B24 /* UserDefaultManager.swift */; };
 		B48BEB632356DA4600271B24 /* RegisterModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B48BEB622356DA4600271B24 /* RegisterModel.swift */; };
@@ -149,7 +150,6 @@
 		B4EE4045233B8BEF008FD80D /* WalkthroughParentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE4043233B8BEF008FD80D /* WalkthroughParentViewController.swift */; };
 		B4EE4046233B8BEF008FD80D /* WalkthroughViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EE4044233B8BEF008FD80D /* WalkthroughViewController.swift */; };
 		B4EFC4DD233C9932000DC74A /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EFC4DC233C9932000DC74A /* WelcomeViewController.swift */; };
-		B4EFC4DF233C9D34000DC74A /* start.mp3 in Resources */ = {isa = PBXBuildFile; fileRef = B4EFC4DE233C9D33000DC74A /* start.mp3 */; };
 		B4EFC4E1233C9E2F000DC74A /* LoginAndSignup.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B4EFC4E0233C9E2F000DC74A /* LoginAndSignup.storyboard */; };
 		B4EFC4E4233C9EDC000DC74A /* ChooseUserTypeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EFC4E3233C9EDC000DC74A /* ChooseUserTypeViewController.swift */; };
 		B4EFC4E6233CAD5D000DC74A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EFC4E5233CAD5D000DC74A /* UIView+Extension.swift */; };
@@ -251,8 +251,9 @@
 		B478321C233A34510081735F /* SuperCarsMajlisUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SuperCarsMajlisUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4783220233A34510081735F /* SuperCarsMajlisUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SuperCarsMajlisUITests.swift; sourceTree = "<group>"; };
 		B4783222233A34510081735F /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		B480A56423B0D8280048FCC3 /* video.mp4 */ = {isa = PBXFileReference; lastKnownFileType = file; path = video.mp4; sourceTree = "<group>"; };
 		B48BEB59235474DE00271B24 /* SuperCarsMajlis.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SuperCarsMajlis.entitlements; sourceTree = "<group>"; };
-		B48BEB5D2356D17400271B24 /* RegisterApprovedMemberWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApprovedMemberWebservice.swift; sourceTree = "<group>"; };
+		B48BEB5D2356D17400271B24 /* RegisterApprovedMemberWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterApprovedMemberWebservice.swift; sourceTree = "<group>"; wrapsLines = 0; };
 		B48BEB602356D61C00271B24 /* UserDefaultManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserDefaultManager.swift; sourceTree = "<group>"; };
 		B48BEB622356DA4600271B24 /* RegisterModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterModel.swift; sourceTree = "<group>"; };
 		B48BEB642356ED1200271B24 /* ApprovedMemberDetailModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApprovedMemberDetailModel.swift; sourceTree = "<group>"; };
@@ -332,7 +333,6 @@
 		B4EE4043233B8BEF008FD80D /* WalkthroughParentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughParentViewController.swift; sourceTree = "<group>"; };
 		B4EE4044233B8BEF008FD80D /* WalkthroughViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WalkthroughViewController.swift; sourceTree = "<group>"; };
 		B4EFC4DC233C9932000DC74A /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
-		B4EFC4DE233C9D33000DC74A /* start.mp3 */ = {isa = PBXFileReference; lastKnownFileType = audio.mp3; path = start.mp3; sourceTree = "<group>"; };
 		B4EFC4E0233C9E2F000DC74A /* LoginAndSignup.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = LoginAndSignup.storyboard; sourceTree = "<group>"; };
 		B4EFC4E3233C9EDC000DC74A /* ChooseUserTypeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseUserTypeViewController.swift; sourceTree = "<group>"; };
 		B4EFC4E5233CAD5D000DC74A /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
@@ -1274,7 +1274,7 @@
 		B4EE403D233B8A95008FD80D /* Walkthrough */ = {
 			isa = PBXGroup;
 			children = (
-				B4EFC4DE233C9D33000DC74A /* start.mp3 */,
+				B480A56423B0D8280048FCC3 /* video.mp4 */,
 				B4EE4043233B8BEF008FD80D /* WalkthroughParentViewController.swift */,
 				B4EE4044233B8BEF008FD80D /* WalkthroughViewController.swift */,
 				B4EFC4DC233C9932000DC74A /* WelcomeViewController.swift */,
@@ -1455,6 +1455,7 @@
 				B427DB05234EE9BA003ACB36 /* segoeuib.ttf in Resources */,
 				B4C74EBC234DB84E00E9CEDF /* Settings.storyboard in Resources */,
 				B4EE4035233B87D6008FD80D /* Poppins-Black.ttf in Resources */,
+				B480A56523B0D8280048FCC3 /* video.mp4 in Resources */,
 				B4EE4032233B87D6008FD80D /* Poppins-RegularItalic.ttf in Resources */,
 				B4EE4026233B87D6008FD80D /* Poppins-ExtraLight.ttf in Resources */,
 				B4B84ADE23425AD700607AF4 /* SupercarsFooterTableViewCell.xib in Resources */,
@@ -1465,7 +1466,6 @@
 				B4EE402A233B87D6008FD80D /* Poppins-Light.ttf in Resources */,
 				B4D34F2E238D222900F8140E /* ios_development.cer in Resources */,
 				B4EE402E233B87D6008FD80D /* Poppins-ExtraBold.ttf in Resources */,
-				B4EFC4DF233C9D34000DC74A /* start.mp3 in Resources */,
 				B40A1B16233DC0830033BB82 /* Common.storyboard in Resources */,
 				B478320B233A34510081735F /* LaunchScreen.storyboard in Resources */,
 				B4382FCA234AF99600FDF560 /* HomeEventTableViewCell.xib in Resources */,
@@ -1861,6 +1861,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SuperCarsMajlis/SuperCarsMajlis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 393WND98C8;
 				INFOPLIST_FILE = /Users/himanshugoyal/Project/SCM/SuperCarsMajlis/SuperCarsMajlis/SupportFiles/Info.plist;
@@ -1869,6 +1870,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ae.scmajlis.scm-app";
 				PRODUCT_NAME = SCM;
 				SWIFT_VERSION = 5.0;
@@ -1883,6 +1885,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SuperCarsMajlis/SuperCarsMajlis.entitlements;
 				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_ASSET_PATHS = "";
 				DEVELOPMENT_TEAM = 393WND98C8;
 				INFOPLIST_FILE = /Users/himanshugoyal/Project/SCM/SuperCarsMajlis/SuperCarsMajlis/SupportFiles/Info.plist;
@@ -1891,6 +1894,7 @@
 					"$(inherited)",
 					"@executable_path/Frameworks",
 				);
+				MARKETING_VERSION = 1.0.1;
 				PRODUCT_BUNDLE_IDENTIFIER = "ae.scmajlis.scm-app";
 				PRODUCT_NAME = SCM;
 				SWIFT_VERSION = 5.0;

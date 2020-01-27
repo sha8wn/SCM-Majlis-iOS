@@ -17,8 +17,9 @@ class RegisterViewController: UIViewController {
     @IBOutlet var btnSubmit     : UIButton!
     @IBOutlet var txtFullName   : UITextField!
     @IBOutlet var txtEmail      : UITextField!
-    @IBOutlet var txtCountryCode: UITextField!
     @IBOutlet var txtPhone      : UITextField!
+    @IBOutlet var btnPhoneInfo  : UIButton!
+    var phone: String = ""
     //end
     
     
@@ -47,12 +48,9 @@ class RegisterViewController: UIViewController {
         else if(FunctionConstants.getInstance().isValidEmail(email: self.txtEmail.text ?? "") == false){
             error = (false, "Please enter valid email address")
         }
-        else if(self.txtPhone.text == ""){
-            error = (false, "Please enter phone number")
-        }
-        else if(self.txtPhone.text!.count < 7) || (self.txtPhone.text!.count > 12){
-            error = (false, "Please enter valid phone number")
-        }
+//        else if (self.txtPhone.text == ""){
+//            error = (false, "Please enter valid phone number")
+//        }
         else{
             error = (true, "")
         }
@@ -76,10 +74,19 @@ class RegisterViewController: UIViewController {
     @IBAction func btnSumbitTapped(_ sender: Any) {
         let (isValidate, errorMessage) = self.getValidate()
         if isValidate{
+            if self.txtPhone.text != ""{
+                self.phone = String(format: "%@", self.txtPhone.text!)
+            }else{
+                self.phone = ""
+            }
             self.callRegisterAPi()
         }else{
             AlertViewController.openAlertView(title: "Error", message: errorMessage, buttons: ["OK"])
         }
+    }
+    
+    @IBAction func btnPhoneInfoTapped(_ sender: Any){
+        AlertViewController.openAlertView(title: "Phone Number", message: "Providing a phone number is not mandatory, however, it will reduce the time taken for us to verify and approve your application.", buttons: ["OK"])
     }
     
 }
@@ -88,7 +95,26 @@ class RegisterViewController: UIViewController {
 MARK: - UITextFieldDelegate
 */
 extension RegisterViewController: UITextFieldDelegate{
-    func textFieldDidBeginEditing(_ textField: UITextField) {
-
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        let newLength = (textField.text?.count)! + string.count - range.length
+        if textField == self.txtPhone{
+            let allowedCharactersWithPlus = "+0123456789"
+            let allowedCharactersWithoutPlus = "0123456789"
+            var allowedCharacterSet = CharacterSet()
+            if newLength > 1{
+                allowedCharacterSet = CharacterSet(charactersIn: allowedCharactersWithoutPlus)
+            }else{
+                allowedCharacterSet = CharacterSet(charactersIn: allowedCharactersWithPlus)
+               
+            }
+            let typedCharacterSet = CharacterSet(charactersIn: string)
+            let alphabet = allowedCharacterSet.isSuperset(of: typedCharacterSet)
+            if alphabet == false{
+                return false
+            }else{
+                return true
+            }
+        }
+        return true
     }
 }

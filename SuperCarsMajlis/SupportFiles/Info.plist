@@ -15,7 +15,7 @@
 	<key>CFBundlePackageType</key>
 	<string>$(PRODUCT_BUNDLE_PACKAGE_TYPE)</string>
 	<key>CFBundleShortVersionString</key>
-	<string>1.0</string>
+	<string>$(MARKETING_VERSION)</string>
 	<key>CFBundleURLTypes</key>
 	<array>
 		<dict>
@@ -28,7 +28,7 @@
 		</dict>
 	</array>
 	<key>CFBundleVersion</key>
-	<string>1</string>
+	<string>$(CURRENT_PROJECT_VERSION)</string>
 	<key>LSApplicationQueriesSchemes</key>
 	<array>
 		<string>comgooglemaps</string>
@@ -41,16 +41,15 @@
 		<true/>
 	</dict>
 	<key>NSCameraUsageDescription</key>
-	<string>SCM requires camera access to pick images.</string>
+	<string>The SCM application needs to access your camera in order to upload your SCM profile picture, your supercar and identity documents.</string>
 	<key>NSLocationUsageDescription</key>
-	<string>SCM requires to access your current location for Event.</string>
+	<string>The SCM app requires your location to enable you to check into events.</string>
 	<key>NSLocationWhenInUseUsageDescription</key>
-	<string>SCM use this to personalize your app expirence. </string>
+	<string>The SCM app requires your location to enable you to check into events.</string>
 	<key>NSPhotoLibraryUsageDescription</key>
-	<string>SCM requires photo library access to pick images.</string>
+	<string>The SCM application needs to access your photos in order to upload your SCM profile picture, your supercar and identity documents.</string>
 	<key>UIBackgroundModes</key>
 	<array>
-		<string>location</string>
 		<string>remote-notification</string>
 	</array>
 	<key>UILaunchStoryboardName</key>

@@ -11,11 +11,11 @@ import Foundation
 extension ProfileViewController{
     func callUpdateUserDetailAPI(userId: String, image: String){
         FunctionConstants.getInstance().showLoader(message: "Loading", view: self)
-        let urlPath = kBaseURL + kGetUserAPI + userId
+        let urlPath = kBaseURL + kGetUserAPI + userId 
         
         let requestDict = ["name"      : self.txtFullName.text!,
                            "email"     : self.txtEmail.text!,
-                           "phone"     : String(format: "00971%@", self.txtPhone.text!),
+                           "phone"     : self.phone,
                            "img_add"   : image
             ] as [String : Any]
         

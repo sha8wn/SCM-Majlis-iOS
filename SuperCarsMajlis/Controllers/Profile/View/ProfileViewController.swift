@@ -20,9 +20,9 @@ class ProfileViewController: UIViewController {
     @IBOutlet var btnProfilePic : UIButton!
     @IBOutlet var txtFullName   : UITextField!
     @IBOutlet var txtEmail      : UITextField!
-    @IBOutlet var txtCountryCode: UITextField!
     @IBOutlet var txtPhone      : UITextField!
     var model                   : ApprovedUsersList!
+    var phone                   : String                = ""
     //end
     
     /*
@@ -45,9 +45,9 @@ class ProfileViewController: UIViewController {
         //Data
         self.txtFullName.text = self.model.name ?? ""
         self.txtEmail.text = self.model.email ?? ""
-        let phone = self.model.phone ?? "00971"
-        self.txtPhone.text = String(phone.dropFirst(5))
-        
+        let phone = self.model.phone ?? ""
+//        self.txtPhone.text = String(phone.dropFirst(5))
+        self.txtPhone.text = phone
         
         self.btnProfilePic.sd_imageIndicator = SDWebImageActivityIndicator.white
         self.btnProfilePic.sd_setBackgroundImage(with: URL(string: self.model.img ?? ""), for: .normal, completed: nil)
@@ -68,12 +68,9 @@ class ProfileViewController: UIViewController {
         else if(FunctionConstants.getInstance().isValidEmail(email: self.txtEmail.text ?? "") == false){
             error = (false, "Please enter valid email address")
         }
-        else if(self.txtPhone.text == ""){
-            error = (false, "Please enter phone number")
-        }
-        else if(self.txtPhone.text!.count < 7) || (self.txtPhone.text!.count > 12){
-            error = (false, "Please enter valid phone number")
-        }
+//        else if (self.txtPhone.text == ""){
+//            error = (false, "Please enter valid phone number")
+//        }
         else{
             error = (true, "")
         }
@@ -108,9 +105,39 @@ class ProfileViewController: UIViewController {
                 let profilePicData: Data =  profilePic.jpegData(compressionQuality: 0.25)!
                 pic = profilePicData.base64EncodedString()
             }
+            if self.txtPhone.text != ""{
+                self.phone = String(format: "%@", self.txtPhone.text!)
+            }else{
+                self.phone = ""
+            }
             self.callUpdateUserDetailAPI(userId: "\(self.model.id!)" , image: pic)
         }else{
             AlertViewController.openAlertView(title: "Error", message: errorMessage, buttons: ["OK"])
         }
+    }
+}
+
+extension ProfileViewController: UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        let newLength = (textField.text?.count)! + string.count - range.length
+        if textField == self.txtPhone{
+            let allowedCharactersWithPlus = "+0123456789"
+            let allowedCharactersWithoutPlus = "0123456789"
+            var allowedCharacterSet = CharacterSet()
+            if newLength > 1{
+                allowedCharacterSet = CharacterSet(charactersIn: allowedCharactersWithoutPlus)
+            }else{
+                allowedCharacterSet = CharacterSet(charactersIn: allowedCharactersWithPlus)
+               
+            }
+            let typedCharacterSet = CharacterSet(charactersIn: string)
+            let alphabet = allowedCharacterSet.isSuperset(of: typedCharacterSet)
+            if alphabet == false{
+                return false
+            }else{
+                return true
+            }
+        }
+        return true
     }
 }

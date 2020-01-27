@@ -539,9 +539,8 @@ extension EventDetailsViewController: UITableViewDelegate, UITableViewDataSource
     
     func handleGoogleMap(lat: String, long: String){
         if UIApplication.shared.canOpenURL(URL(string:"comgooglemaps://")!) {
-            UIApplication.shared.open(URL(string: "comgooglemaps://?center=\(lat),\(long)&zoom=14&views=traffic&q=loc:\(lat),\(long)")!, options: [:], completionHandler: nil)
+            UIApplication.shared.open(URL(string: "comgooglemaps://?center=\(lat),\(long)&zoom=14&views=traffic&q=\(lat),\(long)")!, options: [:], completionHandler: nil)
         } else {
-            print("Can't use comgooglemaps://")
             UIApplication.shared.open(URL(string: "http://maps.google.com/maps?q=loc:\(lat),\(long)&zoom=14&views=traffic")!, options: [:], completionHandler: nil)
         }
     }

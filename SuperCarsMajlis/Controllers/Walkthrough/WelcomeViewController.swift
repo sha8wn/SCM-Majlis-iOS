@@ -17,22 +17,46 @@ class WelcomeViewController: UIViewController {
      */
     @IBOutlet var btnStart: UIButton!
     @IBOutlet var imgView: UIImageView!
-    var audioPlayer       : AVAudioPlayer?
-
+    var videoPlayer: AVPlayer!
     //end
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        self.imgView.image = UIImage(named: "ic_Welcome_Logo")
+       
         
-//        self.btnStart.setImage(UIImage(named: "ic_Welcome_Logo"), for: .normal)
-//        self.btnStart.setImage(UIImage(named: "ic_Welcome_Logo_Hightlight"), for: .highlighted)
-        
-        self.audioPlayer?.delegate = self
         // Do any additional setup after loading the view.
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+     
+        DispatchQueue.main.async {
+            let image = self.createThumbnailOfVideoFromRemoteUrl()
+            self.imgView.image = image
+        }
+    }
+    
+    func createThumbnailOfVideoFromRemoteUrl() -> UIImage? {
+        guard let path = Bundle.main.path(forResource: "video", ofType:"mp4") else { return UIImage()
+        }
+        
+        let asset = AVAsset(url: URL(fileURLWithPath: path))
+        
+        let assetImgGenerate = AVAssetImageGenerator(asset: asset)
+        assetImgGenerate.appliesPreferredTrackTransform = true
+        //Can set this to improve performance if target size is known before hand
+        //assetImgGenerate.maximumSize = CGSize(width,height)
+        let time = CMTimeMakeWithSeconds(1.0, preferredTimescale: 600)
+        do {
+            let img = try assetImgGenerate.copyCGImage(at: time, actualTime: nil)
+            let thumbnail = UIImage(cgImage: img)
+            return thumbnail
+        } catch {
+          print(error.localizedDescription)
+          return nil
+        }
+    }
 
     /*
     // MARK: - Navigation
@@ -46,26 +70,27 @@ class WelcomeViewController: UIViewController {
 
     @IBAction func btnStartTapped(sender: UIButton){
         
-        self.imgView.image = UIImage(named: "ic_Welcome_Logo_Hightlight")
+        self.btnStart.isUserInteractionEnabled = false
+        
+        guard let path = Bundle.main.path(forResource: "video", ofType:"mp4") else {
+            debugPrint("video.m4v not found")
+            return
+        }
+        self.videoPlayer = AVPlayer(url: URL(fileURLWithPath: path))
+        var playerLayer: AVPlayerLayer?
+        playerLayer = AVPlayerLayer(player: self.videoPlayer)
+        playerLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
+        playerLayer!.frame = self.imgView.frame
+        self.view!.layer.addSublayer(playerLayer!)
+        self.videoPlayer.play()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(playerDidFinishPlaying(note:)),
+                                               name: NSNotification.Name.AVPlayerItemDidPlayToEndTime, object: videoPlayer.currentItem)
 
         
-        let viewController = Constants.loginAndSignupStoryboard.instantiateViewController(withIdentifier: "ChooseUserTypeViewController") as! ChooseUserTypeViewController
-        self.navigationController?.pushViewController(viewController, animated: true)
-//        guard let url = Bundle.main.url(forResource: "start", withExtension: "mp3") else { return }
-//        do {
-//            try AVAudioSession.sharedInstance().setCategory(AVAudioSession.Category.playback)
-//            try AVAudioSession.sharedInstance().setActive(true)
-//            audioPlayer = try AVAudioPlayer(contentsOf: url, fileTypeHint: AVFileType.mp3.rawValue)
-//            audioPlayer?.delegate = self
-//            audioPlayer?.play()
-//        }catch let error{
-//            print(error.localizedDescription)
-//        }
     }
-}
-
-extension WelcomeViewController: AVAudioPlayerDelegate{
-    func audioPlayerDidFinishPlaying(_ player: AVAudioPlayer, successfully flag: Bool) {
+    
+    @objc func playerDidFinishPlaying(note: NSNotification) {
         let viewController = Constants.loginAndSignupStoryboard.instantiateViewController(withIdentifier: "ChooseUserTypeViewController") as! ChooseUserTypeViewController
         self.navigationController?.pushViewController(viewController, animated: true)
     }

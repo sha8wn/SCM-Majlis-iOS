@@ -12,7 +12,13 @@ extension SettingsViewController{
     
     func callGetUserDetailAPI(){
         FunctionConstants.getInstance().showLoader(message: "Loading", view: self)
-        let urlPath = kBaseURL + kGetUserAPI
+        
+        var accessTokenModel: RegisterModel!
+        if getAccessTokenModel() != nil{
+            accessTokenModel = getAccessTokenModel()
+        }
+        
+        let urlPath = kBaseURL + kGetUserAPI + "\(accessTokenModel.user!.id!)"
         
         Network.shared.request(urlPath: urlPath, methods: .get, authType: .auth) { (response, message, statusCode, status) in
             FunctionConstants.getInstance().hideLoader(view: self)
@@ -24,7 +30,8 @@ extension SettingsViewController{
                             if list.count > 0{
                                 self.userModel = list[0]
                                 self.lblUserName.text = list[0].name ?? ""
-                                self.lblUserId.text = "SCM00" + "\(list[0].id ?? 0)"
+                                self.lblUserId.text = "SCM" + "\(list[0].id2 ?? "0")"
+//                                self.lblUserId.text = "SCM00" + "\(list[0].id ?? 0)"
                                 let expiry =  list[0].expiry ?? ""
                                 let registration = list[0].created ?? ""
                                 let startDate = registration.toDate()

@@ -23,8 +23,9 @@ class PickerViewController: UIViewController {
     @IBOutlet weak var btnBack          : UIButton!
     @IBOutlet weak var lblTitle         : UILabel!
     @IBOutlet weak var lblNoData        : UILabel!
-    @IBOutlet weak var searchBar        : UISearchBar!
+//    @IBOutlet weak var searchBar        : UISearchBar!
     @IBOutlet weak var tableView        : UITableView!
+    @IBOutlet weak var searchBar        : UITextField!
     var titleString                     : String        = ""
     var dataArray                       : [String]      = []
     var searchArray                     : [String]      = []
@@ -55,6 +56,7 @@ class PickerViewController: UIViewController {
     
     func setupView(){
         self.searchBar.delegate = self
+//        self.searchBar.delegate = self
         self.searchBar.isHidden = true
     }
     
@@ -85,12 +87,12 @@ class PickerViewController: UIViewController {
         
         self.lblTitle.text = title
         
-        self.searchBar.tintColor = .white
-        
-        self.searchBar.barTintColor = .white
-        
-        self.searchBar.searchTextField.textColor = .white
-        
+//        self.searchBar.tintColor = .white
+//
+//        self.searchBar.barTintColor = .white
+//
+//        self.searchBar.searchTextField.textColor = .white
+//
         self.searchBar.isHidden = true
         
         self.searchActive = false
@@ -129,11 +131,11 @@ class PickerViewController: UIViewController {
         
         self.searchBar.isHidden = true
         
-        self.searchBar.tintColor = .white
-        
-        self.searchBar.barTintColor = .white
-        
-        self.searchBar.searchTextField.textColor = .white
+//        self.searchBar.tintColor = .white
+//
+//        self.searchBar.barTintColor = .white
+//
+//        self.searchBar.searchTextField.textColor = .white
         
         self.searchActive = false
         
@@ -272,6 +274,44 @@ extension PickerViewController: UITableViewDelegate, UITableViewDataSource{
 }
 //end
 
+extension PickerViewController: UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool {
+        if let text = textField.text as NSString? {
+            let txtAfterUpdate = text.replacingCharacters(in: range, with: string)
+            if(txtAfterUpdate.count == 0){
+                self.searchBar.resignFirstResponder()
+                searchActive = false
+                searchBar.text = ""
+                self.tableView.reloadData()
+            }else{
+                searchActive = true
+                self.searchArray = []
+                DispatchQueue.main.async {
+                    if txtAfterUpdate == ""{
+                        self.searchBar.resignFirstResponder()
+                        self.searchBar.text = ""
+                        self.searchActive = false
+                        self.tableView.reloadData()
+                    }else{
+                        if self.dataArray.count > 0{
+                            for str in self.dataArray{
+                                if str.lowercased().contains(txtAfterUpdate.lowercased()){
+                                    self.searchArray.append(str)
+                                }
+                                self.searchActive = true
+                                self.tableView.reloadData()
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        return true
+    }
+}
+
+/*
+
 /*
  MARK: - Search Bar Delegate
  */
@@ -322,6 +362,7 @@ extension PickerViewController: UISearchBarDelegate{
     }
 }
 
+ */
 
 /*
  MARK: - PickerViewController: UITableViewCell

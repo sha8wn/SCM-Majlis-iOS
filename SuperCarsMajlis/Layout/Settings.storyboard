@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -79,7 +79,7 @@
                                                             <outlet property="delegate" destination="VQp-YE-9Jh" id="KZX-oY-O9F"/>
                                                         </connections>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FULL NAME" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U0-h2-sh7">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="FULL NAME*" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8U0-h2-sh7">
                                                         <rect key="frame" x="25" y="50" width="364" height="14"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" name="customGrey50Opacity"/>
@@ -93,7 +93,7 @@
                                                         </constraints>
                                                     </view>
                                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="5jn-xH-i28">
-                                                        <rect key="frame" x="100" y="221" width="289" height="36"/>
+                                                        <rect key="frame" x="25" y="221" width="364" height="36"/>
                                                         <color key="tintColor" name="customGrey50Opacity"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="36" id="E8J-yW-YLb"/>
@@ -105,7 +105,7 @@
                                                             <outlet property="delegate" destination="VQp-YE-9Jh" id="EPb-Pm-bZh"/>
                                                         </connections>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHONE NUMBER" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slX-fW-Hbm">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="PHONE NUMBER (Please include country code)" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="slX-fW-Hbm">
                                                         <rect key="frame" x="25" y="202" width="364" height="14"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" name="customGrey50Opacity"/>
@@ -124,7 +124,7 @@
                                                             <outlet property="delegate" destination="VQp-YE-9Jh" id="jn2-Ue-HiC"/>
                                                         </connections>
                                                     </textField>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGl-Bq-xsx">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="EMAIL*" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pGl-Bq-xsx">
                                                         <rect key="frame" x="25" y="126" width="364" height="14"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="12"/>
                                                         <color key="textColor" name="customGrey50Opacity"/>
@@ -137,29 +137,8 @@
                                                             <constraint firstAttribute="height" constant="1" id="0Vy-HX-vVf"/>
                                                         </constraints>
                                                     </view>
-                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XY4-Ew-y3J">
-                                                        <rect key="frame" x="25" y="257" width="60" height="1"/>
-                                                        <color key="backgroundColor" name="customGrey50Opacity"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="1" id="TrH-Wp-xST"/>
-                                                            <constraint firstAttribute="width" constant="60" id="xdw-4S-WXW"/>
-                                                        </constraints>
-                                                    </view>
-                                                    <textField opaque="NO" userInteractionEnabled="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="+971" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="dd4-3K-imM">
-                                                        <rect key="frame" x="25" y="221" width="60" height="36"/>
-                                                        <constraints>
-                                                            <constraint firstAttribute="height" constant="36" id="4EY-Oz-Awg"/>
-                                                            <constraint firstAttribute="width" constant="60" id="rSY-YG-ghd"/>
-                                                        </constraints>
-                                                        <color key="textColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                                        <fontDescription key="fontDescription" name="Poppins-Medium" family="Poppins" pointSize="18"/>
-                                                        <textInputTraits key="textInputTraits"/>
-                                                        <connections>
-                                                            <outlet property="delegate" destination="VQp-YE-9Jh" id="cfi-3Y-VQn"/>
-                                                        </connections>
-                                                    </textField>
                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dhQ-GW-Wv9">
-                                                        <rect key="frame" x="100" y="257" width="289" height="1"/>
+                                                        <rect key="frame" x="25" y="257" width="364" height="1"/>
                                                         <color key="backgroundColor" name="customGrey50Opacity"/>
                                                         <constraints>
                                                             <constraint firstAttribute="height" constant="1" id="yw3-bv-Tfh"/>
@@ -174,33 +153,26 @@
                                                     <constraint firstItem="NkO-bH-the" firstAttribute="leading" secondItem="yyk-Ic-TO1" secondAttribute="leading" id="C2X-8R-V4d"/>
                                                     <constraint firstItem="slX-fW-Hbm" firstAttribute="leading" secondItem="Ppu-ip-LYa" secondAttribute="leading" id="FBx-ds-PQu"/>
                                                     <constraint firstItem="Ppu-ip-LYa" firstAttribute="top" secondItem="btq-Qv-t5H" secondAttribute="bottom" id="Fpt-i9-vQM"/>
+                                                    <constraint firstItem="5jn-xH-i28" firstAttribute="leading" secondItem="slX-fW-Hbm" secondAttribute="leading" id="Ik5-1B-aTy"/>
                                                     <constraint firstItem="NkO-bH-the" firstAttribute="top" secondItem="yyk-Ic-TO1" secondAttribute="top" constant="-50" id="JXk-Fg-rhi"/>
                                                     <constraint firstItem="btq-Qv-t5H" firstAttribute="top" secondItem="pGl-Bq-xsx" secondAttribute="bottom" constant="5" id="JoW-p9-Uak"/>
-                                                    <constraint firstItem="5jn-xH-i28" firstAttribute="leading" secondItem="dd4-3K-imM" secondAttribute="trailing" constant="15" id="ML8-tK-45m"/>
                                                     <constraint firstItem="dhQ-GW-Wv9" firstAttribute="leading" secondItem="5jn-xH-i28" secondAttribute="leading" id="Mpu-di-ful"/>
-                                                    <constraint firstItem="XY4-Ew-y3J" firstAttribute="leading" secondItem="dd4-3K-imM" secondAttribute="leading" id="Mzr-VD-IP5"/>
                                                     <constraint firstItem="pGl-Bq-xsx" firstAttribute="trailing" secondItem="z1Q-zV-hJh" secondAttribute="trailing" id="NKt-UB-Oek"/>
                                                     <constraint firstItem="z1Q-zV-hJh" firstAttribute="leading" secondItem="pEi-gd-PMO" secondAttribute="leading" id="NiR-g3-aWC"/>
                                                     <constraint firstItem="dhQ-GW-Wv9" firstAttribute="trailing" secondItem="5jn-xH-i28" secondAttribute="trailing" id="P7S-VZ-HLk"/>
                                                     <constraint firstItem="pEi-gd-PMO" firstAttribute="trailing" secondItem="8U0-h2-sh7" secondAttribute="trailing" id="Pix-Oa-mMT"/>
                                                     <constraint firstItem="dhQ-GW-Wv9" firstAttribute="top" secondItem="5jn-xH-i28" secondAttribute="bottom" id="Sga-6t-cMN"/>
-                                                    <constraint firstItem="dd4-3K-imM" firstAttribute="top" secondItem="slX-fW-Hbm" secondAttribute="bottom" constant="5" id="U90-Xf-cTB"/>
                                                     <constraint firstItem="z1Q-zV-hJh" firstAttribute="trailing" secondItem="pEi-gd-PMO" secondAttribute="trailing" id="WLs-Xl-Xmj"/>
                                                     <constraint firstItem="pEi-gd-PMO" firstAttribute="top" secondItem="8U0-h2-sh7" secondAttribute="bottom" constant="5" id="X9S-vS-hke"/>
                                                     <constraint firstItem="Ppu-ip-LYa" firstAttribute="trailing" secondItem="btq-Qv-t5H" secondAttribute="trailing" id="XXe-ak-TXa"/>
-                                                    <constraint firstItem="dd4-3K-imM" firstAttribute="trailing" secondItem="XY4-Ew-y3J" secondAttribute="trailing" id="ZtP-hA-E1M"/>
                                                     <constraint firstItem="5jn-xH-i28" firstAttribute="trailing" secondItem="slX-fW-Hbm" secondAttribute="trailing" id="a3e-ll-yKi"/>
                                                     <constraint firstItem="slX-fW-Hbm" firstAttribute="trailing" secondItem="Ppu-ip-LYa" secondAttribute="trailing" id="dgb-eo-9Pn"/>
                                                     <constraint firstItem="5jn-xH-i28" firstAttribute="top" secondItem="slX-fW-Hbm" secondAttribute="bottom" constant="5" id="eqN-ou-qTR"/>
                                                     <constraint firstAttribute="bottom" secondItem="dhQ-GW-Wv9" secondAttribute="bottom" constant="447" id="eu7-HP-wM5"/>
-                                                    <constraint firstItem="XY4-Ew-y3J" firstAttribute="top" secondItem="dd4-3K-imM" secondAttribute="bottom" id="fCP-vi-ayd"/>
-                                                    <constraint firstItem="dhQ-GW-Wv9" firstAttribute="top" secondItem="XY4-Ew-y3J" secondAttribute="bottom" constant="-1" id="h7Y-pO-Tl1"/>
-                                                    <constraint firstItem="dd4-3K-imM" firstAttribute="leading" secondItem="slX-fW-Hbm" secondAttribute="leading" id="ifc-MF-4Fk"/>
                                                     <constraint firstItem="pEi-gd-PMO" firstAttribute="leading" secondItem="8U0-h2-sh7" secondAttribute="leading" id="kmn-9o-daS"/>
                                                     <constraint firstItem="pGl-Bq-xsx" firstAttribute="top" secondItem="z1Q-zV-hJh" secondAttribute="bottom" constant="20" id="n14-8E-JNx"/>
                                                     <constraint firstItem="slX-fW-Hbm" firstAttribute="top" secondItem="Ppu-ip-LYa" secondAttribute="bottom" constant="20" id="nFw-yy-pCo"/>
                                                     <constraint firstItem="8U0-h2-sh7" firstAttribute="leading" secondItem="yyk-Ic-TO1" secondAttribute="leading" constant="25" id="o60-OH-aMq"/>
-                                                    <constraint firstItem="dhQ-GW-Wv9" firstAttribute="leading" secondItem="XY4-Ew-y3J" secondAttribute="trailing" constant="15" id="oRL-Sf-Cei"/>
                                                     <constraint firstItem="btq-Qv-t5H" firstAttribute="top" secondItem="pGl-Bq-xsx" secondAttribute="bottom" constant="5" id="s0h-jH-wNr"/>
                                                     <constraint firstItem="Ppu-ip-LYa" firstAttribute="leading" secondItem="btq-Qv-t5H" secondAttribute="leading" id="tid-DT-fIh"/>
                                                     <constraint firstItem="z1Q-zV-hJh" firstAttribute="top" secondItem="pEi-gd-PMO" secondAttribute="bottom" id="tje-JJ-bkH"/>
@@ -321,7 +293,6 @@
                         <outlet property="btnProfilePic" destination="9l5-UX-k4M" id="fDe-1V-xGs"/>
                         <outlet property="btnSubmit" destination="inh-6d-gVb" id="MdR-gi-sWn"/>
                         <outlet property="picBGView" destination="BSl-RA-b3f" id="91u-Dz-kft"/>
-                        <outlet property="txtCountryCode" destination="dd4-3K-imM" id="p7m-Y2-seH"/>
                         <outlet property="txtEmail" destination="btq-Qv-t5H" id="Qfk-W1-nGQ"/>
                         <outlet property="txtFullName" destination="pEi-gd-PMO" id="eUe-5s-V1J"/>
                         <outlet property="txtPhone" destination="5jn-xH-i28" id="Vmj-hx-u37"/>

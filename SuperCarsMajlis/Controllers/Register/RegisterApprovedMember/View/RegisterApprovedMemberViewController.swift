@@ -18,9 +18,10 @@ class RegisterApprovedMemberViewController: UIViewController {
     @IBOutlet var btnShowHidePassword : UIButton!
     @IBOutlet var txtFullName         : UITextField!
     @IBOutlet var txtEmail            : UITextField!
-    @IBOutlet var txtCountryCode      : UITextField!
     @IBOutlet var txtPhone            : UITextField!
     @IBOutlet var txtPassword         : UITextField!
+    @IBOutlet var btnPhoneInfo        : UIButton!
+    var phone                         : String        = ""
     var userModel                     : ApprovedUsersList!
     var userId                        : String        = ""
     var isShowPassword                : Bool          = false
@@ -44,7 +45,6 @@ class RegisterApprovedMemberViewController: UIViewController {
      */
     func setup(){
         self.txtPassword.setRightPaddingPoints(20)
-        self.txtCountryCode.isUserInteractionEnabled = false
     }
     //end
     
@@ -66,12 +66,9 @@ class RegisterApprovedMemberViewController: UIViewController {
         else if(self.txtPassword.text!.count < 5){
             error = (false, "Please enter valid password")
         }
-        else if(self.txtPhone.text == ""){
-            error = (false, "Please enter phone number")
-        }
-        else if(self.txtPhone.text!.count < 7) || (self.txtPhone.text!.count > 12){
-            error = (false, "Please enter valid phone number")
-        }
+//        else if (self.txtPhone.text == ""){
+//            error = (false, "Please enter valid phone number")
+//        }
         else{
             error = (true, "")
         }
@@ -94,6 +91,11 @@ class RegisterApprovedMemberViewController: UIViewController {
     @IBAction func btnNextTapped(_ sender: Any) {
         let (isValidate, errorMessage) = self.getValidate()
         if isValidate{
+            if self.txtPhone.text != ""{
+                self.phone = String(format: "%@", self.txtPhone.text!)
+            }else{
+                self.phone = ""
+            }
             self.callUpdateUserDetailAPI(userId: self.userId)
         }else{
             AlertViewController.openAlertView(title: "Error", message: errorMessage, buttons: ["OK"])
@@ -110,5 +112,34 @@ class RegisterApprovedMemberViewController: UIViewController {
             self.txtPassword.isSecureTextEntry = false
             self.btnShowHidePassword.setImage(UIImage(named: "ic_Eye_Cross"), for: .normal)
         }
+    }
+    
+    @IBAction func btnPhoneInfoTapped(_ sender: Any){
+        AlertViewController.openAlertView(title: "Phone Number", message: "Providing a phone number is not mandatory, however, it will reduce the time taken for us to verify and approve your application.", buttons: ["OK"])
+    }
+}
+
+extension RegisterApprovedMemberViewController: UITextFieldDelegate{
+    func textField(_ textField: UITextField, shouldChangeCharactersIn range: NSRange, replacementString string: String) -> Bool{
+        let newLength = (textField.text?.count)! + string.count - range.length
+        if textField == self.txtPhone{
+            let allowedCharactersWithPlus = "+0123456789"
+            let allowedCharactersWithoutPlus = "0123456789"
+            var allowedCharacterSet = CharacterSet()
+            if newLength > 1{
+                allowedCharacterSet = CharacterSet(charactersIn: allowedCharactersWithoutPlus)
+            }else{
+                allowedCharacterSet = CharacterSet(charactersIn: allowedCharactersWithPlus)
+               
+            }
+            let typedCharacterSet = CharacterSet(charactersIn: string)
+            let alphabet = allowedCharacterSet.isSuperset(of: typedCharacterSet)
+            if alphabet == false{
+                return false
+            }else{
+                return true
+            }
+        }
+        return true
     }
 }

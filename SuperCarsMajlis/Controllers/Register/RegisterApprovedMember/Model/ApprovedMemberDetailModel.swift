@@ -42,6 +42,7 @@ struct ApprovedUsers : Codable {
 
 struct ApprovedUsersList : Codable {
     let id : Int?
+    let id2: String?
     let created : String?
     let expiry : String?
     let name : String?
@@ -56,6 +57,7 @@ struct ApprovedUsersList : Codable {
     enum CodingKeys: String, CodingKey {
 
         case id = "id"
+        case id2 = "id2"
         case created = "created"
         case expiry = "expiry"
         case name = "name"
