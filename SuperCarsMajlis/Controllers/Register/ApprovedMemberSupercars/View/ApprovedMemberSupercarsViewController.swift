@@ -300,8 +300,17 @@ extension ApprovedMemberSupercarsViewController: UITableViewDelegate, UITableVie
         PickerViewController.openPickerView(type: .brand, title: "Brand", lastSelectedValue: model.brand ?? "") { (value, index) in
             model.brand = value
             model.brand_Id = index ?? 0
+            
+            model.model = ""
+            model.model_Id =  0
+            
+            model.color = ""
+            model.color_Id =  0
+            
             self.dataArray[sender.tag] = model
             self.tableView.reloadRows(at: [IndexPath(row: sender.tag, section: 0)], with: .none)
+//            self.tableView.reloadRows(at: [IndexPath(row: sender.tag + 1, section: 0)], with: .none)
+//            self.tableView.reloadRows(at: [IndexPath(row: sender.tag + 2, section: 0)], with: .none)
         }
     }
     
