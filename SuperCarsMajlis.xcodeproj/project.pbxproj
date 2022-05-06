@@ -7,7 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		03DB5DCD987F31CB06CE1461 /* Pods_SuperCarsMajlis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 69DA3973C0C7F64ED6367D50 /* Pods_SuperCarsMajlis.framework */; };
+		188D3E9062BB763A807FEF2C /* Pods_SuperCarsMajlis_SuperCarsMajlisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1676BEE73B36424E2EDE3198 /* Pods_SuperCarsMajlis_SuperCarsMajlisUITests.framework */; };
+		450C2E38722F26E8FDBD3775 /* Pods_SuperCarsMajlisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE0DD8D2E10907F06C53F17D /* Pods_SuperCarsMajlisTests.framework */; };
 		B4089B1923543BDF001E05E8 /* CarModels.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4089B1823543BDF001E05E8 /* CarModels.swift */; };
 		B40A1B04233CB87A0033BB82 /* Event.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B40A1B03233CB87A0033BB82 /* Event.storyboard */; };
 		B40A1B07233CB8B30033BB82 /* PastEventViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B40A1B06233CB8B30033BB82 /* PastEventViewController.swift */; };
@@ -84,6 +85,7 @@
 		B498C344235064E300D073F8 /* PastEventListModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C343235064E300D073F8 /* PastEventListModel.swift */; };
 		B498C34923508A6200D073F8 /* RegisterWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C34823508A6200D073F8 /* RegisterWebservice.swift */; };
 		B498C34D23508F7800D073F8 /* CarBrands.swift in Sources */ = {isa = PBXBuildFile; fileRef = B498C34C23508F7800D073F8 /* CarBrands.swift */; };
+		B4A308342817FC6100AA5DFA /* AuthKey_T824BT63D4.p8 in Resources */ = {isa = PBXBuildFile; fileRef = B4A308332817FC6100AA5DFA /* AuthKey_T824BT63D4.p8 */; };
 		B4ACF646236FE72A0042100E /* PromotionsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACF645236FE72A0042100E /* PromotionsViewController.swift */; };
 		B4ACF64C236FFB430042100E /* PromotionWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACF64B236FFB430042100E /* PromotionWebservice.swift */; };
 		B4ACF64E237000C50042100E /* PromotionModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4ACF64D237000C50042100E /* PromotionModel.swift */; };
@@ -155,8 +157,7 @@
 		B4EFC4E6233CAD5D000DC74A /* UIView+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4EFC4E5233CAD5D000DC74A /* UIView+Extension.swift */; };
 		B4F8FD4B239FA2C50030648A /* FeedbackViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8FD4A239FA2C50030648A /* FeedbackViewController.swift */; };
 		B4F8FD4D239FA2D40030648A /* FeedbackWebservice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B4F8FD4C239FA2D40030648A /* FeedbackWebservice.swift */; };
-		B9569C550D51144C371B04AA /* Pods_SuperCarsMajlisUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = ABEA51CEAF90E2CB90C1F339 /* Pods_SuperCarsMajlisUITests.framework */; };
-		BF0A5EC42202EA39355FF24D /* Pods_SuperCarsMajlisTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21ED808E30A848FCA1AD363 /* Pods_SuperCarsMajlisTests.framework */; };
+		CD7EA84A5F1F9480DA3085DB /* Pods_SuperCarsMajlis.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CDD7105253AAB1F47AABB45D /* Pods_SuperCarsMajlis.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -177,13 +178,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		507DCBC44F0160C184F173DE /* Pods-SuperCarsMajlisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlisUITests.debug.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlisUITests/Pods-SuperCarsMajlisUITests.debug.xcconfig"; sourceTree = "<group>"; };
-		5A86E3975E09B728B6CB438A /* Pods-SuperCarsMajlis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlis.release.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlis/Pods-SuperCarsMajlis.release.xcconfig"; sourceTree = "<group>"; };
-		69DA3973C0C7F64ED6367D50 /* Pods_SuperCarsMajlis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCarsMajlis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7A5564F3D3BEBF4D4CADE4A7 /* Pods-SuperCarsMajlisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlisTests.release.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlisTests/Pods-SuperCarsMajlisTests.release.xcconfig"; sourceTree = "<group>"; };
-		8ED761D56DD017F60E1AC0B9 /* Pods-SuperCarsMajlis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlis.debug.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlis/Pods-SuperCarsMajlis.debug.xcconfig"; sourceTree = "<group>"; };
-		A21ED808E30A848FCA1AD363 /* Pods_SuperCarsMajlisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCarsMajlisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		ABEA51CEAF90E2CB90C1F339 /* Pods_SuperCarsMajlisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCarsMajlisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		1676BEE73B36424E2EDE3198 /* Pods_SuperCarsMajlis_SuperCarsMajlisUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCarsMajlis_SuperCarsMajlisUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		21FF69B71C43713492874BAD /* Pods-SuperCarsMajlis-SuperCarsMajlisUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlis-SuperCarsMajlisUITests.debug.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlis-SuperCarsMajlisUITests/Pods-SuperCarsMajlis-SuperCarsMajlisUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		AE0DD8D2E10907F06C53F17D /* Pods_SuperCarsMajlisTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCarsMajlisTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B4089B1823543BDF001E05E8 /* CarModels.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarModels.swift; sourceTree = "<group>"; };
 		B40A1B03233CB87A0033BB82 /* Event.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Event.storyboard; sourceTree = "<group>"; };
 		B40A1B06233CB8B30033BB82 /* PastEventViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventViewController.swift; sourceTree = "<group>"; };
@@ -267,6 +264,7 @@
 		B498C343235064E300D073F8 /* PastEventListModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PastEventListModel.swift; sourceTree = "<group>"; };
 		B498C34823508A6200D073F8 /* RegisterWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterWebservice.swift; sourceTree = "<group>"; };
 		B498C34C23508F7800D073F8 /* CarBrands.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CarBrands.swift; sourceTree = "<group>"; };
+		B4A308332817FC6100AA5DFA /* AuthKey_T824BT63D4.p8 */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = AuthKey_T824BT63D4.p8; sourceTree = "<group>"; };
 		B4ACF645236FE72A0042100E /* PromotionsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionsViewController.swift; sourceTree = "<group>"; };
 		B4ACF64B236FFB430042100E /* PromotionWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionWebservice.swift; sourceTree = "<group>"; };
 		B4ACF64D237000C50042100E /* PromotionModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PromotionModel.swift; sourceTree = "<group>"; };
@@ -338,8 +336,12 @@
 		B4EFC4E5233CAD5D000DC74A /* UIView+Extension.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UIView+Extension.swift"; sourceTree = "<group>"; };
 		B4F8FD4A239FA2C50030648A /* FeedbackViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackViewController.swift; sourceTree = "<group>"; };
 		B4F8FD4C239FA2D40030648A /* FeedbackWebservice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedbackWebservice.swift; sourceTree = "<group>"; };
-		B6DAC2E0C3B4B013FBF98245 /* Pods-SuperCarsMajlisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlisTests.debug.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlisTests/Pods-SuperCarsMajlisTests.debug.xcconfig"; sourceTree = "<group>"; };
-		C61F3548793A01BF7AA399F4 /* Pods-SuperCarsMajlisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlisUITests.release.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlisUITests/Pods-SuperCarsMajlisUITests.release.xcconfig"; sourceTree = "<group>"; };
+		BD477283E5827AB504A5BE6D /* Pods-SuperCarsMajlis.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlis.debug.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlis/Pods-SuperCarsMajlis.debug.xcconfig"; sourceTree = "<group>"; };
+		C7B832783101108A3FAB5E82 /* Pods-SuperCarsMajlis.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlis.release.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlis/Pods-SuperCarsMajlis.release.xcconfig"; sourceTree = "<group>"; };
+		CDD7105253AAB1F47AABB45D /* Pods_SuperCarsMajlis.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SuperCarsMajlis.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CEFFB066B48F77A3F57E84F5 /* Pods-SuperCarsMajlisTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlisTests.debug.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlisTests/Pods-SuperCarsMajlisTests.debug.xcconfig"; sourceTree = "<group>"; };
+		DB7B4049D728838E2AA27243 /* Pods-SuperCarsMajlis-SuperCarsMajlisUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlis-SuperCarsMajlisUITests.release.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlis-SuperCarsMajlisUITests/Pods-SuperCarsMajlis-SuperCarsMajlisUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FBB7B622EFA01F3DE04CA8CD /* Pods-SuperCarsMajlisTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SuperCarsMajlisTests.release.xcconfig"; path = "Target Support Files/Pods-SuperCarsMajlisTests/Pods-SuperCarsMajlisTests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -347,7 +349,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				03DB5DCD987F31CB06CE1461 /* Pods_SuperCarsMajlis.framework in Frameworks */,
+				CD7EA84A5F1F9480DA3085DB /* Pods_SuperCarsMajlis.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -355,7 +357,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BF0A5EC42202EA39355FF24D /* Pods_SuperCarsMajlisTests.framework in Frameworks */,
+				450C2E38722F26E8FDBD3775 /* Pods_SuperCarsMajlisTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -363,7 +365,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B9569C550D51144C371B04AA /* Pods_SuperCarsMajlisUITests.framework in Frameworks */,
+				188D3E9062BB763A807FEF2C /* Pods_SuperCarsMajlis_SuperCarsMajlisUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -373,24 +375,14 @@
 		590CE53ABD8D61995FE88F7F /* Pods */ = {
 			isa = PBXGroup;
 			children = (
-				8ED761D56DD017F60E1AC0B9 /* Pods-SuperCarsMajlis.debug.xcconfig */,
-				5A86E3975E09B728B6CB438A /* Pods-SuperCarsMajlis.release.xcconfig */,
-				B6DAC2E0C3B4B013FBF98245 /* Pods-SuperCarsMajlisTests.debug.xcconfig */,
-				7A5564F3D3BEBF4D4CADE4A7 /* Pods-SuperCarsMajlisTests.release.xcconfig */,
-				507DCBC44F0160C184F173DE /* Pods-SuperCarsMajlisUITests.debug.xcconfig */,
-				C61F3548793A01BF7AA399F4 /* Pods-SuperCarsMajlisUITests.release.xcconfig */,
+				BD477283E5827AB504A5BE6D /* Pods-SuperCarsMajlis.debug.xcconfig */,
+				C7B832783101108A3FAB5E82 /* Pods-SuperCarsMajlis.release.xcconfig */,
+				21FF69B71C43713492874BAD /* Pods-SuperCarsMajlis-SuperCarsMajlisUITests.debug.xcconfig */,
+				DB7B4049D728838E2AA27243 /* Pods-SuperCarsMajlis-SuperCarsMajlisUITests.release.xcconfig */,
+				CEFFB066B48F77A3F57E84F5 /* Pods-SuperCarsMajlisTests.debug.xcconfig */,
+				FBB7B622EFA01F3DE04CA8CD /* Pods-SuperCarsMajlisTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		79C35E9347475AC60C2E8CF7 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				69DA3973C0C7F64ED6367D50 /* Pods_SuperCarsMajlis.framework */,
-				A21ED808E30A848FCA1AD363 /* Pods_SuperCarsMajlisTests.framework */,
-				ABEA51CEAF90E2CB90C1F339 /* Pods_SuperCarsMajlisUITests.framework */,
-			);
-			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		B40A1B05233CB89F0033BB82 /* PastEvent */ = {
@@ -687,7 +679,7 @@
 				B478321F233A34510081735F /* SuperCarsMajlisUITests */,
 				B47831F9233A344D0081735F /* Products */,
 				590CE53ABD8D61995FE88F7F /* Pods */,
-				79C35E9347475AC60C2E8CF7 /* Frameworks */,
+				DA088F449969D234A8A1E635 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -1153,6 +1145,7 @@
 		B4D34F1A238D222900F8140E /* SCM_Certificates */ = {
 			isa = PBXGroup;
 			children = (
+				B4A308332817FC6100AA5DFA /* AuthKey_T824BT63D4.p8 */,
 				B4D34F1B238D222900F8140E /* SCM_Push_Dev.p12 */,
 				B4D34F1C238D222900F8140E /* aps_development.cer */,
 				B4D34F1D238D222900F8140E /* SCM_Push_Dis.p12 */,
@@ -1331,6 +1324,16 @@
 			path = View;
 			sourceTree = "<group>";
 		};
+		DA088F449969D234A8A1E635 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CDD7105253AAB1F47AABB45D /* Pods_SuperCarsMajlis.framework */,
+				1676BEE73B36424E2EDE3198 /* Pods_SuperCarsMajlis_SuperCarsMajlisUITests.framework */,
+				AE0DD8D2E10907F06C53F17D /* Pods_SuperCarsMajlisTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -1338,11 +1341,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4783225233A34510081735F /* Build configuration list for PBXNativeTarget "SuperCarsMajlis" */;
 			buildPhases = (
-				84C80D67497BAB40AF9E481E /* [CP] Check Pods Manifest.lock */,
+				E6905E85489F73655366B547 /* [CP] Check Pods Manifest.lock */,
 				B47831F4233A344D0081735F /* Sources */,
 				B47831F5233A344D0081735F /* Frameworks */,
 				B47831F6233A344D0081735F /* Resources */,
-				0A204C1B084B559E2B344116 /* [CP] Embed Pods Frameworks */,
+				377A952B499BF92D424A2D9A /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1357,7 +1360,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B4783228233A34510081735F /* Build configuration list for PBXNativeTarget "SuperCarsMajlisTests" */;
 			buildPhases = (
-				64E8F3301D2C145193C2D9C1 /* [CP] Check Pods Manifest.lock */,
+				952E578A9682D3B9BECF7816 /* [CP] Check Pods Manifest.lock */,
 				B478320D233A34510081735F /* Sources */,
 				B478320E233A34510081735F /* Frameworks */,
 				B478320F233A34510081735F /* Resources */,
@@ -1376,10 +1379,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = B478322B233A34510081735F /* Build configuration list for PBXNativeTarget "SuperCarsMajlisUITests" */;
 			buildPhases = (
-				E846A241E5CA3A8633BB9E50 /* [CP] Check Pods Manifest.lock */,
+				FFAC69CA6627E97A0B24AF8B /* [CP] Check Pods Manifest.lock */,
 				B4783218233A34510081735F /* Sources */,
 				B4783219233A34510081735F /* Frameworks */,
 				B478321A233A34510081735F /* Resources */,
+				93CF3361E8054BFFB42554EB /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -1481,6 +1485,7 @@
 				B4D34F2D238D222900F8140E /* SCM_Dev.mobileprovision in Resources */,
 				B40A1B0F233CC1530033BB82 /* PaseEventCollectionViewCell.xib in Resources */,
 				B427DB08234EE9BA003ACB36 /* segoeuil.ttf in Resources */,
+				B4A308342817FC6100AA5DFA /* AuthKey_T824BT63D4.p8 in Resources */,
 				B4382FDC234B446900FDF560 /* SettingsTableViewCell.xib in Resources */,
 				B4EE4027233B87D6008FD80D /* Poppins-ThinItalic.ttf in Resources */,
 				B4EE402B233B87D6008FD80D /* Poppins-Medium.ttf in Resources */,
@@ -1516,7 +1521,7 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		0A204C1B084B559E2B344116 /* [CP] Embed Pods Frameworks */ = {
+		377A952B499BF92D424A2D9A /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1533,7 +1538,24 @@
 			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SuperCarsMajlis/Pods-SuperCarsMajlis-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		64E8F3301D2C145193C2D9C1 /* [CP] Check Pods Manifest.lock */ = {
+		93CF3361E8054BFFB42554EB /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuperCarsMajlis-SuperCarsMajlisUITests/Pods-SuperCarsMajlis-SuperCarsMajlisUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-SuperCarsMajlis-SuperCarsMajlisUITests/Pods-SuperCarsMajlis-SuperCarsMajlisUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-SuperCarsMajlis-SuperCarsMajlisUITests/Pods-SuperCarsMajlis-SuperCarsMajlisUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		952E578A9682D3B9BECF7816 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1555,7 +1577,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		84C80D67497BAB40AF9E481E /* [CP] Check Pods Manifest.lock */ = {
+		E6905E85489F73655366B547 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1577,7 +1599,7 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		E846A241E5CA3A8633BB9E50 /* [CP] Check Pods Manifest.lock */ = {
+		FFAC69CA6627E97A0B24AF8B /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -1592,7 +1614,7 @@
 			outputFileListPaths = (
 			);
 			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-SuperCarsMajlisUITests-checkManifestLockResult.txt",
+				"$(DERIVED_FILE_DIR)/Pods-SuperCarsMajlis-SuperCarsMajlisUITests-checkManifestLockResult.txt",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -1856,7 +1878,7 @@
 		};
 		B4783226233A34510081735F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8ED761D56DD017F60E1AC0B9 /* Pods-SuperCarsMajlis.debug.xcconfig */;
+			baseConfigurationReference = BD477283E5827AB504A5BE6D /* Pods-SuperCarsMajlis.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SuperCarsMajlis/SuperCarsMajlis.entitlements;
@@ -1880,7 +1902,7 @@
 		};
 		B4783227233A34510081735F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 5A86E3975E09B728B6CB438A /* Pods-SuperCarsMajlis.release.xcconfig */;
+			baseConfigurationReference = C7B832783101108A3FAB5E82 /* Pods-SuperCarsMajlis.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_ENTITLEMENTS = SuperCarsMajlis/SuperCarsMajlis.entitlements;
@@ -1904,7 +1926,7 @@
 		};
 		B4783229233A34510081735F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = B6DAC2E0C3B4B013FBF98245 /* Pods-SuperCarsMajlisTests.debug.xcconfig */;
+			baseConfigurationReference = CEFFB066B48F77A3F57E84F5 /* Pods-SuperCarsMajlisTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1920,13 +1942,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperCarsMajlis.app/SuperCarsMajlis";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCM.app/SCM";
 			};
 			name = Debug;
 		};
 		B478322A233A34510081735F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 7A5564F3D3BEBF4D4CADE4A7 /* Pods-SuperCarsMajlisTests.release.xcconfig */;
+			baseConfigurationReference = FBB7B622EFA01F3DE04CA8CD /* Pods-SuperCarsMajlisTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -1942,13 +1964,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 5.0;
 				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SuperCarsMajlis.app/SuperCarsMajlis";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/SCM.app/SCM";
 			};
 			name = Release;
 		};
 		B478322C233A34510081735F /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 507DCBC44F0160C184F173DE /* Pods-SuperCarsMajlisUITests.debug.xcconfig */;
+			baseConfigurationReference = 21FF69B71C43713492874BAD /* Pods-SuperCarsMajlis-SuperCarsMajlisUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
@@ -1968,7 +1990,7 @@
 		};
 		B478322D233A34510081735F /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = C61F3548793A01BF7AA399F4 /* Pods-SuperCarsMajlisUITests.release.xcconfig */;
+			baseConfigurationReference = DB7B4049D728838E2AA27243 /* Pods-SuperCarsMajlis-SuperCarsMajlisUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;

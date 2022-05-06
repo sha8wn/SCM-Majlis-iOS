@@ -103,9 +103,9 @@ extension WebViewController{
                                         if let text = dict.value(forKey: "text") as? String{
 //                                            self.webView.loadHTMLString(text, baseURL: nil)
                                             
-//                                            self.txtView.attributedText = text.htmlAttributed(using: UIFont(name: "Poppins-Medium", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0), color: UIColor.white)
+                                            self.txtView.attributedText = text.htmlAttributed(using: UIFont(name: "Poppins-Medium", size: 12.0) ?? UIFont.systemFont(ofSize: 12.0), color: UIColor.white)
                                             
-                                            self.txtView.attributedText = text.htmlAttributed(using: UIFont(), color: UIColor.white)
+//                                            self.txtView.attributedText = text.htmlAttributed(using: UIFont(), color: UIColor.white)
                                             
                                         }else{
                                             

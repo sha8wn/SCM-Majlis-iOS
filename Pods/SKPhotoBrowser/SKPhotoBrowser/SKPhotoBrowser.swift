@@ -17,6 +17,12 @@ open class SKPhotoBrowser: UIViewController {
     open var initPageIndex: Int = 0
     open var activityItemProvider: UIActivityItemProvider?
     open var photos: [SKPhotoProtocol] = []
+	open var autoHideControllsfadeOutDelay: Double = 4.0
+    open var shouldAutoHideControlls: Bool = true
+    
+    public var toolActionButton: UIBarButtonItem {
+        return toolbar.toolActionButton
+    }
     
     internal lazy var pagingScrollView: SKPagingScrollView = SKPagingScrollView(frame: self.view.frame, browser: self)
     
@@ -82,15 +88,11 @@ open class SKPhotoBrowser: UIViewController {
     public convenience init(photos: [SKPhotoProtocol], initialPageIndex: Int) {
         self.init(nibName: nil, bundle: nil)
         self.photos = photos
-        self.photos.forEach { $0.checkCache() }
+        //self.photos.forEach { $0.checkCache() }
         self.currentPageIndex = min(initialPageIndex, photos.count - 1)
         self.initPageIndex = self.currentPageIndex
         animator.senderOriginImage = photos[currentPageIndex].underlyingImage
         animator.senderViewForAnimation = photos[currentPageIndex] as? UIView
-    }
-
-    deinit {
-        NotificationCenter.default.removeObserver(self)
     }
     
     func setup() {
@@ -244,7 +246,7 @@ open class SKPhotoBrowser: UIViewController {
         }
         
         if let activityItemProvider = activityItemProvider {
-            activityItems.append(activityItemProvider)
+            activityItems.append(activityItemProvider.item as AnyObject)
         }
         
         activityViewController = UIActivityViewController(activityItems: activityItems, applicationActivities: nil)
@@ -252,7 +254,7 @@ open class SKPhotoBrowser: UIViewController {
             self.hideControlsAfterDelay()
             self.activityViewController = nil
         }
-        if UI_USER_INTERFACE_IDIOM() == .phone {
+        if SKMesurement.isPhone {
             present(activityViewController, animated: true, completion: nil)
         } else {
             activityViewController.modalPresentationStyle = .popover
@@ -325,10 +327,12 @@ public extension SKPhotoBrowser {
     }
     
     func hideControlsAfterDelay() {
+        // Hide controlls only if it is configured to hide automatically
+        guard shouldAutoHideControlls else { return }
         // reset
         cancelControlHiding()
         // start
-        controlVisibilityTimer = Timer.scheduledTimer(timeInterval: 4.0, target: self, selector: #selector(SKPhotoBrowser.hideControls(_:)), userInfo: nil, repeats: false)
+        controlVisibilityTimer = Timer.scheduledTimer(timeInterval: autoHideControllsfadeOutDelay, target: self, selector: #selector(SKPhotoBrowser.hideControls(_:)), userInfo: nil, repeats: false)
     }
     
     func hideControls() {
@@ -495,7 +499,7 @@ internal extension SKPhotoBrowser {
                 }))
             }
             
-            if UI_USER_INTERFACE_IDIOM() == .phone {
+            if SKMesurement.isPhone {
                 present(actionSheetController, animated: true, completion: nil)
             } else {
                 actionSheetController.modalPresentationStyle = .popover

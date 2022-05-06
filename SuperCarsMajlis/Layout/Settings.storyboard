@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -197,7 +198,7 @@
                                                         <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9l5-UX-k4M">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9l5-UX-k4M">
                                                         <rect key="frame" x="0.0" y="0.0" width="130" height="130"/>
                                                         <connections>
                                                             <action selector="btnProfilePicTapped:" destination="VQp-YE-9Jh" eventType="touchUpInside" id="WjV-OT-uKz"/>
@@ -268,7 +269,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="UxS-GI-l5d"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Cnm-CQ-h10" firstAttribute="width" secondItem="VZK-vE-6Xp" secondAttribute="width" id="9cQ-9Z-vbT"/>
                             <constraint firstItem="Lzk-TA-Qgi" firstAttribute="top" secondItem="gUd-x8-HZ1" secondAttribute="bottom" constant="20" id="A8N-GC-3gJ"/>
@@ -286,7 +288,6 @@
                             <constraint firstItem="Lzk-TA-Qgi" firstAttribute="leading" secondItem="UxS-GI-l5d" secondAttribute="leading" id="s2V-1R-XQj"/>
                             <constraint firstAttribute="trailing" secondItem="VZK-vE-6Xp" secondAttribute="trailing" id="tlo-JQ-dRf"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="UxS-GI-l5d"/>
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="gUd-x8-HZ1" id="aS8-NJ-iZ9"/>
@@ -522,7 +523,8 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="3ae-Us-sO4"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="h3T-DI-WKB" firstAttribute="leading" secondItem="3ae-Us-sO4" secondAttribute="leading" constant="10" id="7gp-cB-Um3"/>
                             <constraint firstAttribute="trailing" secondItem="zGJ-Jv-dAt" secondAttribute="trailing" id="Ee8-BC-eQu"/>
@@ -540,7 +542,6 @@
                             <constraint firstItem="3ae-Us-sO4" firstAttribute="bottom" secondItem="bLM-dI-Z3D" secondAttribute="bottom" constant="10" id="tHG-g9-YWB"/>
                             <constraint firstItem="zGJ-Jv-dAt" firstAttribute="leading" secondItem="3ae-Us-sO4" secondAttribute="leading" id="vgX-Wq-9Ac"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="3ae-Us-sO4"/>
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="h3T-DI-WKB" id="RFb-Yf-tXd"/>
@@ -612,7 +613,8 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="OKW-97-swY"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="93c-l6-vGz" firstAttribute="top" secondItem="XX0-da-wRh" secondAttribute="bottom" constant="30" id="0Rd-Ea-hna"/>
                             <constraint firstItem="Ger-IV-ml7" firstAttribute="top" secondItem="93c-l6-vGz" secondAttribute="bottom" constant="30" id="3IA-xx-3HR"/>
@@ -631,7 +633,6 @@
                             <constraint firstItem="OKW-97-swY" firstAttribute="trailing" secondItem="93c-l6-vGz" secondAttribute="trailing" constant="25" id="rwh-7n-N0R"/>
                             <constraint firstItem="XX0-da-wRh" firstAttribute="leading" secondItem="0ob-SA-7KO" secondAttribute="leading" constant="10" id="xif-V1-fAn"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="OKW-97-swY"/>
                     </view>
                     <connections>
                         <outlet property="bgImageView" destination="s5D-wP-GBY" id="lGo-R9-QVc"/>
@@ -663,5 +664,8 @@
         <namedColor name="customWhite50Opacity">
             <color red="1" green="1" blue="1" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

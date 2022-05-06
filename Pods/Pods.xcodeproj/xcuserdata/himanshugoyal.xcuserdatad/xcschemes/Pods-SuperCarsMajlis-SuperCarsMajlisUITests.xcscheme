@@ -14,9 +14,9 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "2274E8AB061685D25F037E546EAEA5AE"
-               BuildableName = "Pods_SuperCarsMajlisUITests.framework"
-               BlueprintName = "Pods-SuperCarsMajlisUITests"
+               BlueprintIdentifier = "7A4710A7265D9C6D2983827D25929307"
+               BuildableName = "Pods_SuperCarsMajlis_SuperCarsMajlisUITests.framework"
+               BlueprintName = "Pods-SuperCarsMajlis-SuperCarsMajlisUITests"
                ReferencedContainer = "container:Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>

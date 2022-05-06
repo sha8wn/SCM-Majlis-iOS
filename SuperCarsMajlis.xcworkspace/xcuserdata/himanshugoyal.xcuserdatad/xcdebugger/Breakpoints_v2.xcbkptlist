@@ -68,34 +68,34 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "0E999613-F45C-4619-9D98-6163C85BBE17 - d7b01162f6fa9ad"
+                  uuid = "0E999613-F45C-4619-9D98-6163C85BBE17 - 2819e07750baeab9"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;Alamofire.DataResponse&lt;Any&gt;&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Int, SCM.WebServiceResponseType) -&gt; () in SCM.ProfileViewController.callUpdateUserDetailAPI(userId: Swift.String, image: Swift.String) -&gt; ()"
                   moduleName = "SCM"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/himanshugoyal/Project/SCM/SuperCarsMajlis/SuperCarsMajlis/Controllers/Profile/Webservice/ProfileWebservice.swift"
+                  urlString = "file:///Users/himanshugoyal/Project/SCM-Majlis-iOS/SuperCarsMajlis/Controllers/Profile/Webservice/ProfileWebservice.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "25"
                   endingLineNumber = "25"
-                  offsetFromSymbolStart = "326">
+                  offsetFromSymbolStart = "314">
                </Location>
                <Location
-                  uuid = "0E999613-F45C-4619-9D98-6163C85BBE17 - dc4107b809d2c1ce"
+                  uuid = "0E999613-F45C-4619-9D98-6163C85BBE17 - f923e6d9760782bb"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (Swift.Optional&lt;Swift.Int&gt;) -&gt; () in closure #1 (Swift.Optional&lt;Alamofire.DataResponse&lt;Any&gt;&gt;, Swift.Optional&lt;Swift.String&gt;, Swift.Int, SCM.WebServiceResponseType) -&gt; () in SCM.ProfileViewController.callUpdateUserDetailAPI(userId: Swift.String, image: Swift.String) -&gt; ()"
                   moduleName = "SCM"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/himanshugoyal/Project/SCM/SuperCarsMajlis/SuperCarsMajlis/Controllers/Profile/Webservice/ProfileWebservice.swift"
+                  urlString = "file:///Users/himanshugoyal/Project/SCM-Majlis-iOS/SuperCarsMajlis/Controllers/Profile/Webservice/ProfileWebservice.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "26"
                   endingLineNumber = "26"
-                  offsetFromSymbolStart = "91">
+                  offsetFromSymbolStart = "95">
                </Location>
             </Locations>
          </BreakpointContent>
@@ -212,29 +212,29 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "023D1061-8CDF-48C0-842A-1D932F436A81 - bd27a9de550e390b"
+                  uuid = "023D1061-8CDF-48C0-842A-1D932F436A81 - a709273e25e5d9be"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SCM.ManagerSuperCarsViewController.btnCRBackTapped(sender: __C.UIButton) -&gt; ()"
                   moduleName = "SCM"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/himanshugoyal/Project/SCM/SuperCarsMajlis/SuperCarsMajlis/Controllers/ManageSuperCars/View/ManagerSuperCarsViewController.swift"
+                  urlString = "file:///Users/himanshugoyal/Project/SCM-Majlis-iOS/SuperCarsMajlis/Controllers/ManageSuperCars/View/ManagerSuperCarsViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "271"
                   endingLineNumber = "271"
-                  offsetFromSymbolStart = "660">
+                  offsetFromSymbolStart = "626">
                </Location>
                <Location
-                  uuid = "023D1061-8CDF-48C0-842A-1D932F436A81 - 563c4f99326072c4"
+                  uuid = "023D1061-8CDF-48C0-842A-1D932F436A81 - 4c12c179428b93af"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "closure #1 (__C.UIImage) -&gt; () in SCM.ManagerSuperCarsViewController.btnCRBackTapped(sender: __C.UIButton) -&gt; ()"
                   moduleName = "SCM"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/himanshugoyal/Project/SCM/SuperCarsMajlis/SuperCarsMajlis/Controllers/ManageSuperCars/View/ManagerSuperCarsViewController.swift"
+                  urlString = "file:///Users/himanshugoyal/Project/SCM-Majlis-iOS/SuperCarsMajlis/Controllers/ManageSuperCars/View/ManagerSuperCarsViewController.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "269"
@@ -340,14 +340,14 @@
             landmarkType = "7">
             <Locations>
                <Location
-                  uuid = "13257D09-8F90-4150-9802-5F269776FD1B - d4ab4503fff81ab3"
+                  uuid = "13257D09-8F90-4150-9802-5F269776FD1B - 2ca07638c8146dd"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "default argument 0 of SKPhotoBrowser.SKActionView.configureCloseButton(image: Swift.Optional&lt;__C.UIImage&gt;, size: Swift.Optional&lt;__C.CGSize&gt;) -&gt; ()"
                   moduleName = "SKPhotoBrowser"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/himanshugoyal/Project/SCM/SuperCarsMajlis/Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
+                  urlString = "file:///Users/himanshugoyal/Project/SCM-Majlis-iOS/Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
@@ -355,14 +355,14 @@
                   offsetFromSymbolStart = "6">
                </Location>
                <Location
-                  uuid = "13257D09-8F90-4150-9802-5F269776FD1B - 39292d7f6e47648c"
+                  uuid = "13257D09-8F90-4150-9802-5F269776FD1B - ef486f1f1d3e38e2"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "default argument 1 of SKPhotoBrowser.SKActionView.configureCloseButton(image: Swift.Optional&lt;__C.UIImage&gt;, size: Swift.Optional&lt;__C.CGSize&gt;) -&gt; ()"
                   moduleName = "SKPhotoBrowser"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/himanshugoyal/Project/SCM/SuperCarsMajlis/Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
+                  urlString = "file:///Users/himanshugoyal/Project/SCM-Majlis-iOS/Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "90"
@@ -370,19 +370,19 @@
                   offsetFromSymbolStart = "10">
                </Location>
                <Location
-                  uuid = "13257D09-8F90-4150-9802-5F269776FD1B - cf1c7b46a6443c1b"
+                  uuid = "13257D09-8F90-4150-9802-5F269776FD1B - 197d3926d53d6054"
                   shouldBeEnabled = "Yes"
                   ignoreCount = "0"
                   continueAfterRunningActions = "No"
                   symbolName = "SKPhotoBrowser.SKActionView.configureCloseButton(image: Swift.Optional&lt;__C.UIImage&gt;, size: Swift.Optional&lt;__C.CGSize&gt;) -&gt; ()"
                   moduleName = "SKPhotoBrowser"
                   usesParentBreakpointCondition = "Yes"
-                  urlString = "file:///Users/himanshugoyal/Project/SCM/SuperCarsMajlis/Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
+                  urlString = "file:///Users/himanshugoyal/Project/SCM-Majlis-iOS/Pods/SKPhotoBrowser/SKPhotoBrowser/SKActionView.swift"
                   startingColumnNumber = "9223372036854775807"
                   endingColumnNumber = "9223372036854775807"
                   startingLineNumber = "91"
                   endingLineNumber = "91"
-                  offsetFromSymbolStart = "234">
+                  offsetFromSymbolStart = "254">
                </Location>
             </Locations>
          </BreakpointContent>

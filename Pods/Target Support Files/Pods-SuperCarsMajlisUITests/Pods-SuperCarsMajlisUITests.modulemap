@@ -1,6 +1,0 @@
-framework module Pods_SuperCarsMajlisUITests {
-  umbrella header "Pods-SuperCarsMajlisUITests-umbrella.h"
-
-  export *
-  module * { export * }
-}

@@ -84,17 +84,17 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Pods-SuperCarsMajlis-SuperCarsMajlisUITests.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-SuperCarsMajlis.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>
 		</dict>
 		<key>Pods-SuperCarsMajlisTests.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>Pods-SuperCarsMajlisUITests.xcscheme</key>
 		<dict>
 			<key>isShown</key>
 			<false/>

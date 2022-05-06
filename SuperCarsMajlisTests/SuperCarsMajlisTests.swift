@@ -7,7 +7,7 @@
 //
 
 import XCTest
-@testable import SuperCarsMajlis
+//@testable import SuperCarsMajlis
 
 class SuperCarsMajlisTests: XCTestCase {
 

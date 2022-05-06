@@ -1,11 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="17701" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17703"/>
         <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <customFonts key="customFonts">
@@ -43,7 +44,7 @@
                                 </connections>
                             </button>
                             <wkWebView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="KFf-fv-TVx">
-                                <rect key="frame" x="25" y="176" width="364" height="720"/>
+                                <rect key="frame" x="25" y="169" width="364" height="727"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <wkWebViewConfiguration key="configuration">
                                     <audiovisualMediaTypes key="mediaTypesRequiringUserActionForPlayback" none="YES"/>
@@ -51,20 +52,21 @@
                                 </wkWebViewConfiguration>
                             </wkWebView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="2K9-TK-07p">
-                                <rect key="frame" x="25" y="176" width="364" height="720"/>
+                                <rect key="frame" x="25" y="169" width="364" height="727"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <color key="textColor" systemColor="labelColor"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Title" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7dh-Jd-Bb8">
-                                <rect key="frame" x="25" y="109" width="364" height="42"/>
+                                <rect key="frame" x="25" y="109" width="364" height="35"/>
                                 <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="30"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="6su-Lg-vI8"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstAttribute="bottom" secondItem="KFf-fv-TVx" secondAttribute="bottom" id="0z7-dM-yuX"/>
                             <constraint firstAttribute="bottom" secondItem="2K9-TK-07p" secondAttribute="bottom" id="9Aq-0H-G6P"/>
@@ -84,7 +86,6 @@
                             <constraint firstItem="7dh-Jd-Bb8" firstAttribute="leading" secondItem="6su-Lg-vI8" secondAttribute="leading" constant="25" id="piK-kH-28j"/>
                             <constraint firstItem="KFf-fv-TVx" firstAttribute="leading" secondItem="7dh-Jd-Bb8" secondAttribute="leading" id="vXa-Ii-qPW"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="6su-Lg-vI8"/>
                     </view>
                     <connections>
                         <outlet property="btn_back" destination="ZIj-5t-17r" id="dPv-Ir-Snc"/>
@@ -215,7 +216,8 @@
                                 </connections>
                             </textField>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="i9k-uA-jyn"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="owa-c2-Ekq" firstAttribute="leading" secondItem="i9k-uA-jyn" secondAttribute="leading" constant="15" id="4M1-B7-XPi"/>
                             <constraint firstItem="WAG-XV-BMM" firstAttribute="leading" secondItem="owa-c2-Ekq" secondAttribute="trailing" constant="5" id="A8h-RA-XW0"/>
@@ -240,7 +242,6 @@
                             <constraint firstItem="z8e-GL-8C5" firstAttribute="leading" secondItem="WAG-XV-BMM" secondAttribute="trailing" constant="5" id="xlF-GX-mmj"/>
                             <constraint firstAttribute="bottom" secondItem="cmQ-Ex-iv3" secondAttribute="bottom" id="zS9-0S-ei2"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="i9k-uA-jyn"/>
                     </view>
                     <connections>
                         <outlet property="btnBack" destination="owa-c2-Ekq" id="8tg-aE-yj9"/>
@@ -306,7 +307,7 @@
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="hWx-CE-HxI">
                                                 <rect key="frame" x="0.0" y="181" width="374" height="60"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhx-mY-SDB">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Hhx-mY-SDB">
                                                         <rect key="frame" x="0.0" y="0.0" width="187" height="60"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                                         <state key="normal" title="OK">
@@ -316,7 +317,7 @@
                                                             <action selector="btnATapped:" destination="48s-h4-Atr" eventType="touchUpInside" id="Irx-DT-wAg"/>
                                                         </connections>
                                                     </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-rh-2sb">
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a5I-rh-2sb">
                                                         <rect key="frame" x="187" y="0.0" width="187" height="60"/>
                                                         <fontDescription key="fontDescription" name="Poppins-Bold" family="Poppins" pointSize="16"/>
                                                         <state key="normal" title="Cancel">
@@ -372,6 +373,7 @@
                                 </constraints>
                             </view>
                         </subviews>
+                        <viewLayoutGuide key="safeArea" id="QiK-0r-ugC"/>
                         <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="U9I-8Y-pH7" firstAttribute="leading" secondItem="QiK-0r-ugC" secondAttribute="leading" id="3RY-Yf-wEZ"/>
@@ -383,7 +385,6 @@
                             <constraint firstItem="SHH-zh-hpm" firstAttribute="trailing" secondItem="QiK-0r-ugC" secondAttribute="trailing" id="u3h-8w-ToS"/>
                             <constraint firstAttribute="bottom" secondItem="U9I-8Y-pH7" secondAttribute="bottom" id="wJL-VM-VN6"/>
                         </constraints>
-                        <viewLayoutGuide key="safeArea" id="QiK-0r-ugC"/>
                     </view>
                     <connections>
                         <outlet property="bgView" destination="N3e-jd-wGj" id="xv3-A5-gd8"/>
@@ -410,5 +411,11 @@
         <namedColor name="customWhite20Opacity">
             <color red="1" green="1" blue="1" alpha="0.20000000298023224" colorSpace="custom" customColorSpace="sRGB"/>
         </namedColor>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
+        <systemColor name="systemBackgroundColor">
+            <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
     </resources>
 </document>

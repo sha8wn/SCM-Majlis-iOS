@@ -11,6 +11,6 @@
 #endif
 
 
-FOUNDATION_EXPORT double Pods_SuperCarsMajlisUITestsVersionNumber;
-FOUNDATION_EXPORT const unsigned char Pods_SuperCarsMajlisUITestsVersionString[];
+FOUNDATION_EXPORT double Pods_SuperCarsMajlis_SuperCarsMajlisUITestsVersionNumber;
+FOUNDATION_EXPORT const unsigned char Pods_SuperCarsMajlis_SuperCarsMajlisUITestsVersionString[];
 
